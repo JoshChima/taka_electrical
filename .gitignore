@@ -1,0 +1,12 @@
+# Allow-list: everything is ignored unless listed below.
+# Keeps .env (DB password), inventree-data/ (secret key, OIDC private key,
+# database) and any future local files out of the repo by default.
+/*
+!/.gitignore
+!/.env.example
+!/README.md
+!/docker-compose.yml
+!/Caddyfile
+!/seed/
+
+__pycache__/
