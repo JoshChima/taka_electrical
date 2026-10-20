@@ -40,6 +40,33 @@ export default function Overview({ onError }: { onError: (e: unknown) => void })
               </li>
             ))}
           </Column>
+          <Column title="Vans" note={plural(board.vans.length, 'Van')}>
+            {board.vans.map((l) => (
+              <li key={l.pk} className="stack">
+                <div className="row">
+                  <strong>{l.name}</strong>
+                  <Count loc={l} />
+                </div>
+                <span className="muted small">{l.description}</span>
+              </li>
+            ))}
+          </Column>
+          <Column title="Job Sites" note="One per Project">
+            {board.jobSites.map((s) => (
+              <li key={s.pk} className="stack">
+                <div className="row">
+                  <strong>{s.name}</strong>
+                  <span className="mono small muted">{s.project}</span>
+                </div>
+                <span className="muted small">{s.description}</span>
+                <span className="small">
+                  {s.partCount
+                    ? `${plural(s.partCount, 'part')} staged: ${s.partNames.join(', ')}`
+                    : 'Nothing staged yet'}
+                </span>
+              </li>
+            ))}
+          </Column>
         </div>
       )}
     </main>
