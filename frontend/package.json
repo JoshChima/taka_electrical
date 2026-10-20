@@ -1,0 +1,32 @@
+{
+  "name": "taka-stock-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run generate:api && tsc --noEmit && vite build",
+    "test": "vitest run",
+    "test:smoke": "playwright test",
+    "generate:api": "openapi-typescript inventree-openapi-1.6.0.json -o src/inventree.d.ts",
+    "generate:fixtures": "python scripts/seed_fixtures.py ../seed/seed_electrical.py src/test/seed-fixtures.json"
+  },
+  "dependencies": {
+    "openapi-fetch": "^0.17.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "jsdom": "^30.1.3",
+    "msw": "^3.0.3",
+    "openapi-typescript": "^7.13.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.5"
+  }
+}
