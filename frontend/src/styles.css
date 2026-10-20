@@ -162,6 +162,14 @@ h3 { margin: 0; font-size: 14px; font-weight: 600; }
 .figure.low .figure-value { color: var(--low); }
 .card .where li { padding: 10px 0; }
 
+/* Reorder: one line per part; its fields stack on a phone */
+.tile.low a { color: var(--low); }
+.price { flex: none; min-width: 120px; }
+@media (max-width: 600px) {
+  .reorder .line > * { flex-basis: 100%; }
+  .reorder .price { align-items: flex-start; text-align: left; }
+}
+
 /* Sign in */
 .sign-in { max-width: 400px; margin: 64px auto; padding: 0 16px; }
 .sign-in .card { padding: 24px; gap: 16px; }

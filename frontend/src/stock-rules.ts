@@ -72,11 +72,16 @@ export function whereIs(part: number, stock: StockItem[], locations: Location[])
 }
 
 /** The parts below Minimum Stock, most short first. */
-export function lowStock(parts: Part[], stock: StockItem[], lines: PurchaseOrderLine[], locations: Location[]): LowPart[] {
+export function lowStock(parts: Part[], stock: StockItem[], lines: PurchaseOrderLine[], locations: Location[]) {
+  const totals = totalsInStock(stock)
+  return stockPositions(parts.filter((p) => isLow(p, totals.get(p.pk) ?? 0)), stock, lines, locations)
+}
+
+/** Each part's stock against its Minimum Stock and On Order, most short first. */
+export function stockPositions(parts: Part[], stock: StockItem[], lines: PurchaseOrderLine[], locations: Location[]): LowPart[] {
   const totals = totalsInStock(stock)
   const ordered = onOrder(lines)
   return parts
-    .filter((p) => isLow(p, totals.get(p.pk) ?? 0))
     .map((p) => {
       const inStock = totals.get(p.pk) ?? 0
       const minimum = Number(p.minimum_stock)
@@ -137,7 +142,7 @@ export type PurchaseOrderLine = Pick<
   order_detail?: Pick<Schemas['PurchaseOrder'], 'status' | 'project_code' | 'supplier' | 'supplier_name'> | null
 }
 
-export type SupplierPart = Pick<Schemas['SupplierPart'], 'pk' | 'part' | 'supplier'> & {
+export type SupplierPart = Pick<Schemas['SupplierPart'], 'pk' | 'part' | 'supplier' | 'pack_quantity_native'> & {
   supplier_detail?: Pick<NonNullable<Schemas['SupplierPart']['supplier_detail']>, 'name'> | null
 }
 
@@ -172,6 +177,52 @@ export function lastSupplier(part: number, lines: PurchaseOrderLine[], supplierP
         ? [only[0].supplier, only[0].supplier_detail?.name ?? '']
         : []
   return pk == null ? undefined : { pk, name: name ?? '', unitCost: lastPricePaid(part, pk, lines) }
+}
+
+/** Suggested reorder quantity: what brings the part back to Minimum Stock after On Order. 0 means covered. */
+export const suggestedQuantity = (p: Pick<LowPart, 'minimum' | 'inStock' | 'onOrder'>) =>
+  Math.max(0, p.minimum - p.inStock - p.onOrder)
+
+/** What the Owner wants to reorder of a part, in the part's own units, and from whom (undefined: not chosen yet). */
+export type ReorderChoice = { part: number; quantity: number; supplier?: number }
+/** A line priced at the last price paid that supplier per unit (undefined: no price yet). */
+export type DraftLine = ReorderChoice & { unitCost?: number }
+/** One purchase order draft per supplier. `total` leaves out the `unpriced` lines. */
+export type OrderDraft = { supplier?: number; lines: DraftLine[]; total: number; unpriced: number }
+
+/**
+ * Order drafts: the reorder lines grouped by chosen supplier, in the order each supplier first appears.
+ * Lines with no supplier yet come last, in a draft with no supplier.
+ */
+export function orderDrafts(choices: ReorderChoice[], lines: PurchaseOrderLine[]): OrderDraft[] {
+  const drafts = new Map<number | undefined, OrderDraft>()
+  for (const choice of choices) {
+    const unitCost = choice.supplier == null ? undefined : lastPricePaid(choice.part, choice.supplier, lines)
+    const draft = drafts.get(choice.supplier) ?? { supplier: choice.supplier, lines: [], total: 0, unpriced: 0 }
+    drafts.set(choice.supplier, draft)
+    draft.lines.push({ ...choice, unitCost })
+    if (unitCost == null) draft.unpriced++
+    else draft.total += unitCost * choice.quantity
+  }
+  return [...drafts.values()].sort((a, b) => Number(a.supplier == null) - Number(b.supplier == null))
+}
+
+/**
+ * A draft's purchase order lines as InvenTree takes them: the supplier part, the quantity in supplier packs
+ * (rounded up), and the last price paid per pack when known. Lines of 0 are left out.
+ */
+export function purchaseOrderLines(draft: OrderDraft, supplierParts: SupplierPart[]) {
+  return draft.lines
+    .filter((l) => l.quantity > 0)
+    .map((l) => {
+      const supplierPart = supplierParts.find((s) => s.part === l.part && s.supplier === draft.supplier)!
+      const pack = supplierPart.pack_quantity_native || 1
+      return {
+        part: supplierPart.pk,
+        quantity: Math.ceil(l.quantity / pack),
+        ...(l.unitCost != null && { purchase_price: String(+(l.unitCost * pack).toFixed(6)) }),
+      }
+    })
 }
 
 /** A purchase order line as the Owner books it in. Quantities are in the part's own units. */

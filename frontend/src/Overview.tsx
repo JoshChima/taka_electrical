@@ -48,7 +48,12 @@ export default function Overview({ onError }: { onError: (e: unknown) => void })
       ) : (
         <>
         <div className="tiles">
-          <Tile label="Below Minimum Stock" value={plural(low.length, 'part')} low={low.length > 0} />
+          <Tile
+            label="Below Minimum Stock"
+            value={plural(low.length, 'part')}
+            low={low.length > 0}
+            note={low.length > 0 && <a href={`${import.meta.env.BASE_URL}reorder`}>Review and reorder <span aria-hidden="true">→</span></a>}
+          />
           {deliveries && (
             <a className="tile" href={`${import.meta.env.BASE_URL}receive`}>
               <span className="tile-label">Deliveries expected</span>
@@ -115,6 +120,11 @@ export default function Overview({ onError }: { onError: (e: unknown) => void })
               <h2 id="low">Below Minimum Stock</h2>
               <span className="muted small">Counted across the warehouse, every Van and every Job Site</span>
             </div>
+            {low.length > 0 && (
+              <a className="button primary" href={`${import.meta.env.BASE_URL}reorder`}>
+                Reorder these {low.length}
+              </a>
+            )}
           </div>
           <div className="scroll-x">
             <table aria-labelledby="low">
@@ -158,7 +168,7 @@ export default function Overview({ onError }: { onError: (e: unknown) => void })
 /** A quantity with its unit: "2,500 ft"; parts counted by the piece have no unit. */
 const qty = (n: number, units: string) => `${n.toLocaleString('en-US')}${units ? ` ${units}` : ''}`
 
-function Tile({ label, value, note, low }: { label: string; value: string; note?: string; low?: boolean }) {
+function Tile({ label, value, note, low }: { label: string; value: string; note?: React.ReactNode; low?: boolean }) {
   return (
     <div role="group" aria-label={`${value} ${label.replace(/^\w/, (c) => c.toLowerCase())}`} className={low ? 'tile low' : 'tile'}>
       <span className="tile-label">{label}</span>

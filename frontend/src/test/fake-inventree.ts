@@ -110,6 +110,44 @@ export function fakeInvenTree({ signedIn = true } = {}) {
     ),
     http.get('*/api/company/part/', api(() => fake.supplierParts)),
     http.get('*/api/parameter/', api(() => fake.parameters)),
+    // Like InvenTree 1.6.0: the reference comes from PO-{ref:04d}, a new order is pending (10).
+    http.post('*/api/order/po/', async ({ request }) => {
+      if (!fake.signedIn) return notAuthenticated()
+      if (request.headers.get('X-CSRFToken') !== CSRF)
+        return HttpResponse.json({ detail: 'CSRF Failed: CSRF token missing.' }, { status: 403 })
+      const body = (await request.json()) as { supplier: number; description?: string; project_code?: number }
+      const pk = Math.max(...fake.purchaseOrders.map((o) => o.pk)) + 1
+      const order = {
+        pk, reference: `PO-${String(pk).padStart(4, '0')}`, supplier: body.supplier,
+        supplier_name: fake.supplierParts.find((s) => s.supplier === body.supplier)!.supplier_detail.name,
+        supplier_reference: '', status: 10, status_text: 'Pending', project_code: body.project_code ?? null,
+        project_code_label: null, description: body.description ?? '', target_date: null, issue_date: null,
+        destination: null, line_items: 0, completed_lines: 0,
+      }
+      fake.purchaseOrders.push(order as unknown as (typeof fake.purchaseOrders)[number])
+      return HttpResponse.json(order, { status: 201 })
+    }),
+    // `part` is the supplier part and `quantity` is in its packs.
+    http.post('*/api/order/po-line/', async ({ request }) => {
+      if (!fake.signedIn) return notAuthenticated()
+      if (request.headers.get('X-CSRFToken') !== CSRF)
+        return HttpResponse.json({ detail: 'CSRF Failed: CSRF token missing.' }, { status: 403 })
+      const body = (await request.json()) as { order: number; part: number; quantity: number; purchase_price?: string }
+      const order = fake.purchaseOrders.find((o) => o.pk === body.order)!
+      const supplierPart = fake.supplierParts.find((s) => s.pk === body.part)!
+      const part = fake.parts.find((p) => p.pk === supplierPart.part)!
+      const line = {
+        pk: Math.max(...fake.poLines.map((l) => l.pk)) + 1, order: order.pk, part: supplierPart.pk,
+        quantity: Number(body.quantity), received: 0,
+        purchase_price: body.purchase_price == null ? null : Number(body.purchase_price),
+        project_code: order.project_code, project_code_label: order.project_code_label, destination: null,
+        sku: supplierPart.SKU, ipn: part.IPN, internal_part: part.pk, internal_part_name: part.name,
+        part_detail: { pk: part.pk, IPN: part.IPN, name: part.name, units: part.units }, supplier_part_detail: supplierPart,
+      }
+      fake.poLines.push(line as unknown as (typeof fake.poLines)[number])
+      order.line_items += 1
+      return HttpResponse.json(line, { status: 201 })
+    }),
     // Like InvenTree 1.6.0: no over-receipt check, quantities are in supplier packs, a line without a
     // location lands in the order's destination, and the order completes once every line is received.
     http.post('*/api/order/po/:id/receive/', async ({ request, params }) => {

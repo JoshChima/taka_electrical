@@ -107,7 +107,7 @@ async function fetchDetail(part: number) {
   }
 }
 
-const dollars = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+export const dollars = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
 
 function PartDetail({
   part,
