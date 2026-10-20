@@ -1,0 +1,6 @@
+node_modules/
+dist/
+# Generated from inventree-openapi-1.6.0.json by `npm run generate:api` (runs on build)
+src/inventree.d.ts
+test-results/
+playwright-report/
