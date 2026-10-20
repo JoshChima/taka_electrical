@@ -54,7 +54,7 @@ export function totalsInStock(stock: StockItem[]) {
 }
 
 /** "Aisle C - Boxes & Devices" -> "Aisle C", "Van 03 (Service Calls)" -> "Van 03". */
-const shortName = (name: string) => name.replace(/ - .*| \(.*/, '')
+export const shortName = (name: string) => name.replace(/ - .*| \(.*/, '')
 
 /** Low: total in stock is below Minimum Stock. A Minimum Stock of 0 is never low (stock can't go below 0). */
 export const isLow = (part: Part, inStock: number) => inStock < Number(part.minimum_stock ?? 0)
@@ -318,4 +318,49 @@ export function locationBoard(locations: Location[], stock: StockItem[], low = n
     } else board[column].push(row)
   }
   return board
+}
+
+/** Where a part can be moved from: the warehouse aisles (and the Tool Crib) holding it, most stock first. */
+export function warehouseStock(part: number, stock: StockItem[], locations: Location[]) {
+  const aisles = new Map(locationBoard(locations, []).warehouse.map((a) => [a.pk, shortName(a.name)]))
+  const at = new Map<number, number>()
+  for (const item of stock)
+    if (item.part === part && item.location != null && aisles.has(item.location))
+      at.set(item.location, (at.get(item.location) ?? 0) + Number(item.quantity))
+  return [...at]
+    .map(([pk, quantity]) => ({ pk, name: aisles.get(pk)!, quantity }))
+    .sort((a, b) => b.quantity - a.quantity)
+}
+
+/** One line of a move: `quantity` of a part, in its own units, out of the aisle `from`. */
+export type MoveLine = { part: number; from: number; quantity: number }
+
+/**
+ * Why a line can't be moved, or undefined when it can. InvenTree's transfer doesn't reject more than a
+ * stock item holds (it moves the whole item), so this guards it.
+ */
+export function moveProblem(quantity: number, from: { name: string; quantity: number } | undefined, units: string) {
+  if (!from) return 'None in the warehouse to move.'
+  if (!Number.isFinite(quantity) || quantity <= 0) return 'Enter how many to move.'
+  if (quantity > from.quantity)
+    return `Only ${from.quantity.toLocaleString('en-US')}${units ? ` ${units}` : ''} in ${from.name}. Move at most that.`
+}
+
+/**
+ * The stock transfer's items: each line taken from its aisle's stock items, largest first, splitting the last.
+ * `line` is the index of the move line an item serves, so InvenTree's per-item errors map back to lines.
+ */
+export function transferItems(lines: MoveLine[], stock: StockItem[]) {
+  return lines.flatMap(({ part, from, quantity }, line) => {
+    let left = quantity
+    return stock
+      .filter((s) => s.part === part && s.location === from)
+      .sort((a, b) => Number(b.quantity) - Number(a.quantity))
+      .flatMap((s) => {
+        if (left <= 0) return []
+        const take = Math.min(left, Number(s.quantity))
+        left -= take
+        return [{ pk: s.pk, quantity: String(take), line }]
+      })
+  })
 }

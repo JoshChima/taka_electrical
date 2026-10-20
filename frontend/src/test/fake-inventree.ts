@@ -184,6 +184,31 @@ export function fakeInvenTree({ signedIn = true } = {}) {
       if (order.completed_lines === lines.length) order.status = 30
       return HttpResponse.json(created, { status: 201 })
     }),
+    // Like InvenTree 1.6.0: all lines in one transaction, errors keyed by line index, no structural
+    // destinations, and a quantity above what the item holds is NOT rejected: the whole item moves.
+    http.post('*/api/stock/transfer/', async ({ request }) => {
+      if (!fake.signedIn) return notAuthenticated()
+      if (request.headers.get('X-CSRFToken') !== CSRF)
+        return HttpResponse.json({ detail: 'CSRF Failed: CSRF token missing.' }, { status: 403 })
+      const body = (await request.json()) as { items: { pk: number; quantity: string }[]; location: number }
+      if (fake.locations.find((l) => l.pk === body.location)?.structural)
+        return HttpResponse.json({ location: ['Structural locations cannot be assigned stock items'] }, { status: 400 })
+      const errors: Record<number, Record<string, string[]>> = {}
+      body.items.forEach(({ pk, quantity }, i) => {
+        if (!fake.stock.some((s) => s.pk === pk)) errors[i] = { pk: [`Invalid pk "${pk}" - object does not exist.`] }
+        else if (!(Number(quantity) > 0)) errors[i] = { quantity: ['Quantity must be greater than zero'] }
+      })
+      if (Object.keys(errors).length) return HttpResponse.json({ items: errors }, { status: 400 })
+      for (const { pk, quantity } of body.items) {
+        const item = fake.stock.find((s) => s.pk === pk)!
+        if (Number(quantity) >= item.quantity) item.location = body.location
+        else {
+          item.quantity -= Number(quantity)
+          fake.stock.push({ ...item, pk: Math.max(...fake.stock.map((s) => s.pk)) + 1, quantity: Number(quantity), location: body.location })
+        }
+      }
+      return HttpResponse.json(body, { status: 201 })
+    }),
   )
   return fake
 }

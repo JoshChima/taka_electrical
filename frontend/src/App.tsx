@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { currentUser, signOut, SignedOut, Unreachable } from './api'
 import Find from './Find'
+import Move from './Move'
 import Overview from './Overview'
 import Receive from './Receive'
 import Reorder from './Reorder'
@@ -10,6 +11,7 @@ import SignIn from './SignIn'
 const PAGES = [
   { path: '', label: 'Overview', Page: Overview },
   { path: 'find', label: 'Find a part', Page: Find },
+  { path: 'move', label: 'Move stock', Page: Move },
   { path: 'reorder', label: 'Reorder', Page: Reorder },
   { path: 'receive', label: 'Receive', Page: Receive },
 ]
