@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { api, everyRow } from './api'
-import { locationBoard, type BoardLocation, type LocationBoard } from './stock-rules'
+import { dueDate, fetchExpected } from './Receive'
+import { locationBoard, type BoardLocation, type LocationBoard, type PurchaseOrder } from './stock-rules'
 
 const PAGE = 500
 const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`
@@ -17,9 +18,11 @@ async function fetchBoard() {
 
 export default function Overview({ onError }: { onError: (e: unknown) => void }) {
   const [board, setBoard] = useState<LocationBoard>()
+  const [deliveries, setDeliveries] = useState<PurchaseOrder[]>()
 
   useEffect(() => {
     fetchBoard().then(setBoard, onError)
+    fetchExpected().then(setDeliveries, onError)
   }, [onError])
 
   return (
@@ -28,6 +31,19 @@ export default function Overview({ onError }: { onError: (e: unknown) => void })
         <h1>Stock overview</h1>
         <p className="muted">Everything the business holds, by where it is.</p>
       </div>
+      {deliveries && (
+        <div className="tiles">
+          <a className="tile" href={`${import.meta.env.BASE_URL}receive`}>
+            <span className="tile-label">Deliveries expected</span>
+            <span className="tile-value">{deliveries.length}</span>
+            <span className="small muted">
+              {deliveries.length
+                ? `Next: ${deliveries[0].supplier_name}, ${dueDate(deliveries[0].target_date)}`
+                : 'Nothing on its way'}
+            </span>
+          </a>
+        </div>
+      )}
       {!board ? (
         <p role="status">Loading stock…</p>
       ) : (

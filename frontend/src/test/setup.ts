@@ -12,6 +12,7 @@ afterEach(() => {
   server.resetHandlers()
   server.events.removeAllListeners()
   for (const c of document.cookie.split(';')) document.cookie = `${c.split('=')[0].trim()}=; max-age=0`
+  history.replaceState(null, '', '/')
   localStorage.clear()
   sessionStorage.clear()
 })

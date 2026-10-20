@@ -1,7 +1,41 @@
 import { useCallback, useEffect, useState } from 'react'
 import { currentUser, signOut, SignedOut, Unreachable } from './api'
 import Overview from './Overview'
+import Receive from './Receive'
 import SignIn from './SignIn'
+
+// The pages, in navigation order. Adding a page is one line: its path under the app, nav label and component.
+const PAGES = [
+  { path: '', label: 'Overview', Page: Overview },
+  { path: 'receive', label: 'Receive', Page: Receive },
+]
+
+const BASE = import.meta.env.BASE_URL
+const currentPath = () =>
+  location.pathname.startsWith(BASE) ? location.pathname.slice(BASE.length).replace(/\/$/, '') : ''
+
+/** The current page's path. Links to app pages change it without reloading; back and forward work. */
+function usePath() {
+  const [path, setPath] = useState(currentPath)
+  useEffect(() => {
+    const sync = () => setPath(currentPath())
+    const follow = (e: MouseEvent) => {
+      const a = e.target instanceof Element ? e.target.closest('a') : null
+      if (!a || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target) return
+      if (a.origin !== location.origin || !a.pathname.startsWith(BASE)) return
+      e.preventDefault()
+      history.pushState(null, '', a.href)
+      sync()
+    }
+    addEventListener('popstate', sync)
+    document.addEventListener('click', follow)
+    return () => {
+      removeEventListener('popstate', sync)
+      document.removeEventListener('click', follow)
+    }
+  }, [])
+  return path
+}
 
 type Session =
   | { kind: 'checking' }
@@ -13,6 +47,8 @@ const UNREACHABLE = "Can't reach the server. Check that InvenTree is running, th
 
 export default function App() {
   const [session, setSession] = useState<Session>({ kind: 'checking' })
+  const path = usePath()
+  const page = PAGES.find((p) => p.path === path) ?? PAGES[0]
 
   // Every page reports API failures here: a 401 anywhere means "sign in again".
   const onError = useCallback((e: unknown) => {
@@ -61,7 +97,7 @@ export default function App() {
     <>
       <header className="app-header">
         <div className="bar">
-          <a className="brand" href={import.meta.env.BASE_URL}>
+          <a className="brand" href={BASE}>
             <span className="logo" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinejoin="round">
                 <path d="M13 2 4 14h7l-1 8 9-12h-7z" />
@@ -70,9 +106,11 @@ export default function App() {
             Taka Electrical
           </a>
           <nav aria-label="Main">
-            <a href={import.meta.env.BASE_URL} aria-current="page">
-              Overview
-            </a>
+            {PAGES.map((p) => (
+              <a key={p.path} href={BASE + p.path} aria-current={p === page ? 'page' : undefined}>
+                {p.label}
+              </a>
+            ))}
           </nav>
           <span className="user">{session.user}</span>
           <button className="quiet" onClick={leave}>
@@ -80,7 +118,7 @@ export default function App() {
           </button>
         </div>
       </header>
-      <Overview onError={onError} />
+      <page.Page onError={onError} />
     </>
   )
 }

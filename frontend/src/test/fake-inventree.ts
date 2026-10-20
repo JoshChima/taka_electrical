@@ -26,20 +26,25 @@ export function fakeInvenTree({ signedIn = true } = {}) {
     signedIn,
     locations: structuredClone(seed.locations),
     stock: structuredClone(seed.stock),
+    purchaseOrders: structuredClone(seed.purchaseOrders),
+    poLines: structuredClone(seed.poLines),
     /** Every request the app sent, in order. */
     requests: [] as Request[],
   }
   server.events.on('request:start', ({ request }) => fake.requests.push(request.clone()))
 
   // List endpoints: a bare array, or a LimitOffset page when `limit` is given (as InvenTree does).
+  // A query parameter named after a plain field filters on it (`?status=20`, `?order=1`).
   const api =
-    (rows: () => unknown[]) =>
+    (rows: () => Row[]) =>
     ({ request }: { request: Request }) => {
       if (!fake.signedIn) return notAuthenticated()
       const query = new URL(request.url).searchParams
-      if (!query.has('limit')) return HttpResponse.json(rows())
+      const all = rows().filter((row) =>
+        [...query].every(([key, value]) => typeof row[key] === 'object' || !(key in row) || String(row[key]) === value),
+      )
+      if (!query.has('limit')) return HttpResponse.json(all)
       const offset = Number(query.get('offset') ?? 0)
-      const all = rows()
       return HttpResponse.json({
         count: all.length,
         next: null,
@@ -84,9 +89,49 @@ export function fakeInvenTree({ signedIn = true } = {}) {
     }),
     http.get('*/api/stock/location/', api(() => fake.locations)),
     http.get('*/api/stock/', api(() => fake.stock)),
+    http.get('*/api/order/po/', api(() => fake.purchaseOrders)),
+    http.get('*/api/order/po-line/', api(() => fake.poLines)),
+    // Like InvenTree 1.6.0: no over-receipt check, quantities are in supplier packs, a line without a
+    // location lands in the order's destination, and the order completes once every line is received.
+    http.post('*/api/order/po/:id/receive/', async ({ request, params }) => {
+      if (!fake.signedIn) return notAuthenticated()
+      if (request.headers.get('X-CSRFToken') !== CSRF)
+        return HttpResponse.json({ detail: 'CSRF Failed: CSRF token missing.' }, { status: 403 })
+      const order = fake.purchaseOrders.find((o) => o.pk === Number(params.id))!
+      if (order.status !== 20)
+        return HttpResponse.json(
+          { non_field_errors: ["Lines can only be received against an order marked as 'PLACED'"] },
+          { status: 400 },
+        )
+      const body = (await request.json()) as {
+        items: { line_item: number; quantity: string; location?: number }[]
+        location?: number
+      }
+      const created = body.items.map((item) => {
+        const line = fake.poLines.find((l) => l.pk === item.line_item && l.order === order.pk)!
+        line.received += Number(item.quantity)
+        const stockItem = {
+          pk: Math.max(...fake.stock.map((s) => s.pk)) + 1,
+          part: line.internal_part,
+          quantity: Number(item.quantity) * line.supplier_part_detail.pack_quantity_native,
+          location: item.location ?? body.location ?? order.destination,
+          status: 10,
+          in_stock: true,
+          part_detail: line.part_detail,
+        }
+        fake.stock.push(stockItem)
+        return stockItem
+      })
+      const lines = fake.poLines.filter((l) => l.order === order.pk)
+      order.completed_lines = lines.filter((l) => l.received >= l.quantity).length
+      if (order.completed_lines === lines.length) order.status = 30
+      return HttpResponse.json(created, { status: 201 })
+    }),
   )
   return fake
 }
+
+type Row = Record<string, unknown>
 
 /** The fake as seen when InvenTree is down: Caddy answers 502 for every API call. */
 export function unreachableInvenTree() {

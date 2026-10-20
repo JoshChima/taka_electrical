@@ -81,6 +81,46 @@ nav a[aria-current='page'] { color: var(--ink-on-dark); box-shadow: inset 0 -3px
 .stack { display: flex; flex-direction: column; gap: 4px; }
 .count { flex: none; font-size: 14px; }
 
+.card-body { padding: 16px 20px; }
+.card-foot {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 16px 20px; background: #f8f9fa;
+}
+select {
+  font: inherit; min-height: var(--tap); width: 100%; padding: 0 10px;
+  border: 1px solid var(--control-line); border-radius: 8px; background: var(--surface);
+}
+button.secondary { background: var(--surface); color: var(--action); border: 1px solid var(--control-line); }
+
+/* Overview tiles */
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.tile {
+  display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--line); color: var(--ink); text-decoration: none;
+}
+.tile-label { font-size: 13px; font-weight: 500; color: var(--ink-muted); }
+.tile-value { font-size: 34px; font-weight: 600; line-height: 1.1; }
+
+/* Receive: the order list and the order side by side, stacked on a phone */
+.split { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+.split .orders { flex: 1 1 300px; min-width: 0; }
+.split .delivery { flex: 999 1 560px; min-width: 0; }
+.orders li { padding: 0; }
+.orders button {
+  width: 100%; min-height: 72px; display: flex; flex-direction: column; align-items: stretch; gap: 4px;
+  padding: 14px 20px; border: 0; border-radius: 0; background: var(--surface); color: inherit;
+  text-align: left; font-weight: 400;
+}
+.orders button[aria-pressed='true'] { background: #e8eefc; box-shadow: inset 3px 0 0 var(--action); }
+.line { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px 20px; }
+.line .name { flex: 1 1 260px; min-width: 0; align-self: center; }
+.field { display: flex; flex-direction: column; gap: 4px; flex: none; }
+.field label { font-size: 12px; font-weight: 400; color: var(--ink-muted); }
+.field input { width: 104px; text-align: right; }
+.field .row { align-items: center; gap: 6px; }
+.grow { flex: 1 1 220px; min-width: 0; }
+.full { flex-basis: 100%; }
+
 /* Sign in */
 .sign-in { max-width: 400px; margin: 64px auto; padding: 0 16px; }
 .sign-in .card { padding: 24px; gap: 16px; }
