@@ -34,7 +34,7 @@ export default function App() {
 
   switch (session.kind) {
     case 'checking':
-      return <p role="status">Checking sign-in…</p>
+      return <p role="status" className="page muted">Checking sign-in…</p>
     case 'failed':
       return (
         <main className="sign-in">
