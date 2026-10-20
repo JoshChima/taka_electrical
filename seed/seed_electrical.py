@@ -304,6 +304,9 @@ PARTS = [
 TRACKABLE = {'TL-DMM', 'TL-CLAMP'}
 CONSUMABLE = {'CON-WN-YEL', 'CON-WN-RED', 'SUP-STAPLE-NM', 'CNS-TAPE-BLK', 'CNS-PULL-LUBE'}
 TOOLS_CATEGORY = 'Tools & Equipment'
+# Wire (units 'ft') is bought in reels: its supplier part's pack size. Supplier price breaks and
+# purchase order lines are per pack, so the seed converts the feet and per-foot costs below.
+REEL_FT = 500
 
 # --- Install kits (assemblies) with bills of materials -------------------------
 KITS = [
@@ -340,7 +343,7 @@ BUILDS = [
     ('BO-0004', 'PRJ-103', 'KIT-HB-150', 40, BuildStatus.PENDING, 'J103', 21),
     ('BO-0005', 'PRJ-104', 'KIT-EV-48', 8, BuildStatus.PENDING, 'J104', 30),
 ]
-# (reference, supplier, project, status, supplier ref, days until target, [(IPN, qty)])
+# (reference, supplier, project, status, supplier ref, days until target, [(IPN, qty in part units)])
 PURCHASE_ORDERS = [
     ('PO-0001', 'BP', 'PRJ-103', PurchaseOrderStatus.PLACED, 'BPL-88412', 10, [('LGT-HB-150', 40), ('SUP-HB-CHAIN', 20)]),
     ('PO-0002', 'RW', 'PRJ-103', PurchaseOrderStatus.PLACED, 'RWC-55190', 7, [('WIR-MC-12-2', 2500)]),
@@ -421,15 +424,15 @@ def seed():
         mfr_name, mfr_code = MANUFACTURERS[mfr]
         mpart = ManufacturerPart.objects.create(
             part=part, manufacturer=manufacturers[mfr], MPN=f"{mfr_code}-{ipn.split('-', 1)[1]}")
-        reel = units == 'ft'
+        pack = REEL_FT if units == 'ft' else 1
         spart = SupplierPart.objects.create(
             part=part, supplier=suppliers[sup], manufacturer_part=mpart, primary=True,
             SKU=f'{SUPPLIERS[sup][2]}-{10000 + n * 7}', description=desc,
-            packaging='500 ft reel' if reel else '', pack_quantity='500' if reel else '1')
+            packaging=f'{REEL_FT} ft reel' if pack > 1 else '', pack_quantity=str(pack))
         supplier_parts[ipn] = spart
-        SupplierPriceBreak.objects.create(part=spart, quantity=1, price=money(cost), price_currency='USD')
-        SupplierPriceBreak.objects.create(part=spart, quantity=1000 if reel else 50,
-                                          price=money(cost * 0.88), price_currency='USD')
+        SupplierPriceBreak.objects.create(part=spart, quantity=1, price=money(cost * pack), price_currency='USD')
+        SupplierPriceBreak.objects.create(part=spart, quantity=2 if pack > 1 else 50,
+                                          price=money(cost * 0.88 * pack), price_currency='USD')
 
         for pair in params.split(';') if params else []:
             key, value = pair.split('=', 1)
@@ -465,9 +468,10 @@ def seed():
             created_by=admin, target_date=target(days), destination=locations['WH'],
             issue_date=TODAY if status == PurchaseOrderStatus.PLACED else None)
         for ipn, qty in lines:
+            pack = REEL_FT if parts[ipn].units == 'ft' else 1
             PurchaseOrderLineItem.objects.create(
-                order=po, part=supplier_parts[ipn], quantity=qty, project_code=projects.get(prj),
-                purchase_price=costs[ipn], purchase_price_currency='USD')
+                order=po, part=supplier_parts[ipn], quantity=Decimal(qty) / pack, project_code=projects.get(prj),
+                purchase_price=costs[ipn] * pack, purchase_price_currency='USD')
 
     sales_orders = {}
     for ref, cust, prj, status, cust_ref, days, lines in SALES_ORDERS:

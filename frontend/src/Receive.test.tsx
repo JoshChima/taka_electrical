@@ -142,8 +142,8 @@ describe('Receive a delivery', () => {
     const order = await orderDetail('PO-0002 · Ridgeline Wire & Cable')
     const [cable] = await order.findAllByRole('group')
 
-    // The demo seed orders 2500 reels of 500 ft (it probably meant 2500 ft).
-    expect(cable.textContent).toMatch(/MC 12\/2 Aluminum Armor.*ordered 1,250,000 ft, received so far 0 ft/)
+    // The demo seed orders 2500 ft: 5 reels of 500 ft.
+    expect(cable.textContent).toMatch(/MC 12\/2 Aluminum Armor.*ordered 2,500 ft, received so far 0 ft/)
     await userEvent.clear(arrived(cable))
     await userEvent.type(arrived(cable), '1000')
     await userEvent.click(order.getByRole('button', { name: 'Book in delivery for PO-0002' }))

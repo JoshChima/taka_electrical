@@ -76,13 +76,13 @@ def rows(t):
                        'units': units, 'minimum_stock': f'{minimum:.6f}',
                        'default_location': cat_loc[cat], 'category_default_location': cat_loc[cat]}
         part_details[ipn] = part_detail
-        # One supplier part per part, created in part order. Wire comes in 500 ft reels, so its
-        # purchase order quantities are in reels (packs), as in InvenTree.
-        reel = units == 'ft'
+        # One supplier part per part, created in part order. Wire comes in reels of REEL_FT, so its
+        # purchase order quantities and prices are per reel (pack), as in InvenTree.
+        pack = t['REEL_FT'] if units == 'ft' else 1
         supplier_parts[ipn] = {'pk': n + 1, 'part': n + 1, 'supplier': list(t['SUPPLIERS']).index(sup) + 1,
                                'SKU': f"{t['SUPPLIERS'][sup][2]}-{10000 + n * 7}",
-                               'pack_quantity': '500' if reel else '1',
-                               'pack_quantity_native': 500.0 if reel else 1.0,
+                               'pack_quantity': str(pack),
+                               'pack_quantity_native': float(pack),
                                'supplier_detail': {'pk': list(t['SUPPLIERS']).index(sup) + 1,
                                                    'name': t['SUPPLIERS'][sup][0]}}
         for pair in params.split(';') if params else []:
@@ -115,8 +115,9 @@ def rows(t):
         purchase_orders.append(po)
         for ipn, qty in lines:
             spart = supplier_parts[ipn]
+            pack = spart['pack_quantity_native']
             po_lines.append({'pk': len(po_lines) + 1, 'order': po['pk'], 'part': spart['pk'],
-                             'quantity': float(qty), 'received': 0.0, 'purchase_price': costs[ipn],
+                             'quantity': qty / pack, 'received': 0.0, 'purchase_price': costs[ipn] * pack,
                              'project_code': po['project_code'], 'project_code_label': prj,
                              'destination': None, 'sku': spart['SKU'], 'ipn': ipn,
                              'internal_part': spart['part'], 'internal_part_name': part_details[ipn]['name'],
