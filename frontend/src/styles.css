@@ -162,6 +162,18 @@ h3 { margin: 0; font-size: 14px; font-weight: 600; }
 .figure.low .figure-value { color: var(--low); }
 .card .where li { padding: 10px 0; }
 
+/* Move stock: the form and its summary side by side, stacked on a phone */
+.split .move { flex: 999 1 560px; min-width: 0; }
+.split .summary { flex: 1 1 280px; min-width: 0; }
+.toggle { display: flex; border: 1px solid var(--control-line); border-radius: 8px; overflow: hidden; }
+.toggle button { flex: 1 1 0; border: 0; border-radius: 0; background: var(--surface); color: var(--ink); }
+.toggle button[aria-pressed='true'] { background: var(--ink); color: var(--ink-on-dark); }
+button.remove { padding: 0; width: var(--tap); border: 0; background: transparent; color: var(--ink-muted); font-size: 22px; }
+button.add { text-align: left; }
+.summary dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 10px 16px; }
+.summary dd { margin: 0; text-align: right; font-weight: 500; }
+.summary .card-foot { align-items: stretch; }
+
 /* Sign in */
 .sign-in { max-width: 400px; margin: 64px auto; padding: 0 16px; }
 .sign-in .card { padding: 24px; gap: 16px; }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { api, everyRow } from './api'
 import { dueDate, fetchExpected } from './Receive'
-import { locationBoard, lowStock, partsTracked, type BoardLocation, type PurchaseOrder } from './stock-rules'
+import { locationBoard, lowStock, partsTracked, shortName, type BoardLocation, type PurchaseOrder } from './stock-rules'
 
 const PAGE = 500
 const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`
@@ -89,6 +89,7 @@ export default function Overview({ onError }: { onError: (e: unknown) => void })
                   <Count loc={l} />
                 </div>
                 <span className="muted small">{l.description}</span>
+                <a href={`${import.meta.env.BASE_URL}move?van=${l.pk}`}>Restock {shortName(l.name)}</a>
               </li>
             ))}
           </Column>
@@ -107,6 +108,9 @@ export default function Overview({ onError }: { onError: (e: unknown) => void })
                 </span>
               </li>
             ))}
+            <li>
+              <a href={`${import.meta.env.BASE_URL}move?to=job-site`}>Stage material at a Job Site</a>
+            </li>
           </Column>
         </div>
         <section className="card" aria-labelledby="low">
