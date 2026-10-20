@@ -1,5 +1,8 @@
 # Taka Electrical Inventory
 
+> **Setting this up on a Windows PC for the first time?** Follow [docs/local-setup.md](docs/local-setup.md): a
+> step-by-step guide that assumes no Docker experience, with troubleshooting.
+
 Local [InvenTree](https://inventree.org) inventory system for an electrical contractor, run with Docker Compose.
 It ships with a demo dataset: electrician parts and materials, suppliers, customers, service-van and job-site stock,
 install kits with bills of materials, and four sample electrical projects with their purchase, sales and build orders.
