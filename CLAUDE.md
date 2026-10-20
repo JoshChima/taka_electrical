@@ -11,3 +11,7 @@ Default vocabulary: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-
 ### Domain docs
 
 Single-context: one `GLOSSARY.md` and `docs/adr/` at the repo root. See `docs/agents/domain.md`.
+
+### InvenTree API
+
+Before writing code that calls InvenTree, read `docs/inventree-api.md`: verified 1.6.0 endpoints, payloads and traps the server doesn't enforce.
