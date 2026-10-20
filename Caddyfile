@@ -80,6 +80,15 @@
 		}
 	}
 
+	# The Owner stock app (frontend/dist, built with `npm run build`), on the same origin as InvenTree
+	# so it can use InvenTree's session login. Unknown paths fall back to index.html for the app's own routes.
+	redir /app /app/
+	handle_path /app/* {
+		root * /srv/app
+		try_files {path} /index.html
+		file_server
+	}
+
 	# All other requests are proxied to the InvenTree server
 	reverse_proxy {$INVENTREE_SERVER:"http://inventree-server:8000"} {
 

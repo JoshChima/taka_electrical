@@ -1,0 +1,92 @@
+/* Design tokens: the neutral placeholder brand from the design canvas. Swap these for the real brand. */
+:root {
+  --font: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --ink: #16191d;
+  --ink-muted: #545d69;
+  --ink-on-dark: #ffffff;
+  --ink-on-dark-muted: #c9ced6;
+  --page: #f3f4f6;
+  --surface: #ffffff;
+  --header: #16191d;
+  --line: #d9dde3;
+  --line-soft: #eef0f3;
+  --control-line: #c3c9d1;
+  --action: #1f4fd1;
+  --accent: #f5b301;
+  --low: #a54a06;
+  --low-bg: #fdf0e3;
+  --radius: 10px;
+  --tap: 44px;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font: 15px/1.45 var(--font);
+}
+h1 { margin: 0; font-size: 28px; font-weight: 600; letter-spacing: -0.01em; }
+h2 { margin: 0; font-size: 17px; font-weight: 600; }
+p { margin: 0; }
+ul { list-style: none; margin: 0; padding: 0; }
+.muted { color: var(--ink-muted); }
+.small { font-size: 14px; }
+.mono { font-family: var(--font-mono); font-size: 12px; }
+:focus-visible { outline: 3px solid var(--action); outline-offset: 2px; }
+
+button, input { font: inherit; min-height: var(--tap); }
+button { cursor: pointer; border-radius: 8px; padding: 0 16px; font-weight: 500; }
+button.primary { background: var(--action); color: var(--ink-on-dark); border: 0; }
+button.primary:disabled { opacity: 0.6; }
+button.quiet { background: transparent; color: var(--ink-on-dark-muted); border: 1px solid #3a4049; }
+input { border: 1px solid var(--control-line); border-radius: 8px; padding: 0 12px; width: 100%; }
+label { display: flex; flex-direction: column; gap: 6px; font-weight: 500; }
+
+/* Header: one row of navigation that scrolls sideways on a phone */
+.app-header { background: var(--header); color: var(--ink-on-dark); }
+.bar {
+  max-width: 1280px; margin: 0 auto; padding: 8px 24px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 24px;
+}
+.brand {
+  display: flex; align-items: center; gap: 10px; min-height: var(--tap);
+  color: var(--ink-on-dark); text-decoration: none; font-weight: 600; font-size: 17px;
+}
+.logo {
+  display: inline-flex; width: 30px; height: 30px; border-radius: 6px;
+  background: var(--accent); color: var(--ink); align-items: center; justify-content: center;
+}
+nav { display: flex; gap: 2px; flex: 1 1 420px; min-width: 0; overflow-x: auto; }
+nav a {
+  flex: none; display: inline-flex; align-items: center; min-height: var(--tap); padding: 0 12px;
+  color: var(--ink-on-dark-muted); text-decoration: none; white-space: nowrap;
+}
+nav a[aria-current='page'] { color: var(--ink-on-dark); box-shadow: inset 0 -3px 0 var(--accent); font-weight: 500; }
+.user { font-size: 14px; color: var(--ink-on-dark-muted); }
+
+/* Pages */
+.page { max-width: 1280px; margin: 0 auto; padding: 32px 24px 64px; display: flex; flex-direction: column; gap: 28px; }
+.page-title { display: flex; flex-direction: column; gap: 4px; }
+.columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 20px; align-items: start; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.card-head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  padding: 16px 20px; border-bottom: 1px solid var(--line-soft);
+}
+.card li { padding: 12px 20px; border-bottom: 1px solid var(--line-soft); }
+.card li:last-child { border-bottom: 0; }
+.row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.stack { display: flex; flex-direction: column; gap: 4px; }
+.count { flex: none; font-size: 14px; }
+
+/* Sign in */
+.sign-in { max-width: 400px; margin: 64px auto; padding: 0 16px; }
+.sign-in .card { padding: 24px; gap: 16px; }
+.notice { background: var(--line-soft); border-radius: 8px; padding: 10px 12px; }
+.problem { background: var(--low-bg); color: var(--low); border-radius: 8px; padding: 10px 12px; }
+
+@media (max-width: 600px) {
+  .bar, .page { padding-left: 16px; padding-right: 16px; }
+}

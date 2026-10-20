@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "build": "npm run generate:api && tsc --noEmit && vite build",
     "test": "vitest run",
     "test:smoke": "playwright test",
     "generate:api": "openapi-typescript inventree-openapi-1.6.0.json -o src/inventree.d.ts",

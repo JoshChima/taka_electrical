@@ -22,8 +22,9 @@
 # ------------------------
 # InvenTree Image Versions
 # ------------------------
-# By default, this docker-compose script targets the STABLE version of InvenTree,
-# image: inventree/inventree:stable
+# By default, this docker-compose script targets InvenTree 1.6.0, the version the Owner stock app
+# (frontend/) is built against. Upgrade deliberately, together with frontend/inventree-openapi-<version>.json.
+# image: inventree/inventree:1.6.0
 #
 # To run the LATEST (development) version of InvenTree,
 # change the INVENTREE_TAG variable (in the .env file) to "latest"
@@ -87,7 +88,7 @@ services:
     # Uses gunicorn as the web server
     inventree-server:
         # If you wish to specify a particular InvenTree version, do so here
-        image: inventree/inventree:${INVENTREE_TAG:-stable}
+        image: inventree/inventree:${INVENTREE_TAG:-1.6.0}
         container_name: inventree-server
         # Only change this port if you understand the stack.
         expose:
@@ -119,7 +120,7 @@ services:
     # Background worker process handles long-running or periodic tasks
     inventree-worker:
         # If you wish to specify a particular InvenTree version, do so here
-        image: inventree/inventree:${INVENTREE_TAG:-stable}
+        image: inventree/inventree:${INVENTREE_TAG:-1.6.0}
         container_name: inventree-worker
         command: invoke worker
         depends_on:
@@ -141,7 +142,7 @@ services:
     # One-shot job: loads the Taka Electrical demo dataset (seed/seed_electrical.py)
     # Runs on every "docker compose up" but does nothing if the data is already present
     inventree-seed:
-        image: inventree/inventree:${INVENTREE_TAG:-stable}
+        image: inventree/inventree:${INVENTREE_TAG:-1.6.0}
         container_name: inventree-seed
         command: sh -c "cd src/backend/InvenTree && python manage.py shell < /home/inventree/seed/seed_electrical.py"
         depends_on:
@@ -181,6 +182,8 @@ services:
             - ./Caddyfile:/etc/caddy/Caddyfile:ro,z
             - ${INVENTREE_EXT_VOLUME}/static:/var/www/static:z
             - ${INVENTREE_EXT_VOLUME}/media:/var/www/media:z
+            # The Owner stock app, served at /app (build it first, see README)
+            - ./frontend/dist:/srv/app:ro,z
             - ${INVENTREE_EXT_VOLUME}:/var/log:z
             - ${INVENTREE_EXT_VOLUME}:/data:z
             - ${INVENTREE_EXT_VOLUME}:/config:z
