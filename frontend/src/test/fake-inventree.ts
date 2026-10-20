@@ -26,6 +26,10 @@ export function fakeInvenTree({ signedIn = true } = {}) {
     signedIn,
     locations: structuredClone(seed.locations),
     stock: structuredClone(seed.stock),
+    parts: structuredClone(seed.parts),
+    projectCodes: structuredClone(seed.projectCodes),
+    purchaseOrders: structuredClone(seed.purchaseOrders),
+    poLines: structuredClone(seed.poLines),
     /** Every request the app sent, in order. */
     requests: [] as Request[],
   }
@@ -33,13 +37,13 @@ export function fakeInvenTree({ signedIn = true } = {}) {
 
   // List endpoints: a bare array, or a LimitOffset page when `limit` is given (as InvenTree does).
   const api =
-    (rows: () => unknown[]) =>
+    (rows: (query: URLSearchParams) => unknown[]) =>
     ({ request }: { request: Request }) => {
       if (!fake.signedIn) return notAuthenticated()
       const query = new URL(request.url).searchParams
-      if (!query.has('limit')) return HttpResponse.json(rows())
+      if (!query.has('limit')) return HttpResponse.json(rows(query))
       const offset = Number(query.get('offset') ?? 0)
-      const all = rows()
+      const all = rows(query)
       return HttpResponse.json({
         count: all.length,
         next: null,
@@ -84,6 +88,18 @@ export function fakeInvenTree({ signedIn = true } = {}) {
     }),
     http.get('*/api/stock/location/', api(() => fake.locations)),
     http.get('*/api/stock/', api(() => fake.stock)),
+    http.get('*/api/part/', api(() => fake.parts)),
+    http.get('*/api/project-code/', api(() => fake.projectCodes)),
+    http.get(
+      '*/api/order/po-line/',
+      api((query) =>
+        fake.poLines.map((line) =>
+          query.get('order_detail') === 'true'
+            ? { ...line, order_detail: fake.purchaseOrders.find((o) => o.pk === line.order) }
+            : line,
+        ),
+      ),
+    ),
   )
   return fake
 }

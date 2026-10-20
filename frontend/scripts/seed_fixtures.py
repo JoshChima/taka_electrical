@@ -69,7 +69,34 @@ def rows(t):
                 stock.append({'pk': len(stock) + 1, 'part': n + 1, 'quantity': each,
                               'location': loc_pk[loc], 'status': 10, 'in_stock': True,
                               'part_detail': part_detail})
-    return {'locations': locations, 'stock': stock}
+
+    # Parts in creation order: the stocked parts, then the install kits (assemblies, no stock, min 0).
+    parts = [{'pk': n + 1, 'IPN': ipn, 'name': name, 'description': desc, 'units': units,
+              'minimum_stock': float(minimum), 'assembly': False, 'active': True}
+             for n, (ipn, _cat, name, desc, units, _cost, minimum, *_rest) in enumerate(t['PARTS'])]
+    parts += [{'pk': len(parts) + n + 1, 'IPN': ipn, 'name': name, 'description': desc, 'units': '',
+               'minimum_stock': 0.0, 'assembly': True, 'active': True}
+              for n, (ipn, name, desc, _bom) in enumerate(t['KITS'])]
+    part_pk = {p['IPN']: p['pk'] for p in parts}
+
+    project_codes = [{'pk': n + 1, 'code': code, 'description': desc, 'active': True}
+                     for n, (code, desc) in enumerate(t['PROJECTS'])]
+    project_pk = {p['code']: p['pk'] for p in project_codes}
+
+    # One supplier part per stocked part, created in part order, so its pk equals the part's.
+    status = {'PENDING': 10, 'PLACED': 20, 'ON_HOLD': 25, 'COMPLETE': 30, 'CANCELLED': 40}
+    purchase_orders, po_lines = [], []
+    for n, (ref, sup, prj, state, sup_ref, _days, lines) in enumerate(t['PURCHASE_ORDERS']):
+        purchase_orders.append({'pk': n + 1, 'reference': ref, 'supplier_name': t['SUPPLIERS'][sup][0],
+                                'supplier_reference': sup_ref, 'status': status[state._mock_name],
+                                'project_code': project_pk.get(prj), 'project_code_label': prj})
+        for ipn, qty in lines:
+            po_lines.append({'pk': len(po_lines) + 1, 'order': n + 1, 'part': part_pk[ipn],
+                             'quantity': float(qty), 'received': 0.0, 'project_code': project_pk.get(prj),
+                             'internal_part': part_pk[ipn], 'internal_part_name': parts[part_pk[ipn] - 1]['name']})
+
+    return {'locations': locations, 'stock': stock, 'parts': parts, 'projectCodes': project_codes,
+            'purchaseOrders': purchase_orders, 'poLines': po_lines}
 
 
 if __name__ == '__main__':
