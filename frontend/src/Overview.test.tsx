@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { render, screen, within } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import App from './App'
 import { fakeInvenTree } from './test/fake-inventree'
 
@@ -46,6 +47,16 @@ describe('Overview A, the locations board', () => {
     expect(riverside.textContent).toMatch(/Riverside Medical Suite 300.*PRJ-102.*2200 Riverside Dr, Suite 300.*1 part staged: LED Troffer 2x4 40W 4000K/)
     expect(harbor.textContent).toMatch(/Harbor Point Warehouse.*PRJ-103.*75 Harbor Point Rd, Bldg C.*Nothing staged yet/)
     expect(oakview.textContent).toMatch(/Oakview Apartments Garage.*PRJ-104.*901 Oakview Blvd, Level P1.*Nothing staged yet/)
+  })
+
+  it('shows how many deliveries are expected and which arrives next, linking to Receive', async () => {
+    fakeInvenTree()
+    render(<App />)
+
+    const tile = await screen.findByRole('link', { name: /Deliveries expected/ })
+    expect(tile.textContent).toMatch(/Deliveries expected\s*2\s*Next: Ridgeline Wire & Cable, 26 Oct/)
+    await userEvent.click(tile)
+    expect(await screen.findByRole('heading', { level: 1, name: 'Receive a delivery' })).toBeTruthy()
   })
 
   it('groups locations by the first level of the location tree, not by their names', async () => {
@@ -170,5 +181,19 @@ describe('Low stock on the overview', () => {
     expect((await lowRows())[0]).toEqual([
       'THHN 12 AWG BlackWIR-THHN-12-BLK', '3,500 ft', '5,000 ft', '1,500 ft', '—', 'Aisle A 2,500 ft · Van 01 500 ft · Van 02 500 ft',
     ])
+  })
+
+  it('counts wire On Order in feet, though it is ordered in 500 ft reels', async () => {
+    const fake = fakeInvenTree()
+    const wire = fake.parts.find((p) => p.IPN === 'WIR-THHN-12-BLK')!
+    wire.minimum_stock = 5000
+    const restock = fake.poLines.find((l) => l.order === 4)! // PO-0004, no Project
+    fake.poLines.push({
+      ...restock, pk: 99, part: wire.pk, internal_part: wire.pk, internal_part_name: wire.name, quantity: 3,
+      supplier_part_detail: { ...restock.supplier_part_detail, pack_quantity_native: 500 },
+    })
+    render(<App />)
+
+    expect((await lowRows())[0][4]).toBe('1,500 ftCovered')
   })
 })

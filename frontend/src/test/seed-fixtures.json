@@ -168,7 +168,9 @@
     "name": "THHN 12 AWG Black",
     "description": "THHN/THWN-2 12 AWG stranded copper, black",
     "units": "ft",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -184,7 +186,9 @@
     "name": "THHN 12 AWG Black",
     "description": "THHN/THWN-2 12 AWG stranded copper, black",
     "units": "ft",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -200,7 +204,9 @@
     "name": "THHN 12 AWG Black",
     "description": "THHN/THWN-2 12 AWG stranded copper, black",
     "units": "ft",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -216,7 +222,9 @@
     "name": "THHN 12 AWG White",
     "description": "THHN/THWN-2 12 AWG stranded copper, white",
     "units": "ft",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -232,7 +240,9 @@
     "name": "THHN 12 AWG White",
     "description": "THHN/THWN-2 12 AWG stranded copper, white",
     "units": "ft",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -248,7 +258,9 @@
     "name": "THHN 12 AWG White",
     "description": "THHN/THWN-2 12 AWG stranded copper, white",
     "units": "ft",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -264,7 +276,9 @@
     "name": "THHN 12 AWG Green",
     "description": "THHN/THWN-2 12 AWG stranded copper, green",
     "units": "ft",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -280,7 +294,9 @@
     "name": "THHN 12 AWG Green",
     "description": "THHN/THWN-2 12 AWG stranded copper, green",
     "units": "ft",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -296,7 +312,9 @@
     "name": "THHN 10 AWG Black",
     "description": "THHN/THWN-2 10 AWG stranded copper, black",
     "units": "ft",
-    "minimum_stock": "500.000000"
+    "minimum_stock": "500.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -312,7 +330,9 @@
     "name": "THHN 10 AWG Black",
     "description": "THHN/THWN-2 10 AWG stranded copper, black",
     "units": "ft",
-    "minimum_stock": "500.000000"
+    "minimum_stock": "500.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -328,7 +348,9 @@
     "name": "THHN 6 AWG Black",
     "description": "THHN/THWN-2 6 AWG stranded copper, black",
     "units": "ft",
-    "minimum_stock": "500.000000"
+    "minimum_stock": "500.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -344,7 +366,9 @@
     "name": "THHN 6 AWG Red",
     "description": "THHN/THWN-2 6 AWG stranded copper, red",
     "units": "ft",
-    "minimum_stock": "500.000000"
+    "minimum_stock": "500.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -360,7 +384,9 @@
     "name": "THHN 8 AWG Green",
     "description": "THHN/THWN-2 8 AWG stranded copper, green (EGC)",
     "units": "ft",
-    "minimum_stock": "500.000000"
+    "minimum_stock": "500.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -376,7 +402,9 @@
     "name": "Bare Copper 4 AWG Solid",
     "description": "Bare solid soft-drawn copper, grounding electrode conductor",
     "units": "ft",
-    "minimum_stock": "200.000000"
+    "minimum_stock": "200.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -392,7 +420,9 @@
     "name": "Bare Copper 4 AWG Solid",
     "description": "Bare solid soft-drawn copper, grounding electrode conductor",
     "units": "ft",
-    "minimum_stock": "200.000000"
+    "minimum_stock": "200.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -408,7 +438,9 @@
     "name": "NM-B 14/2 w/G",
     "description": "Non-metallic sheathed cable 14/2 with ground, 250 ft coil",
     "units": "ft",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -424,7 +456,9 @@
     "name": "NM-B 14/2 w/G",
     "description": "Non-metallic sheathed cable 14/2 with ground, 250 ft coil",
     "units": "ft",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -440,7 +474,9 @@
     "name": "NM-B 12/2 w/G",
     "description": "Non-metallic sheathed cable 12/2 with ground, 250 ft coil",
     "units": "ft",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -456,7 +492,9 @@
     "name": "NM-B 12/2 w/G",
     "description": "Non-metallic sheathed cable 12/2 with ground, 250 ft coil",
     "units": "ft",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -472,7 +510,9 @@
     "name": "NM-B 12/3 w/G",
     "description": "Non-metallic sheathed cable 12/3 with ground, 250 ft coil",
     "units": "ft",
-    "minimum_stock": "500.000000"
+    "minimum_stock": "500.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -488,7 +528,9 @@
     "name": "NM-B 12/3 w/G",
     "description": "Non-metallic sheathed cable 12/3 with ground, 250 ft coil",
     "units": "ft",
-    "minimum_stock": "500.000000"
+    "minimum_stock": "500.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -504,7 +546,9 @@
     "name": "NM-B 6/3 w/G",
     "description": "Non-metallic sheathed cable 6/3 with ground - ranges, ovens",
     "units": "ft",
-    "minimum_stock": "100.000000"
+    "minimum_stock": "100.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -520,7 +564,9 @@
     "name": "MC 12/2 Aluminum Armor",
     "description": "Metal-clad cable 12/2 + insulated ground, aluminum armor, 250 ft coil",
     "units": "ft",
-    "minimum_stock": "2000.000000"
+    "minimum_stock": "2000.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -536,7 +582,9 @@
     "name": "MC 12/2 Aluminum Armor",
     "description": "Metal-clad cable 12/2 + insulated ground, aluminum armor, 250 ft coil",
     "units": "ft",
-    "minimum_stock": "2000.000000"
+    "minimum_stock": "2000.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -552,7 +600,9 @@
     "name": "MC 12/3 Aluminum Armor",
     "description": "Metal-clad cable 12/3 + insulated ground, aluminum armor, 250 ft coil",
     "units": "ft",
-    "minimum_stock": "500.000000"
+    "minimum_stock": "500.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -568,7 +618,9 @@
     "name": "SER 4/0-4/0-4/0-2/0 Aluminum",
     "description": "Service entrance cable, Style R, aluminum, 4/0-4/0-4/0-2/0",
     "units": "ft",
-    "minimum_stock": "100.000000"
+    "minimum_stock": "100.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -584,7 +636,9 @@
     "name": "SER 4/0-4/0-4/0-2/0 Aluminum",
     "description": "Service entrance cable, Style R, aluminum, 4/0-4/0-4/0-2/0",
     "units": "ft",
-    "minimum_stock": "100.000000"
+    "minimum_stock": "100.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -600,7 +654,9 @@
     "name": "Cat6 UTP Plenum Blue",
     "description": "Category 6 23 AWG 4-pair UTP, CMP plenum rated, 1000 ft box",
     "units": "ft",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -616,7 +672,9 @@
     "name": "Thermostat Wire 18/5",
     "description": "18 AWG 5-conductor solid copper thermostat cable, 250 ft",
     "units": "ft",
-    "minimum_stock": "250.000000"
+    "minimum_stock": "250.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -632,7 +690,9 @@
     "name": "Thermostat Wire 18/5",
     "description": "18 AWG 5-conductor solid copper thermostat cable, 250 ft",
     "units": "ft",
-    "minimum_stock": "250.000000"
+    "minimum_stock": "250.000000",
+    "default_location": 2,
+    "category_default_location": 2
    }
   },
   {
@@ -648,7 +708,9 @@
     "name": "1/2\" EMT Conduit, 10 ft",
     "description": "Electrical metallic tubing, 1/2\" trade size, 10 ft stick",
     "units": "",
-    "minimum_stock": "100.000000"
+    "minimum_stock": "100.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -664,7 +726,9 @@
     "name": "1/2\" EMT Conduit, 10 ft",
     "description": "Electrical metallic tubing, 1/2\" trade size, 10 ft stick",
     "units": "",
-    "minimum_stock": "100.000000"
+    "minimum_stock": "100.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -680,7 +744,9 @@
     "name": "3/4\" EMT Conduit, 10 ft",
     "description": "Electrical metallic tubing, 3/4\" trade size, 10 ft stick",
     "units": "",
-    "minimum_stock": "60.000000"
+    "minimum_stock": "60.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -696,7 +762,9 @@
     "name": "3/4\" EMT Conduit, 10 ft",
     "description": "Electrical metallic tubing, 3/4\" trade size, 10 ft stick",
     "units": "",
-    "minimum_stock": "60.000000"
+    "minimum_stock": "60.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -712,7 +780,9 @@
     "name": "1\" EMT Conduit, 10 ft",
     "description": "Electrical metallic tubing, 1\" trade size, 10 ft stick",
     "units": "",
-    "minimum_stock": "20.000000"
+    "minimum_stock": "20.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -728,7 +798,9 @@
     "name": "2\" Sch 40 PVC Conduit, 10 ft",
     "description": "Schedule 40 rigid PVC conduit, 2\" trade size, belled end",
     "units": "",
-    "minimum_stock": "10.000000"
+    "minimum_stock": "10.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -744,7 +816,9 @@
     "name": "2\" Sch 40 PVC Conduit, 10 ft",
     "description": "Schedule 40 rigid PVC conduit, 2\" trade size, belled end",
     "units": "",
-    "minimum_stock": "10.000000"
+    "minimum_stock": "10.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -760,7 +834,9 @@
     "name": "1/2\" EMT Set-Screw Connector",
     "description": "Zinc die-cast set-screw connector, 1/2\" EMT",
     "units": "",
-    "minimum_stock": "300.000000"
+    "minimum_stock": "300.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -776,7 +852,9 @@
     "name": "1/2\" EMT Set-Screw Connector",
     "description": "Zinc die-cast set-screw connector, 1/2\" EMT",
     "units": "",
-    "minimum_stock": "300.000000"
+    "minimum_stock": "300.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -792,7 +870,9 @@
     "name": "1/2\" EMT Set-Screw Connector",
     "description": "Zinc die-cast set-screw connector, 1/2\" EMT",
     "units": "",
-    "minimum_stock": "300.000000"
+    "minimum_stock": "300.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -808,7 +888,9 @@
     "name": "1/2\" EMT Set-Screw Coupling",
     "description": "Zinc die-cast set-screw coupling, 1/2\" EMT",
     "units": "",
-    "minimum_stock": "300.000000"
+    "minimum_stock": "300.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -824,7 +906,9 @@
     "name": "1/2\" EMT Set-Screw Coupling",
     "description": "Zinc die-cast set-screw coupling, 1/2\" EMT",
     "units": "",
-    "minimum_stock": "300.000000"
+    "minimum_stock": "300.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -840,7 +924,9 @@
     "name": "3/4\" EMT Set-Screw Connector",
     "description": "Zinc die-cast set-screw connector, 3/4\" EMT",
     "units": "",
-    "minimum_stock": "200.000000"
+    "minimum_stock": "200.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -856,7 +942,9 @@
     "name": "3/4\" EMT Set-Screw Connector",
     "description": "Zinc die-cast set-screw connector, 3/4\" EMT",
     "units": "",
-    "minimum_stock": "200.000000"
+    "minimum_stock": "200.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -872,7 +960,9 @@
     "name": "3/4\" EMT Set-Screw Coupling",
     "description": "Zinc die-cast set-screw coupling, 3/4\" EMT",
     "units": "",
-    "minimum_stock": "200.000000"
+    "minimum_stock": "200.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -888,7 +978,9 @@
     "name": "3/4\" EMT Set-Screw Coupling",
     "description": "Zinc die-cast set-screw coupling, 3/4\" EMT",
     "units": "",
-    "minimum_stock": "200.000000"
+    "minimum_stock": "200.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -904,7 +996,9 @@
     "name": "3/8\" MC Snap-In Connector",
     "description": "Snap-in connector for 12/2-12/3 MC cable",
     "units": "",
-    "minimum_stock": "500.000000"
+    "minimum_stock": "500.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -920,7 +1014,9 @@
     "name": "3/8\" MC Snap-In Connector",
     "description": "Snap-in connector for 12/2-12/3 MC cable",
     "units": "",
-    "minimum_stock": "500.000000"
+    "minimum_stock": "500.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -936,7 +1032,9 @@
     "name": "2\" PVC LB Conduit Body",
     "description": "Schedule 40 PVC type LB conduit body with cover, 2\"",
     "units": "",
-    "minimum_stock": "5.000000"
+    "minimum_stock": "5.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -952,7 +1050,9 @@
     "name": "1/2\" EMT One-Hole Strap",
     "description": "Steel one-hole strap, 1/2\" EMT",
     "units": "",
-    "minimum_stock": "500.000000"
+    "minimum_stock": "500.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -968,7 +1068,9 @@
     "name": "1/2\" EMT One-Hole Strap",
     "description": "Steel one-hole strap, 1/2\" EMT",
     "units": "",
-    "minimum_stock": "500.000000"
+    "minimum_stock": "500.000000",
+    "default_location": 3,
+    "category_default_location": 3
    }
   },
   {
@@ -984,7 +1086,9 @@
     "name": "Single-Gang Old-Work Box",
     "description": "PVC single-gang old-work (remodel) box, 20 cu in",
     "units": "",
-    "minimum_stock": "100.000000"
+    "minimum_stock": "100.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1000,7 +1104,9 @@
     "name": "Single-Gang Old-Work Box",
     "description": "PVC single-gang old-work (remodel) box, 20 cu in",
     "units": "",
-    "minimum_stock": "100.000000"
+    "minimum_stock": "100.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1016,7 +1122,9 @@
     "name": "Single-Gang Old-Work Box",
     "description": "PVC single-gang old-work (remodel) box, 20 cu in",
     "units": "",
-    "minimum_stock": "100.000000"
+    "minimum_stock": "100.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1032,7 +1140,9 @@
     "name": "Single-Gang New-Work Box",
     "description": "PVC single-gang nail-on new-work box, 18 cu in",
     "units": "",
-    "minimum_stock": "200.000000"
+    "minimum_stock": "200.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1048,7 +1158,9 @@
     "name": "Single-Gang New-Work Box",
     "description": "PVC single-gang nail-on new-work box, 18 cu in",
     "units": "",
-    "minimum_stock": "200.000000"
+    "minimum_stock": "200.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1064,7 +1176,9 @@
     "name": "Two-Gang New-Work Box",
     "description": "PVC two-gang nail-on new-work box, 32 cu in",
     "units": "",
-    "minimum_stock": "100.000000"
+    "minimum_stock": "100.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1080,7 +1194,9 @@
     "name": "Two-Gang New-Work Box",
     "description": "PVC two-gang nail-on new-work box, 32 cu in",
     "units": "",
-    "minimum_stock": "100.000000"
+    "minimum_stock": "100.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1096,7 +1212,9 @@
     "name": "4\" Square Box, 1-1/2\" Deep",
     "description": "Steel 4\" square box, 1-1/2\" deep, 1/2 & 3/4 KOs",
     "units": "",
-    "minimum_stock": "100.000000"
+    "minimum_stock": "100.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1112,7 +1230,9 @@
     "name": "4\" Square Box, 1-1/2\" Deep",
     "description": "Steel 4\" square box, 1-1/2\" deep, 1/2 & 3/4 KOs",
     "units": "",
-    "minimum_stock": "100.000000"
+    "minimum_stock": "100.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1128,7 +1248,9 @@
     "name": "4\" Square Mud Ring, 1-Gang",
     "description": "Single-device mud ring for 4\" square box, 5/8\" raised",
     "units": "",
-    "minimum_stock": "100.000000"
+    "minimum_stock": "100.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1144,7 +1266,9 @@
     "name": "4\" Square Mud Ring, 1-Gang",
     "description": "Single-device mud ring for 4\" square box, 5/8\" raised",
     "units": "",
-    "minimum_stock": "100.000000"
+    "minimum_stock": "100.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1160,7 +1284,9 @@
     "name": "Fan-Rated Ceiling Box",
     "description": "Steel 4\" octagon fan/fixture box with brace, 70 lb fan rated",
     "units": "",
-    "minimum_stock": "30.000000"
+    "minimum_stock": "30.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1176,7 +1302,9 @@
     "name": "Fan-Rated Ceiling Box",
     "description": "Steel 4\" octagon fan/fixture box with brace, 70 lb fan rated",
     "units": "",
-    "minimum_stock": "30.000000"
+    "minimum_stock": "30.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1192,7 +1320,9 @@
     "name": "15A Duplex Receptacle TR, White",
     "description": "Tamper-resistant 15A 125V duplex receptacle, residential grade",
     "units": "",
-    "minimum_stock": "200.000000"
+    "minimum_stock": "200.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1208,7 +1338,9 @@
     "name": "15A Duplex Receptacle TR, White",
     "description": "Tamper-resistant 15A 125V duplex receptacle, residential grade",
     "units": "",
-    "minimum_stock": "200.000000"
+    "minimum_stock": "200.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1224,7 +1356,9 @@
     "name": "15A Duplex Receptacle TR, White",
     "description": "Tamper-resistant 15A 125V duplex receptacle, residential grade",
     "units": "",
-    "minimum_stock": "200.000000"
+    "minimum_stock": "200.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1240,7 +1374,9 @@
     "name": "20A Duplex Receptacle TR, White",
     "description": "Tamper-resistant 20A 125V duplex receptacle, commercial spec grade",
     "units": "",
-    "minimum_stock": "100.000000"
+    "minimum_stock": "100.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1256,7 +1392,9 @@
     "name": "20A Duplex Receptacle TR, White",
     "description": "Tamper-resistant 20A 125V duplex receptacle, commercial spec grade",
     "units": "",
-    "minimum_stock": "100.000000"
+    "minimum_stock": "100.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1272,7 +1410,9 @@
     "name": "20A GFCI Receptacle, White",
     "description": "Self-test 20A 125V GFCI receptacle, tamper and weather resistant",
     "units": "",
-    "minimum_stock": "60.000000"
+    "minimum_stock": "60.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1288,7 +1428,9 @@
     "name": "20A GFCI Receptacle, White",
     "description": "Self-test 20A 125V GFCI receptacle, tamper and weather resistant",
     "units": "",
-    "minimum_stock": "60.000000"
+    "minimum_stock": "60.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1304,7 +1446,9 @@
     "name": "20A GFCI Receptacle, White",
     "description": "Self-test 20A 125V GFCI receptacle, tamper and weather resistant",
     "units": "",
-    "minimum_stock": "60.000000"
+    "minimum_stock": "60.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1320,7 +1464,9 @@
     "name": "USB-A/C Charging Receptacle",
     "description": "15A TR duplex receptacle with USB-A and USB-C (30W) charging ports",
     "units": "",
-    "minimum_stock": "12.000000"
+    "minimum_stock": "12.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1336,7 +1482,9 @@
     "name": "NEMA 14-50R Receptacle",
     "description": "50A 125/250V 14-50R flush receptacle - ranges and EV",
     "units": "",
-    "minimum_stock": "6.000000"
+    "minimum_stock": "6.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1352,7 +1500,9 @@
     "name": "Single-Pole Switch 15A, White",
     "description": "15A 120/277V single-pole toggle switch",
     "units": "",
-    "minimum_stock": "150.000000"
+    "minimum_stock": "150.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1368,7 +1518,9 @@
     "name": "Single-Pole Switch 15A, White",
     "description": "15A 120/277V single-pole toggle switch",
     "units": "",
-    "minimum_stock": "150.000000"
+    "minimum_stock": "150.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1384,7 +1536,9 @@
     "name": "3-Way Switch 15A, White",
     "description": "15A 120/277V three-way toggle switch",
     "units": "",
-    "minimum_stock": "75.000000"
+    "minimum_stock": "75.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1400,7 +1554,9 @@
     "name": "3-Way Switch 15A, White",
     "description": "15A 120/277V three-way toggle switch",
     "units": "",
-    "minimum_stock": "75.000000"
+    "minimum_stock": "75.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1416,7 +1572,9 @@
     "name": "LED/CFL Dimmer 150W",
     "description": "Single-pole/3-way slide dimmer, 150W LED / 600W incandescent",
     "units": "",
-    "minimum_stock": "20.000000"
+    "minimum_stock": "20.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1432,7 +1590,9 @@
     "name": "LED/CFL Dimmer 150W",
     "description": "Single-pole/3-way slide dimmer, 150W LED / 600W incandescent",
     "units": "",
-    "minimum_stock": "20.000000"
+    "minimum_stock": "20.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1448,7 +1608,9 @@
     "name": "PIR Occupancy Sensor Switch",
     "description": "Wall-box PIR occupancy/vacancy sensor, 120/277V, neutral required",
     "units": "",
-    "minimum_stock": "15.000000"
+    "minimum_stock": "15.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1464,7 +1626,9 @@
     "name": "1-Gang Decorator Plate, White",
     "description": "Polycarbonate 1-gang decorator/GFCI wall plate",
     "units": "",
-    "minimum_stock": "200.000000"
+    "minimum_stock": "200.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1480,7 +1644,9 @@
     "name": "1-Gang Decorator Plate, White",
     "description": "Polycarbonate 1-gang decorator/GFCI wall plate",
     "units": "",
-    "minimum_stock": "200.000000"
+    "minimum_stock": "200.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1496,7 +1662,9 @@
     "name": "1-Gang Duplex Plate, White",
     "description": "Polycarbonate 1-gang duplex receptacle wall plate",
     "units": "",
-    "minimum_stock": "200.000000"
+    "minimum_stock": "200.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1512,7 +1680,9 @@
     "name": "1-Gang Duplex Plate, White",
     "description": "Polycarbonate 1-gang duplex receptacle wall plate",
     "units": "",
-    "minimum_stock": "200.000000"
+    "minimum_stock": "200.000000",
+    "default_location": 4,
+    "category_default_location": 4
    }
   },
   {
@@ -1528,7 +1698,9 @@
     "name": "15A 1-Pole Breaker",
     "description": "Plug-on 15A single-pole thermal-magnetic breaker, 10kAIC",
     "units": "",
-    "minimum_stock": "30.000000"
+    "minimum_stock": "30.000000",
+    "default_location": 5,
+    "category_default_location": 5
    }
   },
   {
@@ -1544,7 +1716,9 @@
     "name": "15A 1-Pole Breaker",
     "description": "Plug-on 15A single-pole thermal-magnetic breaker, 10kAIC",
     "units": "",
-    "minimum_stock": "30.000000"
+    "minimum_stock": "30.000000",
+    "default_location": 5,
+    "category_default_location": 5
    }
   },
   {
@@ -1560,7 +1734,9 @@
     "name": "20A 1-Pole Breaker",
     "description": "Plug-on 20A single-pole thermal-magnetic breaker, 10kAIC",
     "units": "",
-    "minimum_stock": "40.000000"
+    "minimum_stock": "40.000000",
+    "default_location": 5,
+    "category_default_location": 5
    }
   },
   {
@@ -1576,7 +1752,9 @@
     "name": "20A 1-Pole Breaker",
     "description": "Plug-on 20A single-pole thermal-magnetic breaker, 10kAIC",
     "units": "",
-    "minimum_stock": "40.000000"
+    "minimum_stock": "40.000000",
+    "default_location": 5,
+    "category_default_location": 5
    }
   },
   {
@@ -1592,7 +1770,9 @@
     "name": "20A 1-Pole Dual Function AFCI/GFCI",
     "description": "Plug-on 20A dual-function combination AFCI + Class A GFCI breaker",
     "units": "",
-    "minimum_stock": "20.000000"
+    "minimum_stock": "20.000000",
+    "default_location": 5,
+    "category_default_location": 5
    }
   },
   {
@@ -1608,7 +1788,9 @@
     "name": "20A 1-Pole Dual Function AFCI/GFCI",
     "description": "Plug-on 20A dual-function combination AFCI + Class A GFCI breaker",
     "units": "",
-    "minimum_stock": "20.000000"
+    "minimum_stock": "20.000000",
+    "default_location": 5,
+    "category_default_location": 5
    }
   },
   {
@@ -1624,7 +1806,9 @@
     "name": "30A 2-Pole Breaker",
     "description": "Plug-on 30A two-pole breaker, 120/240V",
     "units": "",
-    "minimum_stock": "10.000000"
+    "minimum_stock": "10.000000",
+    "default_location": 5,
+    "category_default_location": 5
    }
   },
   {
@@ -1640,7 +1824,9 @@
     "name": "60A 2-Pole Breaker",
     "description": "Plug-on 60A two-pole breaker, 120/240V",
     "units": "",
-    "minimum_stock": "10.000000"
+    "minimum_stock": "10.000000",
+    "default_location": 5,
+    "category_default_location": 5
    }
   },
   {
@@ -1656,7 +1842,9 @@
     "name": "200A 40-Space Main Breaker Load Center",
     "description": "200A 120/240V 1-phase indoor main-breaker load center, 40 spaces / 80 circuits",
     "units": "",
-    "minimum_stock": "2.000000"
+    "minimum_stock": "2.000000",
+    "default_location": 5,
+    "category_default_location": 5
    }
   },
   {
@@ -1672,7 +1860,9 @@
     "name": "200A 40-Space Main Breaker Load Center",
     "description": "200A 120/240V 1-phase indoor main-breaker load center, 40 spaces / 80 circuits",
     "units": "",
-    "minimum_stock": "2.000000"
+    "minimum_stock": "2.000000",
+    "default_location": 5,
+    "category_default_location": 5
    }
   },
   {
@@ -1688,7 +1878,9 @@
     "name": "200A Ringless Meter Socket",
     "description": "200A 4-jaw ringless overhead/underground meter socket, NEMA 3R",
     "units": "",
-    "minimum_stock": "2.000000"
+    "minimum_stock": "2.000000",
+    "default_location": 5,
+    "category_default_location": 5
    }
   },
   {
@@ -1704,7 +1896,9 @@
     "name": "200A Ringless Meter Socket",
     "description": "200A 4-jaw ringless overhead/underground meter socket, NEMA 3R",
     "units": "",
-    "minimum_stock": "2.000000"
+    "minimum_stock": "2.000000",
+    "default_location": 5,
+    "category_default_location": 5
    }
   },
   {
@@ -1720,7 +1914,9 @@
     "name": "60A Non-Fused Disconnect, NEMA 3R",
     "description": "60A 240V non-fusible pull-out disconnect - AC and EV equipment",
     "units": "",
-    "minimum_stock": "6.000000"
+    "minimum_stock": "6.000000",
+    "default_location": 5,
+    "category_default_location": 5
    }
   },
   {
@@ -1736,7 +1932,9 @@
     "name": "5/8\" x 8 ft Ground Rod",
     "description": "Copper-bonded steel ground rod, 5/8\" x 8 ft",
     "units": "",
-    "minimum_stock": "6.000000"
+    "minimum_stock": "6.000000",
+    "default_location": 5,
+    "category_default_location": 5
    }
   },
   {
@@ -1752,7 +1950,9 @@
     "name": "5/8\" x 8 ft Ground Rod",
     "description": "Copper-bonded steel ground rod, 5/8\" x 8 ft",
     "units": "",
-    "minimum_stock": "6.000000"
+    "minimum_stock": "6.000000",
+    "default_location": 5,
+    "category_default_location": 5
    }
   },
   {
@@ -1768,7 +1968,9 @@
     "name": "5/8\" Acorn Ground Rod Clamp",
     "description": "Bronze direct-burial acorn clamp, 5/8\" rod, #10-#2 conductor",
     "units": "",
-    "minimum_stock": "20.000000"
+    "minimum_stock": "20.000000",
+    "default_location": 5,
+    "category_default_location": 5
    }
   },
   {
@@ -1784,7 +1986,9 @@
     "name": "5/8\" Acorn Ground Rod Clamp",
     "description": "Bronze direct-burial acorn clamp, 5/8\" rod, #10-#2 conductor",
     "units": "",
-    "minimum_stock": "20.000000"
+    "minimum_stock": "20.000000",
+    "default_location": 5,
+    "category_default_location": 5
    }
   },
   {
@@ -1800,7 +2004,9 @@
     "name": "LED High-Bay 150W 5000K",
     "description": "Round UFO LED high-bay, 150W, 21,000 lm, 5000K, 0-10V dimming, 120-277V",
     "units": "",
-    "minimum_stock": "20.000000"
+    "minimum_stock": "20.000000",
+    "default_location": 6,
+    "category_default_location": 6
    }
   },
   {
@@ -1816,7 +2022,9 @@
     "name": "LED Troffer 2x4 40W 4000K",
     "description": "Recessed 2x4 LED troffer, 40W, 5,200 lm, 4000K, 0-10V, 120-277V",
     "units": "",
-    "minimum_stock": "24.000000"
+    "minimum_stock": "24.000000",
+    "default_location": 6,
+    "category_default_location": 6
    }
   },
   {
@@ -1832,7 +2040,9 @@
     "name": "LED Troffer 2x4 40W 4000K",
     "description": "Recessed 2x4 LED troffer, 40W, 5,200 lm, 4000K, 0-10V, 120-277V",
     "units": "",
-    "minimum_stock": "24.000000"
+    "minimum_stock": "24.000000",
+    "default_location": 6,
+    "category_default_location": 6
    }
   },
   {
@@ -1848,7 +2058,9 @@
     "name": "6\" LED Wafer Downlight",
     "description": "Canless 6\" LED wafer downlight, 12W, 5CCT selectable, IC rated, J-box included",
     "units": "",
-    "minimum_stock": "48.000000"
+    "minimum_stock": "48.000000",
+    "default_location": 6,
+    "category_default_location": 6
    }
   },
   {
@@ -1864,7 +2076,9 @@
     "name": "6\" LED Wafer Downlight",
     "description": "Canless 6\" LED wafer downlight, 12W, 5CCT selectable, IC rated, J-box included",
     "units": "",
-    "minimum_stock": "48.000000"
+    "minimum_stock": "48.000000",
+    "default_location": 6,
+    "category_default_location": 6
    }
   },
   {
@@ -1880,7 +2094,9 @@
     "name": "LED Exit / Emergency Combo",
     "description": "Red LED exit sign with dual adjustable emergency heads, 90 min battery",
     "units": "",
-    "minimum_stock": "8.000000"
+    "minimum_stock": "8.000000",
+    "default_location": 6,
+    "category_default_location": 6
    }
   },
   {
@@ -1896,7 +2112,9 @@
     "name": "Level 2 EV Charger 48A Hardwired",
     "description": "48A Level 2 EVSE, 240V hardwired, 25 ft cable, NEMA 4, Wi-Fi/OCPP",
     "units": "",
-    "minimum_stock": "4.000000"
+    "minimum_stock": "4.000000",
+    "default_location": 6,
+    "category_default_location": 6
    }
   },
   {
@@ -1912,7 +2130,9 @@
     "name": "Twist-On Wire Connector, Yellow",
     "description": "Yellow twist-on connector, 2x18 to 4x14 AWG",
     "units": "",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -1928,7 +2148,9 @@
     "name": "Twist-On Wire Connector, Yellow",
     "description": "Yellow twist-on connector, 2x18 to 4x14 AWG",
     "units": "",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -1944,7 +2166,9 @@
     "name": "Twist-On Wire Connector, Yellow",
     "description": "Yellow twist-on connector, 2x18 to 4x14 AWG",
     "units": "",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -1960,7 +2184,9 @@
     "name": "Twist-On Wire Connector, Yellow",
     "description": "Yellow twist-on connector, 2x18 to 4x14 AWG",
     "units": "",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -1976,7 +2202,9 @@
     "name": "Twist-On Wire Connector, Red",
     "description": "Red twist-on connector, 2x14 to 5x12 AWG",
     "units": "",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -1992,7 +2220,9 @@
     "name": "Twist-On Wire Connector, Red",
     "description": "Red twist-on connector, 2x14 to 5x12 AWG",
     "units": "",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -2008,7 +2238,9 @@
     "name": "Twist-On Wire Connector, Red",
     "description": "Red twist-on connector, 2x14 to 5x12 AWG",
     "units": "",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -2024,7 +2256,9 @@
     "name": "Twist-On Wire Connector, Red",
     "description": "Red twist-on connector, 2x14 to 5x12 AWG",
     "units": "",
-    "minimum_stock": "1000.000000"
+    "minimum_stock": "1000.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -2040,7 +2274,9 @@
     "name": "3-Port Lever Connector",
     "description": "Inline 3-conductor lever-nut splicing connector, 24-12 AWG",
     "units": "",
-    "minimum_stock": "500.000000"
+    "minimum_stock": "500.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -2056,7 +2292,9 @@
     "name": "3-Port Lever Connector",
     "description": "Inline 3-conductor lever-nut splicing connector, 24-12 AWG",
     "units": "",
-    "minimum_stock": "500.000000"
+    "minimum_stock": "500.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -2072,7 +2310,9 @@
     "name": "3/8\" Beam Clamp",
     "description": "Malleable iron beam clamp, 3/8\"-16 rod",
     "units": "",
-    "minimum_stock": "100.000000"
+    "minimum_stock": "100.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -2088,7 +2328,9 @@
     "name": "3/8\" Beam Clamp",
     "description": "Malleable iron beam clamp, 3/8\"-16 rod",
     "units": "",
-    "minimum_stock": "100.000000"
+    "minimum_stock": "100.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -2104,7 +2346,9 @@
     "name": "3/8\" Threaded Rod, 10 ft",
     "description": "Zinc-plated all-thread rod, 3/8\"-16 x 10 ft",
     "units": "",
-    "minimum_stock": "20.000000"
+    "minimum_stock": "20.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -2120,7 +2364,9 @@
     "name": "High-Bay Chain Hanging Kit",
     "description": "Jack chain (5 ft) with S-hooks and safety cable for high-bay fixtures",
     "units": "",
-    "minimum_stock": "20.000000"
+    "minimum_stock": "20.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -2136,7 +2382,9 @@
     "name": "NM Cable Staple",
     "description": "Insulated staple for 14/2 to 10/3 NM-B cable",
     "units": "",
-    "minimum_stock": "2000.000000"
+    "minimum_stock": "2000.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -2152,7 +2400,9 @@
     "name": "NM Cable Staple",
     "description": "Insulated staple for 14/2 to 10/3 NM-B cable",
     "units": "",
-    "minimum_stock": "2000.000000"
+    "minimum_stock": "2000.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -2168,7 +2418,9 @@
     "name": "1/4\" x 1-3/4\" Concrete Screw",
     "description": "Hex head masonry screw, 1/4\" x 1-3/4\", blue coated",
     "units": "",
-    "minimum_stock": "500.000000"
+    "minimum_stock": "500.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -2184,7 +2436,9 @@
     "name": "1/4\" x 1-3/4\" Concrete Screw",
     "description": "Hex head masonry screw, 1/4\" x 1-3/4\", blue coated",
     "units": "",
-    "minimum_stock": "500.000000"
+    "minimum_stock": "500.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -2200,7 +2454,9 @@
     "name": "Electrical Tape 3/4\" Black",
     "description": "Vinyl electrical tape, 3/4\" x 66 ft, 7 mil",
     "units": "",
-    "minimum_stock": "50.000000"
+    "minimum_stock": "50.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -2216,7 +2472,9 @@
     "name": "Electrical Tape 3/4\" Black",
     "description": "Vinyl electrical tape, 3/4\" x 66 ft, 7 mil",
     "units": "",
-    "minimum_stock": "50.000000"
+    "minimum_stock": "50.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -2232,7 +2490,9 @@
     "name": "Electrical Tape 3/4\" Black",
     "description": "Vinyl electrical tape, 3/4\" x 66 ft, 7 mil",
     "units": "",
-    "minimum_stock": "50.000000"
+    "minimum_stock": "50.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -2248,7 +2508,9 @@
     "name": "Electrical Tape 3/4\" Black",
     "description": "Vinyl electrical tape, 3/4\" x 66 ft, 7 mil",
     "units": "",
-    "minimum_stock": "50.000000"
+    "minimum_stock": "50.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -2264,7 +2526,9 @@
     "name": "Wire Pulling Lubricant, 1 qt",
     "description": "Water-based wire pulling lubricant, 1 quart",
     "units": "",
-    "minimum_stock": "6.000000"
+    "minimum_stock": "6.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -2280,7 +2544,9 @@
     "name": "Wire Pulling Lubricant, 1 qt",
     "description": "Water-based wire pulling lubricant, 1 quart",
     "units": "",
-    "minimum_stock": "6.000000"
+    "minimum_stock": "6.000000",
+    "default_location": 7,
+    "category_default_location": 7
    }
   },
   {
@@ -2296,7 +2562,9 @@
     "name": "True-RMS Digital Multimeter",
     "description": "CAT IV 600V / CAT III 1000V true-RMS digital multimeter",
     "units": "",
-    "minimum_stock": "0.000000"
+    "minimum_stock": "0.000000",
+    "default_location": 8,
+    "category_default_location": 8
    }
   },
   {
@@ -2312,7 +2580,9 @@
     "name": "True-RMS Digital Multimeter",
     "description": "CAT IV 600V / CAT III 1000V true-RMS digital multimeter",
     "units": "",
-    "minimum_stock": "0.000000"
+    "minimum_stock": "0.000000",
+    "default_location": 8,
+    "category_default_location": 8
    }
   },
   {
@@ -2328,7 +2598,9 @@
     "name": "True-RMS Digital Multimeter",
     "description": "CAT IV 600V / CAT III 1000V true-RMS digital multimeter",
     "units": "",
-    "minimum_stock": "0.000000"
+    "minimum_stock": "0.000000",
+    "default_location": 8,
+    "category_default_location": 8
    }
   },
   {
@@ -2344,7 +2616,9 @@
     "name": "True-RMS Digital Multimeter",
     "description": "CAT IV 600V / CAT III 1000V true-RMS digital multimeter",
     "units": "",
-    "minimum_stock": "0.000000"
+    "minimum_stock": "0.000000",
+    "default_location": 8,
+    "category_default_location": 8
    }
   },
   {
@@ -2360,7 +2634,9 @@
     "name": "AC/DC Clamp Meter 600A",
     "description": "True-RMS AC/DC clamp meter, 600A, CAT IV 600V",
     "units": "",
-    "minimum_stock": "0.000000"
+    "minimum_stock": "0.000000",
+    "default_location": 8,
+    "category_default_location": 8
    }
   },
   {
@@ -2376,7 +2652,9 @@
     "name": "AC/DC Clamp Meter 600A",
     "description": "True-RMS AC/DC clamp meter, 600A, CAT IV 600V",
     "units": "",
-    "minimum_stock": "0.000000"
+    "minimum_stock": "0.000000",
+    "default_location": 8,
+    "category_default_location": 8
    }
   },
   {
@@ -2392,7 +2670,9 @@
     "name": "AC/DC Clamp Meter 600A",
     "description": "True-RMS AC/DC clamp meter, 600A, CAT IV 600V",
     "units": "",
-    "minimum_stock": "0.000000"
+    "minimum_stock": "0.000000",
+    "default_location": 8,
+    "category_default_location": 8
    }
   },
   {
@@ -2408,7 +2688,9 @@
     "name": "Steel Fish Tape, 240 ft",
     "description": "1/8\" steel fish tape, 240 ft, in case",
     "units": "",
-    "minimum_stock": "0.000000"
+    "minimum_stock": "0.000000",
+    "default_location": 8,
+    "category_default_location": 8
    }
   },
   {
@@ -2424,7 +2706,9 @@
     "name": "Steel Fish Tape, 240 ft",
     "description": "1/8\" steel fish tape, 240 ft, in case",
     "units": "",
-    "minimum_stock": "0.000000"
+    "minimum_stock": "0.000000",
+    "default_location": 8,
+    "category_default_location": 8
    }
   },
   {
@@ -2440,7 +2724,9 @@
     "name": "Steel Fish Tape, 240 ft",
     "description": "1/8\" steel fish tape, 240 ft, in case",
     "units": "",
-    "minimum_stock": "0.000000"
+    "minimum_stock": "0.000000",
+    "default_location": 8,
+    "category_default_location": 8
    }
   },
   {
@@ -2456,7 +2742,9 @@
     "name": "3/4\" EMT Hand Bender",
     "description": "Hand bender with handle, 3/4\" EMT / 1/2\" rigid",
     "units": "",
-    "minimum_stock": "0.000000"
+    "minimum_stock": "0.000000",
+    "default_location": 8,
+    "category_default_location": 8
    }
   },
   {
@@ -2472,7 +2760,9 @@
     "name": "3/4\" EMT Hand Bender",
     "description": "Hand bender with handle, 3/4\" EMT / 1/2\" rigid",
     "units": "",
-    "minimum_stock": "0.000000"
+    "minimum_stock": "0.000000",
+    "default_location": 8,
+    "category_default_location": 8
    }
   },
   {
@@ -2488,7 +2778,9 @@
     "name": "3/4\" EMT Hand Bender",
     "description": "Hand bender with handle, 3/4\" EMT / 1/2\" rigid",
     "units": "",
-    "minimum_stock": "0.000000"
+    "minimum_stock": "0.000000",
+    "default_location": 8,
+    "category_default_location": 8
    }
   }
  ],
@@ -3314,38 +3606,70 @@
   {
    "pk": 1,
    "reference": "PO-0001",
+   "supplier": 3,
    "supplier_name": "BrightPath Lighting Distributors",
    "supplier_reference": "BPL-88412",
    "status": 20,
+   "status_text": "Placed",
    "project_code": 3,
-   "project_code_label": "PRJ-103"
+   "project_code_label": "PRJ-103",
+   "description": "Material for PRJ-103",
+   "target_date": "2026-10-29",
+   "issue_date": "2026-10-19",
+   "destination": 1,
+   "line_items": 2,
+   "completed_lines": 0
   },
   {
    "pk": 2,
    "reference": "PO-0002",
+   "supplier": 2,
    "supplier_name": "Ridgeline Wire & Cable",
    "supplier_reference": "RWC-55190",
    "status": 20,
+   "status_text": "Placed",
    "project_code": 3,
-   "project_code_label": "PRJ-103"
+   "project_code_label": "PRJ-103",
+   "description": "Material for PRJ-103",
+   "target_date": "2026-10-26",
+   "issue_date": "2026-10-19",
+   "destination": 1,
+   "line_items": 1,
+   "completed_lines": 0
   },
   {
    "pk": 3,
    "reference": "PO-0003",
+   "supplier": 1,
    "supplier_name": "Northgate Electrical Supply",
    "supplier_reference": "",
    "status": 10,
+   "status_text": "Pending",
    "project_code": 4,
-   "project_code_label": "PRJ-104"
+   "project_code_label": "PRJ-104",
+   "description": "Material for PRJ-104",
+   "target_date": "2026-11-09",
+   "issue_date": null,
+   "destination": 1,
+   "line_items": 3,
+   "completed_lines": 0
   },
   {
    "pk": 4,
    "reference": "PO-0004",
+   "supplier": 1,
    "supplier_name": "Northgate Electrical Supply",
    "supplier_reference": "",
    "status": 10,
+   "status_text": "Pending",
    "project_code": null,
-   "project_code_label": null
+   "project_code_label": null,
+   "description": "Warehouse restock",
+   "target_date": "2026-11-02",
+   "issue_date": null,
+   "destination": 1,
+   "line_items": 2,
+   "completed_lines": 0
   }
  ],
  "poLines": [
@@ -3356,8 +3680,30 @@
    "quantity": 40.0,
    "received": 0.0,
    "project_code": 3,
+   "project_code_label": "PRJ-103",
+   "destination": null,
+   "sku": "BPL-10385",
+   "ipn": "LGT-HB-150",
    "internal_part": 56,
-   "internal_part_name": "LED High-Bay 150W 5000K"
+   "internal_part_name": "LED High-Bay 150W 5000K",
+   "part_detail": {
+    "pk": 56,
+    "IPN": "LGT-HB-150",
+    "name": "LED High-Bay 150W 5000K",
+    "description": "Round UFO LED high-bay, 150W, 21,000 lm, 5000K, 0-10V dimming, 120-277V",
+    "units": "",
+    "minimum_stock": "20.000000",
+    "default_location": 6,
+    "category_default_location": 6
+   },
+   "supplier_part_detail": {
+    "pk": 56,
+    "part": 56,
+    "supplier": 3,
+    "SKU": "BPL-10385",
+    "pack_quantity": "1",
+    "pack_quantity_native": 1.0
+   }
   },
   {
    "pk": 2,
@@ -3366,8 +3712,30 @@
    "quantity": 20.0,
    "received": 0.0,
    "project_code": 3,
+   "project_code_label": "PRJ-103",
+   "destination": null,
+   "sku": "BPL-10455",
+   "ipn": "SUP-HB-CHAIN",
    "internal_part": 66,
-   "internal_part_name": "High-Bay Chain Hanging Kit"
+   "internal_part_name": "High-Bay Chain Hanging Kit",
+   "part_detail": {
+    "pk": 66,
+    "IPN": "SUP-HB-CHAIN",
+    "name": "High-Bay Chain Hanging Kit",
+    "description": "Jack chain (5 ft) with S-hooks and safety cable for high-bay fixtures",
+    "units": "",
+    "minimum_stock": "20.000000",
+    "default_location": 7,
+    "category_default_location": 7
+   },
+   "supplier_part_detail": {
+    "pk": 66,
+    "part": 66,
+    "supplier": 3,
+    "SKU": "BPL-10455",
+    "pack_quantity": "1",
+    "pack_quantity_native": 1.0
+   }
   },
   {
    "pk": 3,
@@ -3376,8 +3744,30 @@
    "quantity": 2500.0,
    "received": 0.0,
    "project_code": 3,
+   "project_code_label": "PRJ-103",
+   "destination": null,
+   "sku": "RWC-10084",
+   "ipn": "WIR-MC-12-2",
    "internal_part": 13,
-   "internal_part_name": "MC 12/2 Aluminum Armor"
+   "internal_part_name": "MC 12/2 Aluminum Armor",
+   "part_detail": {
+    "pk": 13,
+    "IPN": "WIR-MC-12-2",
+    "name": "MC 12/2 Aluminum Armor",
+    "description": "Metal-clad cable 12/2 + insulated ground, aluminum armor, 250 ft coil",
+    "units": "ft",
+    "minimum_stock": "2000.000000",
+    "default_location": 2,
+    "category_default_location": 2
+   },
+   "supplier_part_detail": {
+    "pk": 13,
+    "part": 13,
+    "supplier": 2,
+    "SKU": "RWC-10084",
+    "pack_quantity": "500",
+    "pack_quantity_native": 500.0
+   }
   },
   {
    "pk": 4,
@@ -3386,8 +3776,30 @@
    "quantity": 8.0,
    "received": 0.0,
    "project_code": 4,
+   "project_code_label": "PRJ-104",
+   "destination": null,
+   "sku": "NES-10413",
+   "ipn": "EV-L2-48",
    "internal_part": 60,
-   "internal_part_name": "Level 2 EV Charger 48A Hardwired"
+   "internal_part_name": "Level 2 EV Charger 48A Hardwired",
+   "part_detail": {
+    "pk": 60,
+    "IPN": "EV-L2-48",
+    "name": "Level 2 EV Charger 48A Hardwired",
+    "description": "48A Level 2 EVSE, 240V hardwired, 25 ft cable, NEMA 4, Wi-Fi/OCPP",
+    "units": "",
+    "minimum_stock": "4.000000",
+    "default_location": 6,
+    "category_default_location": 6
+   },
+   "supplier_part_detail": {
+    "pk": 60,
+    "part": 60,
+    "supplier": 1,
+    "SKU": "NES-10413",
+    "pack_quantity": "1",
+    "pack_quantity_native": 1.0
+   }
   },
   {
    "pk": 5,
@@ -3396,8 +3808,30 @@
    "quantity": 8.0,
    "received": 0.0,
    "project_code": 4,
+   "project_code_label": "PRJ-104",
+   "destination": null,
+   "sku": "NES-10343",
+   "ipn": "BRK-2P-60",
    "internal_part": 50,
-   "internal_part_name": "60A 2-Pole Breaker"
+   "internal_part_name": "60A 2-Pole Breaker",
+   "part_detail": {
+    "pk": 50,
+    "IPN": "BRK-2P-60",
+    "name": "60A 2-Pole Breaker",
+    "description": "Plug-on 60A two-pole breaker, 120/240V",
+    "units": "",
+    "minimum_stock": "10.000000",
+    "default_location": 5,
+    "category_default_location": 5
+   },
+   "supplier_part_detail": {
+    "pk": 50,
+    "part": 50,
+    "supplier": 1,
+    "SKU": "NES-10343",
+    "pack_quantity": "1",
+    "pack_quantity_native": 1.0
+   }
   },
   {
    "pk": 6,
@@ -3406,8 +3840,30 @@
    "quantity": 4.0,
    "received": 0.0,
    "project_code": 4,
+   "project_code_label": "PRJ-104",
+   "destination": null,
+   "sku": "NES-10364",
+   "ipn": "DSC-60-NF",
    "internal_part": 53,
-   "internal_part_name": "60A Non-Fused Disconnect, NEMA 3R"
+   "internal_part_name": "60A Non-Fused Disconnect, NEMA 3R",
+   "part_detail": {
+    "pk": 53,
+    "IPN": "DSC-60-NF",
+    "name": "60A Non-Fused Disconnect, NEMA 3R",
+    "description": "60A 240V non-fusible pull-out disconnect - AC and EV equipment",
+    "units": "",
+    "minimum_stock": "6.000000",
+    "default_location": 5,
+    "category_default_location": 5
+   },
+   "supplier_part_detail": {
+    "pk": 53,
+    "part": 53,
+    "supplier": 1,
+    "SKU": "NES-10364",
+    "pack_quantity": "1",
+    "pack_quantity_native": 1.0
+   }
   },
   {
    "pk": 7,
@@ -3416,8 +3872,30 @@
    "quantity": 60.0,
    "received": 0.0,
    "project_code": null,
+   "project_code_label": null,
+   "destination": null,
+   "sku": "NES-10252",
+   "ipn": "DEV-GFCI-20-WH",
    "internal_part": 37,
-   "internal_part_name": "20A GFCI Receptacle, White"
+   "internal_part_name": "20A GFCI Receptacle, White",
+   "part_detail": {
+    "pk": 37,
+    "IPN": "DEV-GFCI-20-WH",
+    "name": "20A GFCI Receptacle, White",
+    "description": "Self-test 20A 125V GFCI receptacle, tamper and weather resistant",
+    "units": "",
+    "minimum_stock": "60.000000",
+    "default_location": 4,
+    "category_default_location": 4
+   },
+   "supplier_part_detail": {
+    "pk": 37,
+    "part": 37,
+    "supplier": 1,
+    "SKU": "NES-10252",
+    "pack_quantity": "1",
+    "pack_quantity_native": 1.0
+   }
   },
   {
    "pk": 8,
@@ -3426,8 +3904,30 @@
    "quantity": 24.0,
    "received": 0.0,
    "project_code": null,
+   "project_code_label": null,
+   "destination": null,
+   "sku": "NES-10329",
+   "ipn": "BRK-1P-20-DF",
    "internal_part": 48,
-   "internal_part_name": "20A 1-Pole Dual Function AFCI/GFCI"
+   "internal_part_name": "20A 1-Pole Dual Function AFCI/GFCI",
+   "part_detail": {
+    "pk": 48,
+    "IPN": "BRK-1P-20-DF",
+    "name": "20A 1-Pole Dual Function AFCI/GFCI",
+    "description": "Plug-on 20A dual-function combination AFCI + Class A GFCI breaker",
+    "units": "",
+    "minimum_stock": "20.000000",
+    "default_location": 5,
+    "category_default_location": 5
+   },
+   "supplier_part_detail": {
+    "pk": 48,
+    "part": 48,
+    "supplier": 1,
+    "SKU": "NES-10329",
+    "pack_quantity": "1",
+    "pack_quantity_native": 1.0
+   }
   }
  ]
 }

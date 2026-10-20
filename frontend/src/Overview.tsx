@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { api, everyRow } from './api'
-import { locationBoard, lowStock, partsTracked, type BoardLocation } from './stock-rules'
+import { dueDate, fetchExpected } from './Receive'
+import { locationBoard, lowStock, partsTracked, type BoardLocation, type PurchaseOrder } from './stock-rules'
 
 const PAGE = 500
 const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`
@@ -13,7 +14,7 @@ async function fetchOverview() {
     ),
     everyRow((offset) => api.GET('/api/part/', { params: { query: { active: true, limit: PAGE, offset } } })),
     everyRow((offset) =>
-      api.GET('/api/order/po-line/', { params: { query: { pending: true, order_detail: true, limit: PAGE, offset } } }),
+      api.GET('/api/order/po-line/', { params: { query: { pending: true, order_detail: true, part_detail: true, limit: PAGE, offset } } }),
     ),
     everyRow((offset) => api.GET('/api/project-code/', { params: { query: { limit: PAGE, offset } } })),
   ])
@@ -28,9 +29,11 @@ async function fetchOverview() {
 
 export default function Overview({ onError }: { onError: (e: unknown) => void }) {
   const [overview, setOverview] = useState<Awaited<ReturnType<typeof fetchOverview>>>()
+  const [deliveries, setDeliveries] = useState<PurchaseOrder[]>()
 
   useEffect(() => {
     fetchOverview().then(setOverview, onError)
+    fetchExpected().then(setDeliveries, onError)
   }, [onError])
   const { board, low, activeProjects = 0, partsTracked: tracked = 0 } = overview ?? {}
 
@@ -46,6 +49,17 @@ export default function Overview({ onError }: { onError: (e: unknown) => void })
         <>
         <div className="tiles">
           <Tile label="Below Minimum Stock" value={plural(low.length, 'part')} low={low.length > 0} />
+          {deliveries && (
+            <a className="tile" href={`${import.meta.env.BASE_URL}receive`}>
+              <span className="tile-label">Deliveries expected</span>
+              <span className="tile-value">{deliveries.length}</span>
+              <span className="small muted">
+                {deliveries.length
+                  ? `Next: ${deliveries[0].supplier_name}, ${dueDate(deliveries[0].target_date)}`
+                  : 'Nothing on its way'}
+              </span>
+            </a>
+          )}
           <Tile
             label="Active Projects"
             value={String(activeProjects)}
