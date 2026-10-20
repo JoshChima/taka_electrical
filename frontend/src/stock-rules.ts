@@ -1,5 +1,6 @@
 // The stock rules: turns raw InvenTree data into what the screens show.
 // Pure functions only, so every screen reads the same rules (see spec #1).
+import { amount } from './format'
 import type { components } from './inventree'
 
 export type Location = Pick<components['schemas']['Location'], 'pk' | 'name' | 'description' | 'pathstring' | 'level'>
@@ -8,8 +9,11 @@ export type StockItem = Pick<components['schemas']['StockItem'], 'pk' | 'part' |
 }
 export type Part = Pick<components['schemas']['Part'], 'pk' | 'name' | 'IPN' | 'units' | 'minimum_stock' | 'assembly'>
 
+/** InvenTree's purchase order statuses that the app reads. */
+export const ORDER_STATUS = { PENDING: 10, PLACED: 20, ON_HOLD: 25 } as const
+
 /** Purchase order statuses that are still open: pending, placed, on hold. */
-const OPEN_ORDER = [10, 20, 25]
+const OPEN_ORDER: number[] = [ORDER_STATUS.PENDING, ORDER_STATUS.PLACED, ORDER_STATUS.ON_HOLD]
 
 /**
  * On Order, per part pk, in the part's own units: ordered minus received on open purchase orders that have
@@ -120,15 +124,13 @@ export type PurchaseOrder = Pick<
   | 'target_date' | 'line_items' | 'completed_lines'
 >
 
-const PLACED = 20
-
 /**
  * Expected deliveries: purchase orders placed with the supplier and not fully received,
  * the one due first at the top (orders with no due date last).
  */
 export function expectedDeliveries(orders: PurchaseOrder[]) {
   return orders
-    .filter((o) => o.status === PLACED && (o.completed_lines ?? 0) < (o.line_items ?? 0))
+    .filter((o) => o.status === ORDER_STATUS.PLACED && (o.completed_lines ?? 0) < (o.line_items ?? 0))
     .sort((a, b) => (a.target_date ?? '9999').localeCompare(b.target_date ?? '9999'))
 }
 
@@ -283,7 +285,7 @@ export type Arrival = { quantity: number; location: number | null }
 export function arrivalProblem(line: DeliveryLine, arrival: Arrival) {
   if (!Number.isFinite(arrival.quantity) || arrival.quantity < 0) return 'Enter how many arrived, or 0.'
   if (arrival.quantity > line.outstanding)
-    return `Only ${line.outstanding.toLocaleString('en-US')}${line.units ? ` ${line.units}` : ''} still to come on this order. Book in at most that.`
+    return `Only ${amount(line.outstanding, line.units)} still to come on this order. Book in at most that.`
   if (arrival.quantity > 0 && arrival.location == null) return 'Choose where to put it away.'
 }
 
@@ -359,7 +361,7 @@ export function moveProblem(quantity: number, from: { name: string; quantity: nu
   if (!from) return 'None in the warehouse to move.'
   if (!Number.isFinite(quantity) || quantity <= 0) return 'Enter how many to move.'
   if (quantity > from.quantity)
-    return `Only ${from.quantity.toLocaleString('en-US')}${units ? ` ${units}` : ''} in ${from.name}. Move at most that.`
+    return `Only ${amount(from.quantity, units)} in ${from.name}. Move at most that.`
 }
 
 /**

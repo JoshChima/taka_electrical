@@ -98,7 +98,7 @@ export default function App() {
       )
   }
 
-  const leave = () => signOut().then(() => setSession({ kind: 'signed-out' }), onError)
+  const signOutToSignIn = () => signOut().then(() => setSession({ kind: 'signed-out' }), onError)
   return (
     <>
       <header className="app-header">
@@ -119,7 +119,7 @@ export default function App() {
             ))}
           </nav>
           <span className="user">{session.user}</span>
-          <button className="quiet" onClick={leave}>
+          <button className="quiet" onClick={signOutToSignIn}>
             Sign out
           </button>
         </div>

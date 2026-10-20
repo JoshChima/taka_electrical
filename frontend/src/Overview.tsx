@@ -1,22 +1,15 @@
 import { useEffect, useState } from 'react'
-import { api, everyRow } from './api'
-import { dueDate, fetchExpected } from './Receive'
+import { fetchExpected, fetchLocations, fetchOrderLines, fetchParts, fetchProjectCodes, fetchStock } from './data'
+import { amount, dueDate, plural } from './format'
 import { locationBoard, lowStock, partsTracked, shortName, type BoardLocation, type PurchaseOrder } from './stock-rules'
-
-const PAGE = 500
-const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`
 
 async function fetchOverview() {
   const [locations, stock, parts, lines, projects] = await Promise.all([
-    everyRow((offset) => api.GET('/api/stock/location/', { params: { query: { limit: PAGE, offset } } })),
-    everyRow((offset) =>
-      api.GET('/api/stock/', { params: { query: { in_stock: true, part_detail: true, limit: PAGE, offset } } }),
-    ),
-    everyRow((offset) => api.GET('/api/part/', { params: { query: { active: true, limit: PAGE, offset } } })),
-    everyRow((offset) =>
-      api.GET('/api/order/po-line/', { params: { query: { pending: true, order_detail: true, part_detail: true, limit: PAGE, offset } } }),
-    ),
-    everyRow((offset) => api.GET('/api/project-code/', { params: { query: { limit: PAGE, offset } } })),
+    fetchLocations(),
+    fetchStock({ part_detail: true }),
+    fetchParts({ active: true }),
+    fetchOrderLines({ pending: true, order_detail: true, part_detail: true }),
+    fetchProjectCodes(),
   ])
   const low = lowStock(parts, stock, lines, locations)
   return {
@@ -149,14 +142,14 @@ export default function Overview({ onError }: { onError: (e: unknown) => void })
                       <div className="strong">{p.name}</div>
                       <div className="mono muted">{p.ipn}</div>
                     </td>
-                    <td className="num">{qty(p.inStock, p.units)}</td>
-                    <td className="num muted">{qty(p.minimum, p.units)}</td>
-                    <td className="num short">{qty(p.shortBy, p.units)}</td>
+                    <td className="num">{amount(p.inStock, p.units)}</td>
+                    <td className="num muted">{amount(p.minimum, p.units)}</td>
+                    <td className="num short">{amount(p.shortBy, p.units)}</td>
                     <td className="num">
-                      {p.onOrder ? qty(p.onOrder, p.units) : '—'}
+                      {p.onOrder ? amount(p.onOrder, p.units) : '—'}
                       {p.covered && <span className="chip covered">Covered</span>}
                     </td>
-                    <td className="muted">{p.where.map((w) => `${w.name} ${qty(w.quantity, p.units)}`).join(' · ') || '—'}</td>
+                    <td className="muted">{p.where.map((w) => `${w.name} ${amount(w.quantity, p.units)}`).join(' · ') || '—'}</td>
                   </tr>
                 ))}
               </tbody>
@@ -168,9 +161,6 @@ export default function Overview({ onError }: { onError: (e: unknown) => void })
     </main>
   )
 }
-
-/** A quantity with its unit: "2,500 ft"; parts counted by the piece have no unit. */
-const qty = (n: number, units: string) => `${n.toLocaleString('en-US')}${units ? ` ${units}` : ''}`
 
 function Tile({ label, value, note, low }: { label: string; value: string; note?: React.ReactNode; low?: boolean }) {
   return (

@@ -63,13 +63,13 @@ describe('Overview A, the locations board', () => {
     const fake = fakeInvenTree()
     const serviceVans = fake.locations.find((l) => l.pathstring === 'Service Vans')!
     fake.locations.push({
-      pk: 99, name: 'Spare Truck', description: 'Loaner', parent: serviceVans.pk,
-      pathstring: 'Service Vans/Spare Truck', level: 1, structural: false,
+      pk: 99, name: 'Spare Van', description: 'Loaner', parent: serviceVans.pk,
+      pathstring: 'Service Vans/Spare Van', level: 1, structural: false,
     })
     render(<App />)
 
-    expect(rows(await column('Vans'))).toContainEqual(expect.stringMatching(/Spare Truck.*0 parts.*Loaner/))
-    expect(rows(await column('Main Warehouse'))).not.toContainEqual(expect.stringMatching(/Spare Truck/))
+    expect(rows(await column('Vans'))).toContainEqual(expect.stringMatching(/Spare Van.*0 parts.*Loaner/))
+    expect(rows(await column('Main Warehouse'))).not.toContainEqual(expect.stringMatching(/Spare Van/))
   })
 })
 

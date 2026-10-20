@@ -1,38 +1,36 @@
 import { useEffect, useState } from 'react'
 import { api, everyRow } from './api'
-import { amount } from './Receive'
+import { fetchLocations, fetchOrderLines, fetchParts, fetchStock, fetchSupplierParts, PAGE } from './data'
+import { amount, dollars } from './format'
 import { isLow, lastSupplier, totalsInStock, whereIs, type Location, type StockItem } from './stock-rules'
 
-const PAGE = 500
 const BASE = import.meta.env.BASE_URL
 
-async function fetchParts() {
+async function fetchFind() {
   const [parts, stock, locations] = await Promise.all([
-    everyRow((offset) =>
-      api.GET('/api/part/', { params: { query: { active: true, category_detail: true, limit: PAGE, offset } } }),
-    ),
-    everyRow((offset) => api.GET('/api/stock/', { params: { query: { in_stock: true, limit: PAGE, offset } } })),
-    everyRow((offset) => api.GET('/api/stock/location/', { params: { query: { limit: PAGE, offset } } })),
+    fetchParts({ active: true, category_detail: true }),
+    fetchStock(),
+    fetchLocations(),
   ])
   return { parts, stock, locations, totals: totalsInStock(stock) }
 }
-type Found = Awaited<ReturnType<typeof fetchParts>>
+type Found = Awaited<ReturnType<typeof fetchFind>>
 type FoundPart = Found['parts'][number]
 
 type Props = { onError: (e: unknown) => void }
 
 export default function Find({ onError }: Props) {
   const [data, setData] = useState<Found>()
-  const [words, setWords] = useState('')
+  const [searchText, setSearchText] = useState('')
   const [picked, setPicked] = useState<number>()
 
   useEffect(() => {
-    fetchParts().then(setData, onError)
+    fetchFind().then(setData, onError)
   }, [onError])
 
-  const q = words.trim().toLowerCase()
+  const search = searchText.trim().toLowerCase()
   const found = (data?.parts ?? []).filter(
-    (p) => p.name.toLowerCase().includes(q) || (p.IPN ?? '').toLowerCase().includes(q),
+    (p) => p.name.toLowerCase().includes(search) || (p.IPN ?? '').toLowerCase().includes(search),
   )
   const part = found.find((p) => p.pk === picked) ?? found[0]
   const total = (p: FoundPart) => data?.totals.get(p.pk) ?? 0
@@ -45,7 +43,7 @@ export default function Find({ onError }: Props) {
       </div>
       <label className="search">
         Part name or part number
-        <input type="search" value={words} onChange={(e) => setWords(e.target.value)} />
+        <input type="search" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
       </label>
       {!data ? (
         <p role="status">Loading parts…</p>
@@ -69,7 +67,7 @@ export default function Find({ onError }: Props) {
                       <span className="mono muted">{p.IPN}</span>
                     </span>
                     <span className="stack end">
-                      <span>{amount(total(p), p.units ?? '')}</span>
+                      <span>{amount(total(p), p.units)}</span>
                       {isLow(p, total(p)) && <span className="chip">below minimum</span>}
                     </span>
                   </button>
@@ -91,22 +89,14 @@ async function fetchDetail(part: number) {
     everyRow((offset) =>
       api.GET('/api/parameter/', { params: { query: { model_type: 'part.part', model_id: part, limit: PAGE, offset } } }),
     ),
-    everyRow((offset) =>
-      api.GET('/api/order/po-line/', {
-        params: { query: { base_part: part, order_detail: true, part_detail: true, limit: PAGE, offset } },
-      }),
-    ),
-    everyRow((offset) =>
-      api.GET('/api/company/part/', { params: { query: { part, supplier_detail: true, limit: PAGE, offset } } }),
-    ),
+    fetchOrderLines({ base_part: part, order_detail: true, part_detail: true }),
+    fetchSupplierParts({ part, supplier_detail: true }),
   ])
   return {
     specs: specs.map((s) => [s.data, s.template_detail?.units].filter(Boolean).join(' ')),
     supplier: lastSupplier(part, lines, supplierParts),
   }
 }
-
-export const dollars = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
 
 function PartDetail({
   part,

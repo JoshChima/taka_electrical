@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useState } from 'react'
-import { api, everyRow, load } from './api'
+import { api, load } from './api'
+import { fetchExpected, fetchLocations, fetchOrderLines, fetchParts } from './data'
+import { amount, dueDate, plural } from './format'
 import type { components } from './inventree'
 import {
   arrivalProblem,
   deliveryLines,
-  expectedDeliveries,
   locationBoard,
   receiveItems,
   type BoardLocation,
@@ -12,21 +13,6 @@ import {
   type PartWithCategory,
   type PurchaseOrder,
 } from './stock-rules'
-
-const PAGE = 500
-const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`
-export const amount = (n: number, units: string) => n.toLocaleString('en-US') + (units ? ` ${units}` : '')
-
-/** "2026-10-26" → "26 Oct". */
-export const dueDate = (date?: string | null) =>
-  date ? new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' }) : 'not set'
-
-export async function fetchExpected() {
-  const orders = await everyRow((offset) =>
-    api.GET('/api/order/po/', { params: { query: { status: 20, limit: PAGE, offset } } }),
-  )
-  return expectedDeliveries(orders)
-}
 
 type Props = { onError: (e: unknown) => void }
 
@@ -41,8 +27,8 @@ export default function Receive({ onError }: Props) {
   useEffect(() => {
     Promise.all([
       fetchExpected(),
-      everyRow((offset) => api.GET('/api/stock/location/', { params: { query: { limit: PAGE, offset } } })),
-      everyRow((offset) => api.GET('/api/part/', { params: { query: { category_detail: true, limit: PAGE, offset } } })),
+      fetchLocations(),
+      fetchParts({ category_detail: true }),
     ]).then(([orders, locations, parts]) => {
       // Put-away choices: the warehouse aisles and the Tool Crib, never a structural location.
       setAisles(locationBoard(locations, []).warehouse)
@@ -123,9 +109,7 @@ function Delivery({
 
   const loadLines = useCallback(
     () =>
-      everyRow((offset) =>
-        api.GET('/api/order/po-line/', { params: { query: { order: order.pk, part_detail: true, limit: PAGE, offset } } }),
-      ).then((rows) => {
+      fetchOrderLines({ order: order.pk, part_detail: true }).then((rows) => {
         const lines = deliveryLines(rows, parts)
         setLines(lines)
         setArrived(Object.fromEntries(lines.map((l) => [l.pk, String(l.outstanding)])))

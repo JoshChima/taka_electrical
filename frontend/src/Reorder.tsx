@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react'
-import { api, everyRow, load, SignedOut } from './api'
-import { dollars } from './Find'
+import { api, load, SignedOut } from './api'
+import { fetchOrderLines, fetchParts, fetchStock, fetchSupplierParts } from './data'
+import { amount, dollars, plural } from './format'
 import type { components } from './inventree'
-import { amount } from './Receive'
 import {
   isLow,
   lastSupplier,
@@ -15,18 +15,13 @@ import {
   type OrderDraft,
 } from './stock-rules'
 
-const PAGE = 500
-const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`
-
 /** The low parts, plus the part the Owner came from Find to reorder (`?part=`), even if it isn't low. */
 async function fetchReorder(focus?: number) {
   const [parts, stock, lines, supplierParts] = await Promise.all([
-    everyRow((offset) => api.GET('/api/part/', { params: { query: { active: true, limit: PAGE, offset } } })),
-    everyRow((offset) => api.GET('/api/stock/', { params: { query: { in_stock: true, limit: PAGE, offset } } })),
-    everyRow((offset) =>
-      api.GET('/api/order/po-line/', { params: { query: { order_detail: true, part_detail: true, limit: PAGE, offset } } }),
-    ),
-    everyRow((offset) => api.GET('/api/company/part/', { params: { query: { supplier_detail: true, limit: PAGE, offset } } })),
+    fetchParts({ active: true }),
+    fetchStock(),
+    fetchOrderLines({ order_detail: true, part_detail: true }),
+    fetchSupplierParts({ supplier_detail: true }),
   ])
   const totals = totalsInStock(stock)
   const wanted = parts.filter((p) => isLow(p, totals.get(p.pk) ?? 0) || p.pk === focus)
@@ -110,7 +105,7 @@ export default function Reorder({ onError }: Props) {
         )
       } else setCreated(`Created ${order.reference} for ${supplierName}. It is On Order now.`)
       const done = new Set(draft.lines.map((l) => l.part).filter((pk) => !notAdded.has(pk)))
-      setQuantities((q) => Object.fromEntries(Object.entries(q).filter(([pk]) => !done.has(Number(pk)))))
+      setQuantities((typed) => Object.fromEntries(Object.entries(typed).filter(([pk]) => !done.has(Number(pk)))))
       await refresh()
     } catch (e) {
       onError(e)
