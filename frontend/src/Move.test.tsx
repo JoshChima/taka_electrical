@@ -2,7 +2,9 @@ import { describe, expect, it } from 'vitest'
 import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import App from './App'
+import { http, HttpResponse } from 'msw'
 import { fakeInvenTree, sent } from './test/fake-inventree'
+import { server } from './test/setup'
 
 async function openMove(path = '/move') {
   history.replaceState(null, '', path)
@@ -174,6 +176,24 @@ describe('Move stock', () => {
     expect((within(nmb).getByLabelText('Qty') as HTMLInputElement).value).toBe('250')
     expect((within(gfci).getByLabelText('Qty') as HTMLInputElement).value).toBe('4')
     expect((screen.getByLabelText('Van') as HTMLSelectElement).selectedOptions[0].text).toBe('Van 01 (Residential)')
+  })
+
+  it.each([
+    ['InvenTree errors', () => new HttpResponse('Server Error', { status: 500 })],
+    ['InvenTree refuses', () => HttpResponse.json({ detail: 'You do not have permission.' }, { status: 403 })],
+    ['the network fails', () => HttpResponse.error()],
+  ])('keeps the form as entered and says so on the page when %s', async (_, answer) => {
+    fakeInvenTree()
+    server.use(http.post('*/api/stock/transfer/', answer))
+    await openMove()
+    const nmb = await addPart('nm-b 12/2', 'NM-B 12/2 w/G')
+    await setQty(nmb, '250')
+    await userEvent.click(screen.getByRole('button', { name: 'Move 1 part to Van 01' }))
+
+    expect((await screen.findByText(/The move failed/)).getAttribute('role')).toBe('alert')
+    expect(screen.getByRole('heading', { level: 1, name: 'Move stock' })).toBeTruthy()
+    expect((within(nmb).getByLabelText('Qty') as HTMLInputElement).value).toBe('250')
+    expect(screen.getByRole('button', { name: 'Move 1 part to Van 01' }).hasAttribute('disabled')).toBe(false)
   })
 
   it('opens with the part chosen in Find already added', async () => {

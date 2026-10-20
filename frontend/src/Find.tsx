@@ -31,9 +31,8 @@ export default function Find({ onError }: Props) {
   }, [onError])
 
   const q = words.trim().toLowerCase()
-  // Install kits are built for a Project, not stocked.
   const found = (data?.parts ?? []).filter(
-    (p) => !p.assembly && (p.name.toLowerCase().includes(q) || (p.IPN ?? '').toLowerCase().includes(q)),
+    (p) => p.name.toLowerCase().includes(q) || (p.IPN ?? '').toLowerCase().includes(q),
   )
   const part = found.find((p) => p.pk === picked) ?? found[0]
   const total = (p: FoundPart) => data?.totals.get(p.pk) ?? 0

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { api, everyRow, load } from './api'
+import { api, everyRow, load, SignedOut } from './api'
 import { dollars } from './Find'
 import type { components } from './inventree'
 import { amount } from './Receive'
@@ -10,6 +10,7 @@ import {
   purchaseOrderLines,
   stockPositions,
   suggestedQuantity,
+  supplierPartFor,
   totalsInStock,
   type OrderDraft,
 } from './stock-rules'
@@ -42,6 +43,7 @@ export default function Reorder({ onError }: Props) {
   const [suppliers, setSuppliers] = useState<Record<number, number>>({})
   const [saving, setSaving] = useState<number>()
   const [created, setCreated] = useState<string>()
+  const [problem, setProblem] = useState<string>()
 
   const refresh = useCallback(() => fetchReorder(focus).then(setData, onError), [focus, onError])
   useEffect(() => {
@@ -62,26 +64,52 @@ export default function Reorder({ onError }: Props) {
   const { rows, lines, supplierParts } = data
   const last = new Map(rows.map((p) => [p.pk, lastSupplier(p.pk, lines, supplierParts)]))
   const names = new Map(supplierParts.map((s) => [s.supplier, s.supplier_detail?.name ?? '']))
-  const choices = rows.map((p) => ({
-    part: p.pk,
-    quantity: Number(quantities[p.pk] ?? suggestedQuantity(p)),
-    supplier: suppliers[p.pk] ?? last.get(p.pk)?.pk,
-  }))
+  const choices = rows.map((p) => {
+    // The last supplier is only the default while they still sell the part; otherwise the Owner chooses.
+    const lastPk = last.get(p.pk)?.pk
+    return {
+      part: p.pk,
+      quantity: Number(quantities[p.pk] ?? suggestedQuantity(p)),
+      supplier: suppliers[p.pk] ?? (supplierPartFor(p.pk, lastPk, supplierParts) ? lastPk : undefined),
+    }
+  })
   const drafts = orderDrafts(choices, lines)
   const low = rows.filter((p) => p.inStock < p.minimum).length
 
+  /** Runs an API call; a 401 still goes to sign-in, any other failure comes back as false for the page to report. */
+  const attempt = <T,>(call: Promise<T>) =>
+    call.catch((e) => {
+      if (e instanceof SignedOut) throw e
+      return false as const
+    })
+
   const create = async (draft: OrderDraft) => {
+    const supplierName = names.get(draft.supplier!)
     setSaving(draft.supplier)
+    setCreated(undefined)
+    setProblem(undefined)
     try {
       // The schema marks fields with server-side defaults as required; InvenTree doesn't. No Project code.
       const body = { supplier: draft.supplier, description: 'Warehouse restock' } as components['schemas']['PurchaseOrder']
-      const order = await load(api.POST('/api/order/po/', { body }))
-      for (const line of purchaseOrderLines(draft, supplierParts)) {
-        const body = { order: order.pk, ...line } as unknown as components['schemas']['PurchaseOrderLineItem']
-        await load(api.POST('/api/order/po-line/', { body }))
+      const order = await attempt(load(api.POST('/api/order/po/', { body })))
+      if (!order) {
+        setProblem(`Couldn't create the purchase order for ${supplierName}. Nothing was ordered; try again.`)
+        return
       }
-      setCreated(`Created ${order.reference} for ${names.get(draft.supplier!)}. It is On Order now.`)
-      const done = new Set(draft.lines.map((l) => l.part))
+      // One call per line (InvenTree has no bulk add), so some lines can fail after the order exists.
+      const notAdded = new Set<number>()
+      for (const { forPart, line } of purchaseOrderLines(draft, supplierParts)) {
+        const body = { order: order.pk, ...line } as unknown as components['schemas']['PurchaseOrderLineItem']
+        if (!(await attempt(load(api.POST('/api/order/po-line/', { body }))))) notAdded.add(forPart)
+      }
+      if (notAdded.size) {
+        const missing = rows.filter((p) => notAdded.has(p.pk)).map((p) => p.name).join(', ')
+        setProblem(
+          `Created ${order.reference} for ${supplierName}, but these lines were not added: ${missing}. ` +
+            `Add them to ${order.reference} in InvenTree, or create another order for them.`,
+        )
+      } else setCreated(`Created ${order.reference} for ${supplierName}. It is On Order now.`)
+      const done = new Set(draft.lines.map((l) => l.part).filter((pk) => !notAdded.has(pk)))
       setQuantities((q) => Object.fromEntries(Object.entries(q).filter(([pk]) => !done.has(Number(pk)))))
       await refresh()
     } catch (e) {
@@ -104,6 +132,11 @@ export default function Reorder({ onError }: Props) {
       {created && (
         <p role="status" className="notice">
           {created}
+        </p>
+      )}
+      {problem && (
+        <p role="alert" className="problem">
+          {problem}
         </p>
       )}
       {drafts.map((draft) => {

@@ -69,6 +69,15 @@ describe('Find a part', () => {
     expect(part.getByRole('group', { name: 'Above minimum by' }).textContent).toMatch(/1,500 ft$/)
   })
 
+  it('finds install kits too', async () => {
+    fakeInvenTree()
+    await search('install kit')
+
+    expect(results().map((r) => r.textContent)).toContainEqual(
+      expect.stringMatching(/^LED High-Bay Install Kit \(per fixture\)KIT-HB-150/),
+    )
+  })
+
   it('suggests another word or part number when nothing matches', async () => {
     fakeInvenTree()
     await search('flux capacitor')

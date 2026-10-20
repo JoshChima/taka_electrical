@@ -39,6 +39,17 @@ describe('Receive a delivery', () => {
     expect(putAway(chainKit)).toBe('Aisle F - Supports & Consumables')
   })
 
+  it("defaults put-away to the part category's default location, not the part's own", async () => {
+    const fake = fakeInvenTree()
+    // The high-bay's own default location was changed in InvenTree; its category (LED Fixtures) is still kept in Aisle E.
+    for (const l of fake.poLines)
+      if (l.ipn === 'LGT-HB-150') l.part_detail = { ...l.part_detail, default_location: aisle(fake, 'Aisle A - Wire & Cable') }
+    await pick(await openReceive(), 'PO-0001')
+
+    const [highBay] = await (await orderDetail('PO-0001 · BrightPath Lighting Distributors')).findAllByRole('group')
+    expect(putAway(highBay)).toBe('Aisle E - Lighting & EV')
+  })
+
   it('books in everything that arrived, each line put away where the Owner chose', async () => {
     const fake = fakeInvenTree()
     await pick(await openReceive(), 'PO-0001')

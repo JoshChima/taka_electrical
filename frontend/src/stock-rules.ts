@@ -137,7 +137,7 @@ export type PurchaseOrderLine = Pick<
   Schemas['PurchaseOrderLineItem'],
   'pk' | 'order' | 'quantity' | 'received' | 'purchase_price' | 'internal_part' | 'internal_part_name' | 'ipn'
 > & {
-  part_detail?: Pick<NonNullable<Schemas['PurchaseOrderLineItem']['part_detail']>, 'units' | 'default_location' | 'category_default_location'> | null
+  part_detail?: Pick<NonNullable<Schemas['PurchaseOrderLineItem']['part_detail']>, 'units' | 'default_location'> | null
   supplier_part_detail?: Pick<NonNullable<Schemas['PurchaseOrderLineItem']['supplier_part_detail']>, 'pack_quantity_native'> | null
   order_detail?: Pick<Schemas['PurchaseOrder'], 'status' | 'project_code' | 'supplier' | 'supplier_name'> | null
 }
@@ -207,22 +207,27 @@ export function orderDrafts(choices: ReorderChoice[], lines: PurchaseOrderLine[]
   return [...drafts.values()].sort((a, b) => Number(a.supplier == null) - Number(b.supplier == null))
 }
 
+/** The supplier's supplier part for a part, if they still sell it. */
+export const supplierPartFor = (part: number, supplier: number | undefined, supplierParts: SupplierPart[]) =>
+  supplierParts.find((s) => s.part === part && s.supplier === supplier)
+
 /**
- * A draft's purchase order lines as InvenTree takes them: the supplier part, the quantity in supplier packs
- * (rounded up), and the last price paid per pack when known. Lines of 0 are left out.
+ * A draft's purchase order lines as InvenTree takes them (`line`): the supplier part, the quantity in supplier packs
+ * (rounded up), and the last price paid per pack when known. `forPart` is the part pk each serves.
+ * Lines of 0, and parts the supplier no longer sells, are left out.
  */
 export function purchaseOrderLines(draft: OrderDraft, supplierParts: SupplierPart[]) {
-  return draft.lines
-    .filter((l) => l.quantity > 0)
-    .map((l) => {
-      const supplierPart = supplierParts.find((s) => s.part === l.part && s.supplier === draft.supplier)!
-      const pack = supplierPart.pack_quantity_native || 1
-      return {
-        part: supplierPart.pk,
-        quantity: Math.ceil(l.quantity / pack),
-        ...(l.unitCost != null && { purchase_price: String(+(l.unitCost * pack).toFixed(6)) }),
-      }
-    })
+  return draft.lines.flatMap((l) => {
+    const supplierPart = supplierPartFor(l.part, draft.supplier, supplierParts)
+    if (!supplierPart || l.quantity <= 0) return []
+    const pack = supplierPart.pack_quantity_native || 1
+    const line = {
+      part: supplierPart.pk,
+      quantity: Math.ceil(l.quantity / pack),
+      ...(l.unitCost != null && { purchase_price: String(+(l.unitCost * pack).toFixed(6)) }),
+    }
+    return [{ forPart: l.part, line }]
+  })
 }
 
 /** A purchase order line as the Owner books it in. Quantities are in the part's own units. */
@@ -240,7 +245,17 @@ export type DeliveryLine = {
   putAway: number | null
 }
 
-export function deliveryLines(lines: PurchaseOrderLine[]): DeliveryLine[] {
+/** A part with its category's default location (`category_detail=true`). */
+export type PartWithCategory = Pick<Part, 'pk'> & {
+  category_detail?: Pick<Schemas['Category'], 'default_location'> | null
+}
+
+/**
+ * The lines of a purchase order as the Owner books them in. `parts` gives each part's category, whose default
+ * location is where it is put away (the part's own default location only when the category has none).
+ */
+export function deliveryLines(lines: PurchaseOrderLine[], parts: PartWithCategory[]): DeliveryLine[] {
+  const categoryHome = new Map(parts.map((p) => [p.pk, p.category_detail?.default_location]))
   return lines.map((l) => {
     const pack = l.supplier_part_detail?.pack_quantity_native || 1
     return {
@@ -252,7 +267,8 @@ export function deliveryLines(lines: PurchaseOrderLine[]): DeliveryLine[] {
       received: l.received * pack,
       outstanding: Math.max(0, l.quantity - l.received) * pack,
       pack,
-      putAway: l.part_detail?.default_location ?? l.part_detail?.category_default_location ?? null,
+      // `part_detail.category_default_location` is often null in InvenTree 1.6.0, so the category comes from `parts`.
+      putAway: categoryHome.get(l.internal_part) ?? l.part_detail?.default_location ?? null,
     }
   })
 }

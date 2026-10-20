@@ -2798,7 +2798,8 @@
    "category_detail": {
     "pk": 2,
     "name": "Building Wire",
-    "pathstring": "Wire & Cable/Building Wire"
+    "pathstring": "Wire & Cable/Building Wire",
+    "default_location": 2
    }
   },
   {
@@ -2814,7 +2815,8 @@
    "category_detail": {
     "pk": 2,
     "name": "Building Wire",
-    "pathstring": "Wire & Cable/Building Wire"
+    "pathstring": "Wire & Cable/Building Wire",
+    "default_location": 2
    }
   },
   {
@@ -2830,7 +2832,8 @@
    "category_detail": {
     "pk": 2,
     "name": "Building Wire",
-    "pathstring": "Wire & Cable/Building Wire"
+    "pathstring": "Wire & Cable/Building Wire",
+    "default_location": 2
    }
   },
   {
@@ -2846,7 +2849,8 @@
    "category_detail": {
     "pk": 2,
     "name": "Building Wire",
-    "pathstring": "Wire & Cable/Building Wire"
+    "pathstring": "Wire & Cable/Building Wire",
+    "default_location": 2
    }
   },
   {
@@ -2862,7 +2866,8 @@
    "category_detail": {
     "pk": 2,
     "name": "Building Wire",
-    "pathstring": "Wire & Cable/Building Wire"
+    "pathstring": "Wire & Cable/Building Wire",
+    "default_location": 2
    }
   },
   {
@@ -2878,7 +2883,8 @@
    "category_detail": {
     "pk": 2,
     "name": "Building Wire",
-    "pathstring": "Wire & Cable/Building Wire"
+    "pathstring": "Wire & Cable/Building Wire",
+    "default_location": 2
    }
   },
   {
@@ -2894,7 +2900,8 @@
    "category_detail": {
     "pk": 2,
     "name": "Building Wire",
-    "pathstring": "Wire & Cable/Building Wire"
+    "pathstring": "Wire & Cable/Building Wire",
+    "default_location": 2
    }
   },
   {
@@ -2910,7 +2917,8 @@
    "category_detail": {
     "pk": 2,
     "name": "Building Wire",
-    "pathstring": "Wire & Cable/Building Wire"
+    "pathstring": "Wire & Cable/Building Wire",
+    "default_location": 2
    }
   },
   {
@@ -2926,7 +2934,8 @@
    "category_detail": {
     "pk": 3,
     "name": "NM-B Cable",
-    "pathstring": "Wire & Cable/NM-B Cable"
+    "pathstring": "Wire & Cable/NM-B Cable",
+    "default_location": 2
    }
   },
   {
@@ -2942,7 +2951,8 @@
    "category_detail": {
     "pk": 3,
     "name": "NM-B Cable",
-    "pathstring": "Wire & Cable/NM-B Cable"
+    "pathstring": "Wire & Cable/NM-B Cable",
+    "default_location": 2
    }
   },
   {
@@ -2958,7 +2968,8 @@
    "category_detail": {
     "pk": 3,
     "name": "NM-B Cable",
-    "pathstring": "Wire & Cable/NM-B Cable"
+    "pathstring": "Wire & Cable/NM-B Cable",
+    "default_location": 2
    }
   },
   {
@@ -2974,7 +2985,8 @@
    "category_detail": {
     "pk": 3,
     "name": "NM-B Cable",
-    "pathstring": "Wire & Cable/NM-B Cable"
+    "pathstring": "Wire & Cable/NM-B Cable",
+    "default_location": 2
    }
   },
   {
@@ -2990,7 +3002,8 @@
    "category_detail": {
     "pk": 4,
     "name": "MC Cable",
-    "pathstring": "Wire & Cable/MC Cable"
+    "pathstring": "Wire & Cable/MC Cable",
+    "default_location": 2
    }
   },
   {
@@ -3006,7 +3019,8 @@
    "category_detail": {
     "pk": 4,
     "name": "MC Cable",
-    "pathstring": "Wire & Cable/MC Cable"
+    "pathstring": "Wire & Cable/MC Cable",
+    "default_location": 2
    }
   },
   {
@@ -3022,7 +3036,8 @@
    "category_detail": {
     "pk": 5,
     "name": "Service Entrance",
-    "pathstring": "Wire & Cable/Service Entrance"
+    "pathstring": "Wire & Cable/Service Entrance",
+    "default_location": 2
    }
   },
   {
@@ -3038,7 +3053,8 @@
    "category_detail": {
     "pk": 6,
     "name": "Low Voltage",
-    "pathstring": "Wire & Cable/Low Voltage"
+    "pathstring": "Wire & Cable/Low Voltage",
+    "default_location": 2
    }
   },
   {
@@ -3054,7 +3070,8 @@
    "category_detail": {
     "pk": 6,
     "name": "Low Voltage",
-    "pathstring": "Wire & Cable/Low Voltage"
+    "pathstring": "Wire & Cable/Low Voltage",
+    "default_location": 2
    }
   },
   {
@@ -3070,7 +3087,8 @@
    "category_detail": {
     "pk": 8,
     "name": "EMT",
-    "pathstring": "Conduit & Raceway/EMT"
+    "pathstring": "Conduit & Raceway/EMT",
+    "default_location": 3
    }
   },
   {
@@ -3086,7 +3104,8 @@
    "category_detail": {
     "pk": 8,
     "name": "EMT",
-    "pathstring": "Conduit & Raceway/EMT"
+    "pathstring": "Conduit & Raceway/EMT",
+    "default_location": 3
    }
   },
   {
@@ -3102,7 +3121,8 @@
    "category_detail": {
     "pk": 8,
     "name": "EMT",
-    "pathstring": "Conduit & Raceway/EMT"
+    "pathstring": "Conduit & Raceway/EMT",
+    "default_location": 3
    }
   },
   {
@@ -3118,7 +3138,8 @@
    "category_detail": {
     "pk": 9,
     "name": "PVC",
-    "pathstring": "Conduit & Raceway/PVC"
+    "pathstring": "Conduit & Raceway/PVC",
+    "default_location": 3
    }
   },
   {
@@ -3134,7 +3155,8 @@
    "category_detail": {
     "pk": 10,
     "name": "Fittings",
-    "pathstring": "Conduit & Raceway/Fittings"
+    "pathstring": "Conduit & Raceway/Fittings",
+    "default_location": 3
    }
   },
   {
@@ -3150,7 +3172,8 @@
    "category_detail": {
     "pk": 10,
     "name": "Fittings",
-    "pathstring": "Conduit & Raceway/Fittings"
+    "pathstring": "Conduit & Raceway/Fittings",
+    "default_location": 3
    }
   },
   {
@@ -3166,7 +3189,8 @@
    "category_detail": {
     "pk": 10,
     "name": "Fittings",
-    "pathstring": "Conduit & Raceway/Fittings"
+    "pathstring": "Conduit & Raceway/Fittings",
+    "default_location": 3
    }
   },
   {
@@ -3182,7 +3206,8 @@
    "category_detail": {
     "pk": 10,
     "name": "Fittings",
-    "pathstring": "Conduit & Raceway/Fittings"
+    "pathstring": "Conduit & Raceway/Fittings",
+    "default_location": 3
    }
   },
   {
@@ -3198,7 +3223,8 @@
    "category_detail": {
     "pk": 10,
     "name": "Fittings",
-    "pathstring": "Conduit & Raceway/Fittings"
+    "pathstring": "Conduit & Raceway/Fittings",
+    "default_location": 3
    }
   },
   {
@@ -3214,7 +3240,8 @@
    "category_detail": {
     "pk": 10,
     "name": "Fittings",
-    "pathstring": "Conduit & Raceway/Fittings"
+    "pathstring": "Conduit & Raceway/Fittings",
+    "default_location": 3
    }
   },
   {
@@ -3230,7 +3257,8 @@
    "category_detail": {
     "pk": 10,
     "name": "Fittings",
-    "pathstring": "Conduit & Raceway/Fittings"
+    "pathstring": "Conduit & Raceway/Fittings",
+    "default_location": 3
    }
   },
   {
@@ -3246,7 +3274,8 @@
    "category_detail": {
     "pk": 11,
     "name": "Boxes & Enclosures",
-    "pathstring": "Boxes & Enclosures"
+    "pathstring": "Boxes & Enclosures",
+    "default_location": 4
    }
   },
   {
@@ -3262,7 +3291,8 @@
    "category_detail": {
     "pk": 11,
     "name": "Boxes & Enclosures",
-    "pathstring": "Boxes & Enclosures"
+    "pathstring": "Boxes & Enclosures",
+    "default_location": 4
    }
   },
   {
@@ -3278,7 +3308,8 @@
    "category_detail": {
     "pk": 11,
     "name": "Boxes & Enclosures",
-    "pathstring": "Boxes & Enclosures"
+    "pathstring": "Boxes & Enclosures",
+    "default_location": 4
    }
   },
   {
@@ -3294,7 +3325,8 @@
    "category_detail": {
     "pk": 11,
     "name": "Boxes & Enclosures",
-    "pathstring": "Boxes & Enclosures"
+    "pathstring": "Boxes & Enclosures",
+    "default_location": 4
    }
   },
   {
@@ -3310,7 +3342,8 @@
    "category_detail": {
     "pk": 11,
     "name": "Boxes & Enclosures",
-    "pathstring": "Boxes & Enclosures"
+    "pathstring": "Boxes & Enclosures",
+    "default_location": 4
    }
   },
   {
@@ -3326,7 +3359,8 @@
    "category_detail": {
     "pk": 11,
     "name": "Boxes & Enclosures",
-    "pathstring": "Boxes & Enclosures"
+    "pathstring": "Boxes & Enclosures",
+    "default_location": 4
    }
   },
   {
@@ -3342,7 +3376,8 @@
    "category_detail": {
     "pk": 13,
     "name": "Receptacles",
-    "pathstring": "Wiring Devices/Receptacles"
+    "pathstring": "Wiring Devices/Receptacles",
+    "default_location": 4
    }
   },
   {
@@ -3358,7 +3393,8 @@
    "category_detail": {
     "pk": 13,
     "name": "Receptacles",
-    "pathstring": "Wiring Devices/Receptacles"
+    "pathstring": "Wiring Devices/Receptacles",
+    "default_location": 4
    }
   },
   {
@@ -3374,7 +3410,8 @@
    "category_detail": {
     "pk": 13,
     "name": "Receptacles",
-    "pathstring": "Wiring Devices/Receptacles"
+    "pathstring": "Wiring Devices/Receptacles",
+    "default_location": 4
    }
   },
   {
@@ -3390,7 +3427,8 @@
    "category_detail": {
     "pk": 13,
     "name": "Receptacles",
-    "pathstring": "Wiring Devices/Receptacles"
+    "pathstring": "Wiring Devices/Receptacles",
+    "default_location": 4
    }
   },
   {
@@ -3406,7 +3444,8 @@
    "category_detail": {
     "pk": 13,
     "name": "Receptacles",
-    "pathstring": "Wiring Devices/Receptacles"
+    "pathstring": "Wiring Devices/Receptacles",
+    "default_location": 4
    }
   },
   {
@@ -3422,7 +3461,8 @@
    "category_detail": {
     "pk": 14,
     "name": "Switches & Controls",
-    "pathstring": "Wiring Devices/Switches & Controls"
+    "pathstring": "Wiring Devices/Switches & Controls",
+    "default_location": 4
    }
   },
   {
@@ -3438,7 +3478,8 @@
    "category_detail": {
     "pk": 14,
     "name": "Switches & Controls",
-    "pathstring": "Wiring Devices/Switches & Controls"
+    "pathstring": "Wiring Devices/Switches & Controls",
+    "default_location": 4
    }
   },
   {
@@ -3454,7 +3495,8 @@
    "category_detail": {
     "pk": 14,
     "name": "Switches & Controls",
-    "pathstring": "Wiring Devices/Switches & Controls"
+    "pathstring": "Wiring Devices/Switches & Controls",
+    "default_location": 4
    }
   },
   {
@@ -3470,7 +3512,8 @@
    "category_detail": {
     "pk": 14,
     "name": "Switches & Controls",
-    "pathstring": "Wiring Devices/Switches & Controls"
+    "pathstring": "Wiring Devices/Switches & Controls",
+    "default_location": 4
    }
   },
   {
@@ -3486,7 +3529,8 @@
    "category_detail": {
     "pk": 15,
     "name": "Wall Plates",
-    "pathstring": "Wiring Devices/Wall Plates"
+    "pathstring": "Wiring Devices/Wall Plates",
+    "default_location": 4
    }
   },
   {
@@ -3502,7 +3546,8 @@
    "category_detail": {
     "pk": 15,
     "name": "Wall Plates",
-    "pathstring": "Wiring Devices/Wall Plates"
+    "pathstring": "Wiring Devices/Wall Plates",
+    "default_location": 4
    }
   },
   {
@@ -3518,7 +3563,8 @@
    "category_detail": {
     "pk": 17,
     "name": "Circuit Breakers",
-    "pathstring": "Circuit Protection/Circuit Breakers"
+    "pathstring": "Circuit Protection/Circuit Breakers",
+    "default_location": 5
    }
   },
   {
@@ -3534,7 +3580,8 @@
    "category_detail": {
     "pk": 17,
     "name": "Circuit Breakers",
-    "pathstring": "Circuit Protection/Circuit Breakers"
+    "pathstring": "Circuit Protection/Circuit Breakers",
+    "default_location": 5
    }
   },
   {
@@ -3550,7 +3597,8 @@
    "category_detail": {
     "pk": 17,
     "name": "Circuit Breakers",
-    "pathstring": "Circuit Protection/Circuit Breakers"
+    "pathstring": "Circuit Protection/Circuit Breakers",
+    "default_location": 5
    }
   },
   {
@@ -3566,7 +3614,8 @@
    "category_detail": {
     "pk": 17,
     "name": "Circuit Breakers",
-    "pathstring": "Circuit Protection/Circuit Breakers"
+    "pathstring": "Circuit Protection/Circuit Breakers",
+    "default_location": 5
    }
   },
   {
@@ -3582,7 +3631,8 @@
    "category_detail": {
     "pk": 17,
     "name": "Circuit Breakers",
-    "pathstring": "Circuit Protection/Circuit Breakers"
+    "pathstring": "Circuit Protection/Circuit Breakers",
+    "default_location": 5
    }
   },
   {
@@ -3598,7 +3648,8 @@
    "category_detail": {
     "pk": 18,
     "name": "Panels & Meter Sockets",
-    "pathstring": "Circuit Protection/Panels & Meter Sockets"
+    "pathstring": "Circuit Protection/Panels & Meter Sockets",
+    "default_location": 5
    }
   },
   {
@@ -3614,7 +3665,8 @@
    "category_detail": {
     "pk": 18,
     "name": "Panels & Meter Sockets",
-    "pathstring": "Circuit Protection/Panels & Meter Sockets"
+    "pathstring": "Circuit Protection/Panels & Meter Sockets",
+    "default_location": 5
    }
   },
   {
@@ -3630,7 +3682,8 @@
    "category_detail": {
     "pk": 19,
     "name": "Disconnects",
-    "pathstring": "Circuit Protection/Disconnects"
+    "pathstring": "Circuit Protection/Disconnects",
+    "default_location": 5
    }
   },
   {
@@ -3646,7 +3699,8 @@
    "category_detail": {
     "pk": 20,
     "name": "Grounding & Bonding",
-    "pathstring": "Grounding & Bonding"
+    "pathstring": "Grounding & Bonding",
+    "default_location": 5
    }
   },
   {
@@ -3662,7 +3716,8 @@
    "category_detail": {
     "pk": 20,
     "name": "Grounding & Bonding",
-    "pathstring": "Grounding & Bonding"
+    "pathstring": "Grounding & Bonding",
+    "default_location": 5
    }
   },
   {
@@ -3678,7 +3733,8 @@
    "category_detail": {
     "pk": 22,
     "name": "LED Fixtures",
-    "pathstring": "Lighting/LED Fixtures"
+    "pathstring": "Lighting/LED Fixtures",
+    "default_location": 6
    }
   },
   {
@@ -3694,7 +3750,8 @@
    "category_detail": {
     "pk": 22,
     "name": "LED Fixtures",
-    "pathstring": "Lighting/LED Fixtures"
+    "pathstring": "Lighting/LED Fixtures",
+    "default_location": 6
    }
   },
   {
@@ -3710,7 +3767,8 @@
    "category_detail": {
     "pk": 22,
     "name": "LED Fixtures",
-    "pathstring": "Lighting/LED Fixtures"
+    "pathstring": "Lighting/LED Fixtures",
+    "default_location": 6
    }
   },
   {
@@ -3726,7 +3784,8 @@
    "category_detail": {
     "pk": 23,
     "name": "Emergency & Exit",
-    "pathstring": "Lighting/Emergency & Exit"
+    "pathstring": "Lighting/Emergency & Exit",
+    "default_location": 6
    }
   },
   {
@@ -3742,7 +3801,8 @@
    "category_detail": {
     "pk": 24,
     "name": "EV Charging",
-    "pathstring": "EV Charging"
+    "pathstring": "EV Charging",
+    "default_location": 6
    }
   },
   {
@@ -3758,7 +3818,8 @@
    "category_detail": {
     "pk": 25,
     "name": "Connectors & Terminals",
-    "pathstring": "Connectors & Terminals"
+    "pathstring": "Connectors & Terminals",
+    "default_location": 7
    }
   },
   {
@@ -3774,7 +3835,8 @@
    "category_detail": {
     "pk": 25,
     "name": "Connectors & Terminals",
-    "pathstring": "Connectors & Terminals"
+    "pathstring": "Connectors & Terminals",
+    "default_location": 7
    }
   },
   {
@@ -3790,7 +3852,8 @@
    "category_detail": {
     "pk": 25,
     "name": "Connectors & Terminals",
-    "pathstring": "Connectors & Terminals"
+    "pathstring": "Connectors & Terminals",
+    "default_location": 7
    }
   },
   {
@@ -3806,7 +3869,8 @@
    "category_detail": {
     "pk": 26,
     "name": "Supports & Fasteners",
-    "pathstring": "Supports & Fasteners"
+    "pathstring": "Supports & Fasteners",
+    "default_location": 7
    }
   },
   {
@@ -3822,7 +3886,8 @@
    "category_detail": {
     "pk": 26,
     "name": "Supports & Fasteners",
-    "pathstring": "Supports & Fasteners"
+    "pathstring": "Supports & Fasteners",
+    "default_location": 7
    }
   },
   {
@@ -3838,7 +3903,8 @@
    "category_detail": {
     "pk": 26,
     "name": "Supports & Fasteners",
-    "pathstring": "Supports & Fasteners"
+    "pathstring": "Supports & Fasteners",
+    "default_location": 7
    }
   },
   {
@@ -3854,7 +3920,8 @@
    "category_detail": {
     "pk": 26,
     "name": "Supports & Fasteners",
-    "pathstring": "Supports & Fasteners"
+    "pathstring": "Supports & Fasteners",
+    "default_location": 7
    }
   },
   {
@@ -3870,7 +3937,8 @@
    "category_detail": {
     "pk": 26,
     "name": "Supports & Fasteners",
-    "pathstring": "Supports & Fasteners"
+    "pathstring": "Supports & Fasteners",
+    "default_location": 7
    }
   },
   {
@@ -3886,7 +3954,8 @@
    "category_detail": {
     "pk": 27,
     "name": "Consumables",
-    "pathstring": "Consumables"
+    "pathstring": "Consumables",
+    "default_location": 7
    }
   },
   {
@@ -3902,7 +3971,8 @@
    "category_detail": {
     "pk": 27,
     "name": "Consumables",
-    "pathstring": "Consumables"
+    "pathstring": "Consumables",
+    "default_location": 7
    }
   },
   {
@@ -3918,7 +3988,8 @@
    "category_detail": {
     "pk": 28,
     "name": "Tools & Equipment",
-    "pathstring": "Tools & Equipment"
+    "pathstring": "Tools & Equipment",
+    "default_location": 8
    }
   },
   {
@@ -3934,7 +4005,8 @@
    "category_detail": {
     "pk": 28,
     "name": "Tools & Equipment",
-    "pathstring": "Tools & Equipment"
+    "pathstring": "Tools & Equipment",
+    "default_location": 8
    }
   },
   {
@@ -3950,7 +4022,8 @@
    "category_detail": {
     "pk": 28,
     "name": "Tools & Equipment",
-    "pathstring": "Tools & Equipment"
+    "pathstring": "Tools & Equipment",
+    "default_location": 8
    }
   },
   {
@@ -3966,7 +4039,8 @@
    "category_detail": {
     "pk": 28,
     "name": "Tools & Equipment",
-    "pathstring": "Tools & Equipment"
+    "pathstring": "Tools & Equipment",
+    "default_location": 8
    }
   },
   {
@@ -3982,7 +4056,8 @@
    "category_detail": {
     "pk": 29,
     "name": "Install Kits",
-    "pathstring": "Install Kits"
+    "pathstring": "Install Kits",
+    "default_location": 1
    }
   },
   {
@@ -3998,7 +4073,8 @@
    "category_detail": {
     "pk": 29,
     "name": "Install Kits",
-    "pathstring": "Install Kits"
+    "pathstring": "Install Kits",
+    "default_location": 1
    }
   },
   {
@@ -4014,7 +4090,8 @@
    "category_detail": {
     "pk": 29,
     "name": "Install Kits",
-    "pathstring": "Install Kits"
+    "pathstring": "Install Kits",
+    "default_location": 1
    }
   },
   {
@@ -4030,7 +4107,8 @@
    "category_detail": {
     "pk": 29,
     "name": "Install Kits",
-    "pathstring": "Install Kits"
+    "pathstring": "Install Kits",
+    "default_location": 1
    }
   },
   {
@@ -4046,7 +4124,8 @@
    "category_detail": {
     "pk": 29,
     "name": "Install Kits",
-    "pathstring": "Install Kits"
+    "pathstring": "Install Kits",
+    "default_location": 1
    }
   }
  ],

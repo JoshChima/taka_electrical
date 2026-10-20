@@ -2,7 +2,9 @@ import { describe, expect, it } from 'vitest'
 import { render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import App from './App'
+import { http, HttpResponse } from 'msw'
 import { fakeInvenTree, sent } from './test/fake-inventree'
+import { server } from './test/setup'
 
 type Fake = ReturnType<typeof fakeInvenTree>
 
@@ -209,6 +211,51 @@ describe('Reorder', () => {
     await waitFor(() => expect(document.activeElement).toBe(quantity('20A Duplex Receptacle TR, White')))
     expect(line('20A Duplex Receptacle TR, White').textContent).toMatch(/Not below minimum/)
     expect(quantity('20A Duplex Receptacle TR, White').value).toBe('0')
+  })
+
+  it('asks for a supplier when the last supplier no longer sells the part', async () => {
+    const fake = fakeInvenTree()
+    alsoSupplies(fake, NORTHGATE, 'LGT-HB-150')
+    fake.supplierParts = fake.supplierParts.filter((s) => s.pk !== supplierPartOf(fake, 'LGT-HB-150', BRIGHTPATH))
+    render(<App />)
+    await userEvent.click(within(await screen.findByRole('navigation', { name: 'Main' })).getByRole('link', { name: 'Reorder' }))
+
+    const none = within(await screen.findByRole('region', { name: 'Parts with no supplier yet' }))
+    expect(partsIn(none)).toEqual(['LED High-Bay 150W 5000K'])
+    expect(supplier('LED High-Bay 150W 5000K').value).toBe('')
+  })
+
+  it('keeps the draft and says nothing was ordered when the purchase order cannot be created', async () => {
+    const fake = fakeInvenTree()
+    server.use(http.post('*/api/order/po/', () => new HttpResponse('Server Error', { status: 500 })))
+    await openReorder()
+
+    await userEvent.click(draft('BrightPath Lighting Distributors').getByRole('button', { name: 'Create purchase order' }))
+
+    expect((await screen.findByRole('alert')).textContent).toBe(
+      "Couldn't create the purchase order for BrightPath Lighting Distributors. Nothing was ordered; try again.",
+    )
+    expect(partsIn(draft('BrightPath Lighting Distributors'))).toEqual(['LED High-Bay 150W 5000K'])
+    expect(sent(fake, 'POST', '/api/order/po-line/')).toHaveLength(0)
+  })
+
+  it('names the lines that were not added, and the order they are missing from', async () => {
+    const fake = fakeInvenTree()
+    const evCharger = supplierPartOf(fake, 'EV-L2-48', NORTHGATE)
+    server.use(
+      http.post('*/api/order/po-line/', async ({ request }) => {
+        if (((await request.clone().json()) as { part: number }).part === evCharger) return new HttpResponse('Server Error', { status: 500 })
+      }),
+    )
+    await openReorder()
+
+    await userEvent.click(draft('Northgate Electrical Supply').getByRole('button', { name: 'Create purchase order' }))
+
+    expect((await screen.findByRole('alert')).textContent).toBe(
+      'Created PO-0005 for Northgate Electrical Supply, but these lines were not added: Level 2 EV Charger 48A Hardwired. Add them to PO-0005 in InvenTree, or create another order for them.',
+    )
+    expect(partsIn(draft('Northgate Electrical Supply'))).toContain('Level 2 EV Charger 48A Hardwired')
+    expect(quantity('Level 2 EV Charger 48A Hardwired').value).toBe('2')
   })
 
   it('orders cable in 500 ft reels, rounding up', async () => {

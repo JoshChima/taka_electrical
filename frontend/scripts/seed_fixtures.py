@@ -64,7 +64,7 @@ def rows(t):
 
     cat_loc = {path: loc_pk[loc] for path, _desc, loc in t['CATEGORIES']}
     # Parents come before children in CATEGORIES, so pks follow its order.
-    categories = {path: {'pk': n + 1, 'name': path.split('/')[-1], 'pathstring': path}
+    categories = {path: {'pk': n + 1, 'name': path.split('/')[-1], 'pathstring': path, 'default_location': cat_loc[path]}
                   for n, (path, _desc, _loc) in enumerate(t['CATEGORIES'])}
     templates = {name: {'pk': n + 1, 'name': name, 'units': units}
                  for n, (name, (units, _desc, _choices)) in enumerate(t['TEMPLATES'].items())}

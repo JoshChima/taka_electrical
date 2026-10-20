@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { api, everyRow, load } from './api'
+import { api, everyRow, SignedOut } from './api'
 import type { components } from './inventree'
 import { amount } from './Receive'
 import { locationBoard, moveProblem, shortName, transferItems, warehouseStock, type Part } from './stock-rules'
@@ -97,8 +97,10 @@ export default function Move({ onError }: Props) {
     )
     const body = { items: items.map(({ pk, quantity }) => ({ pk, quantity })), location: to.pk }
     try {
-      const call = api.POST('/api/stock/transfer/', { body: body as components['schemas']['StockTransfer'] })
-      const answer = await call.catch(() => null)
+      const answer = await api
+        .POST('/api/stock/transfer/', { body: body as components['schemas']['StockTransfer'] })
+        .catch(() => null)
+      if (answer?.response.status === 401) throw new SignedOut()
       if (answer?.response.status === 400) {
         // InvenTree runs the whole transfer in one transaction, so nothing moved. Item errors are keyed by item index.
         const error = (answer.error ?? {}) as { items?: Record<string, Record<string, string[]>>; location?: string[] }
@@ -108,7 +110,11 @@ export default function Move({ onError }: Props) {
         setFailed({ message: ['The move failed and nothing was moved.', ...(error.location ?? [])].join(' '), lines: failedLines })
         return
       }
-      await load(call)
+      if (!answer?.response.ok) {
+        const why = answer ? `InvenTree answered ${answer.response.status}` : "the server couldn't be reached"
+        setFailed({ message: `The move failed: ${why}. Check the stock, then try again.`, lines: {} })
+        return
+      }
       setMoved(toSite ? `Staged ${count} at ${siteTo?.project} ${siteTo?.name}.` : `Moved ${count} to ${vanTo?.name}.`)
       setLines([])
       await refresh()

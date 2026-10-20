@@ -9,6 +9,7 @@ import {
   receiveItems,
   type BoardLocation,
   type DeliveryLine,
+  type PartWithCategory,
   type PurchaseOrder,
 } from './stock-rules'
 
@@ -32,6 +33,7 @@ type Props = { onError: (e: unknown) => void }
 export default function Receive({ onError }: Props) {
   const [orders, setOrders] = useState<PurchaseOrder[]>()
   const [aisles, setAisles] = useState<BoardLocation[]>([])
+  const [parts, setParts] = useState<PartWithCategory[]>([])
   const [picked, setPicked] = useState<number>()
   const [booked, setBooked] = useState<string>()
 
@@ -40,9 +42,11 @@ export default function Receive({ onError }: Props) {
     Promise.all([
       fetchExpected(),
       everyRow((offset) => api.GET('/api/stock/location/', { params: { query: { limit: PAGE, offset } } })),
-    ]).then(([orders, locations]) => {
+      everyRow((offset) => api.GET('/api/part/', { params: { query: { category_detail: true, limit: PAGE, offset } } })),
+    ]).then(([orders, locations, parts]) => {
       // Put-away choices: the warehouse aisles and the Tool Crib, never a structural location.
       setAisles(locationBoard(locations, []).warehouse)
+      setParts(parts)
       setOrders(orders)
     }, onError)
   }, [onError])
@@ -91,6 +95,7 @@ export default function Receive({ onError }: Props) {
               key={order.pk}
               order={order}
               aisles={aisles}
+              parts={parts}
               onError={onError}
               onBooked={(message) => {
                 setBooked(message)
@@ -107,9 +112,10 @@ export default function Receive({ onError }: Props) {
 function Delivery({
   order,
   aisles,
+  parts,
   onError,
   onBooked,
-}: Props & { order: PurchaseOrder; aisles: BoardLocation[]; onBooked: (message: string) => void }) {
+}: Props & { order: PurchaseOrder; aisles: BoardLocation[]; parts: PartWithCategory[]; onBooked: (message: string) => void }) {
   const [lines, setLines] = useState<DeliveryLine[]>()
   const [arrived, setArrived] = useState<Record<number, string>>({})
   const [where, setWhere] = useState<Record<number, string>>({})
@@ -120,12 +126,12 @@ function Delivery({
       everyRow((offset) =>
         api.GET('/api/order/po-line/', { params: { query: { order: order.pk, part_detail: true, limit: PAGE, offset } } }),
       ).then((rows) => {
-        const lines = deliveryLines(rows)
+        const lines = deliveryLines(rows, parts)
         setLines(lines)
         setArrived(Object.fromEntries(lines.map((l) => [l.pk, String(l.outstanding)])))
         setWhere(Object.fromEntries(lines.map((l) => [l.pk, String(l.putAway ?? '')])))
       }, onError),
-    [order.pk, onError],
+    [order.pk, parts, onError],
   )
   useEffect(() => {
     loadLines()
