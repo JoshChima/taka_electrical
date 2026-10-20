@@ -6,7 +6,7 @@ import { setupServer } from 'msw/node'
 export const server = setupServer()
 
 // Listen now, not in beforeAll: the api client captures fetch when its module loads.
-server.listen({ onUnhandledRequest: 'error' })
+server.listen({ onUnhandledFrame: 'error' })
 afterEach(() => {
   cleanup()
   server.resetHandlers()

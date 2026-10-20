@@ -4,7 +4,7 @@ import App from './App'
 import { fakeInvenTree } from './test/fake-inventree'
 
 const column = async (name: string) => within(await screen.findByRole('region', { name }))
-const rows = (col: ReturnType<typeof within>) => col.getAllByRole('listitem').map((li) => li.textContent)
+const rows = (col: ReturnType<typeof within>) => col.getAllByRole('listitem').map((li: HTMLElement) => li.textContent)
 
 describe('Overview A, the locations board', () => {
   it('shows the Main Warehouse aisle by aisle with part counts', async () => {
