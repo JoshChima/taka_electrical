@@ -14,7 +14,7 @@ import {
 
 const PAGE = 500
 const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`
-const amount = (n: number, units: string) => n.toLocaleString('en-US') + (units ? ` ${units}` : '')
+export const amount = (n: number, units: string) => n.toLocaleString('en-US') + (units ? ` ${units}` : '')
 
 /** "2026-10-26" → "26 Oct". */
 export const dueDate = (date?: string | null) =>

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { currentUser, signOut, SignedOut, Unreachable } from './api'
+import Find from './Find'
 import Overview from './Overview'
 import Receive from './Receive'
 import SignIn from './SignIn'
@@ -7,6 +8,7 @@ import SignIn from './SignIn'
 // The pages, in navigation order. Adding a page is one line: its path under the app, nav label and component.
 const PAGES = [
   { path: '', label: 'Overview', Page: Overview },
+  { path: 'find', label: 'Find a part', Page: Find },
   { path: 'receive', label: 'Receive', Page: Receive },
 ]
 

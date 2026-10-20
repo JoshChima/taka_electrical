@@ -30,6 +30,8 @@ export function fakeInvenTree({ signedIn = true } = {}) {
     projectCodes: structuredClone(seed.projectCodes),
     purchaseOrders: structuredClone(seed.purchaseOrders),
     poLines: structuredClone(seed.poLines),
+    supplierParts: structuredClone(seed.supplierParts),
+    parameters: structuredClone(seed.parameters),
     /** Every request the app sent, in order. */
     requests: [] as Request[],
   }
@@ -97,13 +99,17 @@ export function fakeInvenTree({ signedIn = true } = {}) {
     http.get(
       '*/api/order/po-line/',
       api((query) =>
-        fake.poLines.map((line) =>
-          query.get('order_detail') === 'true'
-            ? { ...line, order_detail: fake.purchaseOrders.find((o) => o.pk === line.order) }
-            : line,
-        ),
+        fake.poLines
+          .filter((line) => !query.has('base_part') || String(line.internal_part) === query.get('base_part'))
+          .map((line) =>
+            query.get('order_detail') === 'true'
+              ? { ...line, order_detail: fake.purchaseOrders.find((o) => o.pk === line.order) }
+              : line,
+          ),
       ),
     ),
+    http.get('*/api/company/part/', api(() => fake.supplierParts)),
+    http.get('*/api/parameter/', api(() => fake.parameters)),
     // Like InvenTree 1.6.0: no over-receipt check, quantities are in supplier packs, a line without a
     // location lands in the order's destination, and the order completes once every line is received.
     http.post('*/api/order/po/:id/receive/', async ({ request, params }) => {

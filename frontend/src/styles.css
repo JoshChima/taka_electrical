@@ -38,7 +38,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 button, input { font: inherit; min-height: var(--tap); }
 button { cursor: pointer; border-radius: 8px; padding: 0 16px; font-weight: 500; }
-button.primary { background: var(--action); color: var(--ink-on-dark); border: 0; }
+button.primary, a.button.primary { background: var(--action); color: var(--ink-on-dark); border: 0; }
 button.primary:disabled { opacity: 0.6; }
 button.quiet { background: transparent; color: var(--ink-on-dark-muted); border: 1px solid #3a4049; }
 input { border: 1px solid var(--control-line); border-radius: 8px; padding: 0 12px; width: 100%; }
@@ -110,7 +110,7 @@ select {
   font: inherit; min-height: var(--tap); width: 100%; padding: 0 10px;
   border: 1px solid var(--control-line); border-radius: 8px; background: var(--surface);
 }
-button.secondary { background: var(--surface); color: var(--action); border: 1px solid var(--control-line); }
+button.secondary, a.button.secondary { background: var(--surface); color: var(--action); border: 1px solid var(--control-line); }
 
 /* Overview tiles */
 .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
@@ -125,15 +125,15 @@ button.secondary { background: var(--surface); color: var(--action); border: 1px
 
 /* Receive: the order list and the order side by side, stacked on a phone */
 .split { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
-.split .orders { flex: 1 1 300px; min-width: 0; }
-.split .delivery { flex: 999 1 560px; min-width: 0; }
-.orders li { padding: 0; }
-.orders button {
+.split .orders, .split .results { flex: 1 1 300px; min-width: 0; }
+.split .delivery, .split .part { flex: 999 1 560px; min-width: 0; }
+.orders li, .results li { padding: 0; }
+.orders button, .results button {
   width: 100%; min-height: 72px; display: flex; flex-direction: column; align-items: stretch; gap: 4px;
   padding: 14px 20px; border: 0; border-radius: 0; background: var(--surface); color: inherit;
   text-align: left; font-weight: 400;
 }
-.orders button[aria-pressed='true'] { background: #e8eefc; box-shadow: inset 3px 0 0 var(--action); }
+.orders button[aria-pressed='true'], .results button[aria-pressed='true'] { background: #e8eefc; box-shadow: inset 3px 0 0 var(--action); }
 .line { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px 20px; }
 .line .name { flex: 1 1 260px; min-width: 0; align-self: center; }
 .field { display: flex; flex-direction: column; gap: 4px; flex: none; }
@@ -142,6 +142,25 @@ button.secondary { background: var(--surface); color: var(--action); border: 1px
 .field .row { align-items: center; gap: 6px; }
 .grow { flex: 1 1 220px; min-width: 0; }
 .full { flex-basis: 100%; }
+
+/* Find a part */
+.search { max-width: 560px; }
+.results button { flex-direction: row; justify-content: space-between; align-items: center; gap: 12px; }
+.end { align-items: flex-end; text-align: right; }
+a.button {
+  display: inline-flex; align-items: center; min-height: var(--tap); padding: 0 16px;
+  border-radius: 8px; font-weight: 500; text-decoration: none; white-space: nowrap;
+}
+.part .card-head { flex-wrap: wrap; }
+.card-head .row { flex-wrap: wrap; align-items: center; }
+.gap { gap: 16px; }
+h3 { margin: 0; font-size: 14px; font-weight: 600; }
+.figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.figure { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: 8px; background: var(--page); }
+.figure-value { font-size: 24px; font-weight: 600; }
+.figure.low { background: var(--low-bg); }
+.figure.low .figure-value { color: var(--low); }
+.card .where li { padding: 10px 0; }
 
 /* Sign in */
 .sign-in { max-width: 400px; margin: 64px auto; padding: 0 16px; }

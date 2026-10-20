@@ -56,25 +56,30 @@ export function totalsInStock(stock: StockItem[]) {
 /** "Aisle C - Boxes & Devices" -> "Aisle C", "Van 03 (Service Calls)" -> "Van 03". */
 const shortName = (name: string) => name.replace(/ - .*| \(.*/, '')
 
-/**
- * Low: total in stock is below Minimum Stock. A Minimum Stock of 0 is never low (stock can't go below 0).
- * Most short first.
- */
+/** Low: total in stock is below Minimum Stock. A Minimum Stock of 0 is never low (stock can't go below 0). */
+export const isLow = (part: Part, inStock: number) => inStock < Number(part.minimum_stock ?? 0)
+
+/** Where a part is, most first: each location's short name and the quantity there. */
+export function whereIs(part: number, stock: StockItem[], locations: Location[]) {
+  const nameOf = new Map(locations.map((l) => [l.pk, shortName(l.name)]))
+  const at = new Map<string, number>()
+  for (const item of stock) {
+    if (item.part !== part) continue
+    const name = nameOf.get(item.location ?? -1) ?? 'No location'
+    at.set(name, (at.get(name) ?? 0) + Number(item.quantity))
+  }
+  return [...at].map(([name, quantity]) => ({ name, quantity })).sort((a, b) => b.quantity - a.quantity)
+}
+
+/** The parts below Minimum Stock, most short first. */
 export function lowStock(parts: Part[], stock: StockItem[], lines: PurchaseOrderLine[], locations: Location[]): LowPart[] {
   const totals = totalsInStock(stock)
   const ordered = onOrder(lines)
-  const nameOf = new Map(locations.map((l) => [l.pk, shortName(l.name)]))
   return parts
-    .filter((p) => (totals.get(p.pk) ?? 0) < Number(p.minimum_stock ?? 0))
+    .filter((p) => isLow(p, totals.get(p.pk) ?? 0))
     .map((p) => {
       const inStock = totals.get(p.pk) ?? 0
       const minimum = Number(p.minimum_stock)
-      const at = new Map<string, number>()
-      for (const item of stock) {
-        if (item.part !== p.pk) continue
-        const name = nameOf.get(item.location ?? -1) ?? 'No location'
-        at.set(name, (at.get(name) ?? 0) + Number(item.quantity))
-      }
       return {
         pk: p.pk,
         name: p.name,
@@ -85,7 +90,7 @@ export function lowStock(parts: Part[], stock: StockItem[], lines: PurchaseOrder
         shortBy: minimum - inStock,
         onOrder: ordered.get(p.pk) ?? 0,
         covered: inStock + (ordered.get(p.pk) ?? 0) >= minimum,
-        where: [...at].map(([name, quantity]) => ({ name, quantity })).sort((a, b) => b.quantity - a.quantity),
+        where: whereIs(p.pk, stock, locations),
       }
     })
     .sort((a, b) => b.shortBy - a.shortBy || a.name.localeCompare(b.name))
@@ -125,11 +130,48 @@ export function expectedDeliveries(orders: PurchaseOrder[]) {
 type Schemas = components['schemas']
 export type PurchaseOrderLine = Pick<
   Schemas['PurchaseOrderLineItem'],
-  'pk' | 'quantity' | 'received' | 'internal_part' | 'internal_part_name' | 'ipn'
+  'pk' | 'order' | 'quantity' | 'received' | 'purchase_price' | 'internal_part' | 'internal_part_name' | 'ipn'
 > & {
   part_detail?: Pick<NonNullable<Schemas['PurchaseOrderLineItem']['part_detail']>, 'units' | 'default_location' | 'category_default_location'> | null
   supplier_part_detail?: Pick<NonNullable<Schemas['PurchaseOrderLineItem']['supplier_part_detail']>, 'pack_quantity_native'> | null
-  order_detail?: Pick<Schemas['PurchaseOrder'], 'status' | 'project_code'> | null
+  order_detail?: Pick<Schemas['PurchaseOrder'], 'status' | 'project_code' | 'supplier' | 'supplier_name'> | null
+}
+
+export type SupplierPart = Pick<Schemas['SupplierPart'], 'pk' | 'part' | 'supplier'> & {
+  supplier_detail?: Pick<NonNullable<Schemas['SupplierPart']['supplier_detail']>, 'name'> | null
+}
+
+/** A supplier of a part, with the last price paid them per unit of the part (undefined: no price yet). */
+export type Supplier = { pk: number; name: string; unitCost?: number }
+
+/** A part's purchase order lines, most recent first: later orders were created later (higher pk). */
+const latestFirst = (part: number, lines: PurchaseOrderLine[]) =>
+  lines.filter((l) => l.internal_part === part).sort((a, b) => b.order - a.order || b.pk - a.pk)
+
+/**
+ * Last price paid `supplier` for one unit of the part (a foot of cable, one breaker): the most recent priced line.
+ * Lines are priced per supplier pack (a 500 ft reel). Needs the lines' `order_detail` and `supplier_part_detail`.
+ */
+export function lastPricePaid(part: number, supplier: number, lines: PurchaseOrderLine[]) {
+  const line = latestFirst(part, lines).find((l) => l.order_detail?.supplier === supplier && l.purchase_price != null)
+  return line && Number(line.purchase_price) / (line.supplier_part_detail?.pack_quantity_native || 1)
+}
+
+/**
+ * Last supplier: the supplier on the most recent purchase order line for the part. A part never ordered falls back
+ * to its only supplier part; with several (or none) there is no default and the Owner chooses.
+ * Needs the lines' `order_detail` and the supplier parts' `supplier_detail`.
+ */
+export function lastSupplier(part: number, lines: PurchaseOrderLine[], supplierParts: SupplierPart[]): Supplier | undefined {
+  const order = latestFirst(part, lines)[0]?.order_detail
+  const only = supplierParts.filter((s) => s.part === part)
+  const [pk, name] =
+    order?.supplier != null
+      ? [order.supplier, order.supplier_name]
+      : only.length === 1
+        ? [only[0].supplier, only[0].supplier_detail?.name ?? '']
+        : []
+  return pk == null ? undefined : { pk, name: name ?? '', unitCost: lastPricePaid(part, pk, lines) }
 }
 
 /** A purchase order line as the Owner books it in. Quantities are in the part's own units. */

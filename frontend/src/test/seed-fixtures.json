@@ -2793,7 +2793,13 @@
    "units": "ft",
    "minimum_stock": 1000.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 2,
+   "category_detail": {
+    "pk": 2,
+    "name": "Building Wire",
+    "pathstring": "Wire & Cable/Building Wire"
+   }
   },
   {
    "pk": 2,
@@ -2803,7 +2809,13 @@
    "units": "ft",
    "minimum_stock": 1000.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 2,
+   "category_detail": {
+    "pk": 2,
+    "name": "Building Wire",
+    "pathstring": "Wire & Cable/Building Wire"
+   }
   },
   {
    "pk": 3,
@@ -2813,7 +2825,13 @@
    "units": "ft",
    "minimum_stock": 1000.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 2,
+   "category_detail": {
+    "pk": 2,
+    "name": "Building Wire",
+    "pathstring": "Wire & Cable/Building Wire"
+   }
   },
   {
    "pk": 4,
@@ -2823,7 +2841,13 @@
    "units": "ft",
    "minimum_stock": 500.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 2,
+   "category_detail": {
+    "pk": 2,
+    "name": "Building Wire",
+    "pathstring": "Wire & Cable/Building Wire"
+   }
   },
   {
    "pk": 5,
@@ -2833,7 +2857,13 @@
    "units": "ft",
    "minimum_stock": 500.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 2,
+   "category_detail": {
+    "pk": 2,
+    "name": "Building Wire",
+    "pathstring": "Wire & Cable/Building Wire"
+   }
   },
   {
    "pk": 6,
@@ -2843,7 +2873,13 @@
    "units": "ft",
    "minimum_stock": 500.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 2,
+   "category_detail": {
+    "pk": 2,
+    "name": "Building Wire",
+    "pathstring": "Wire & Cable/Building Wire"
+   }
   },
   {
    "pk": 7,
@@ -2853,7 +2889,13 @@
    "units": "ft",
    "minimum_stock": 500.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 2,
+   "category_detail": {
+    "pk": 2,
+    "name": "Building Wire",
+    "pathstring": "Wire & Cable/Building Wire"
+   }
   },
   {
    "pk": 8,
@@ -2863,7 +2905,13 @@
    "units": "ft",
    "minimum_stock": 200.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 2,
+   "category_detail": {
+    "pk": 2,
+    "name": "Building Wire",
+    "pathstring": "Wire & Cable/Building Wire"
+   }
   },
   {
    "pk": 9,
@@ -2873,7 +2921,13 @@
    "units": "ft",
    "minimum_stock": 1000.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 3,
+   "category_detail": {
+    "pk": 3,
+    "name": "NM-B Cable",
+    "pathstring": "Wire & Cable/NM-B Cable"
+   }
   },
   {
    "pk": 10,
@@ -2883,7 +2937,13 @@
    "units": "ft",
    "minimum_stock": 1000.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 3,
+   "category_detail": {
+    "pk": 3,
+    "name": "NM-B Cable",
+    "pathstring": "Wire & Cable/NM-B Cable"
+   }
   },
   {
    "pk": 11,
@@ -2893,7 +2953,13 @@
    "units": "ft",
    "minimum_stock": 500.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 3,
+   "category_detail": {
+    "pk": 3,
+    "name": "NM-B Cable",
+    "pathstring": "Wire & Cable/NM-B Cable"
+   }
   },
   {
    "pk": 12,
@@ -2903,7 +2969,13 @@
    "units": "ft",
    "minimum_stock": 100.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 3,
+   "category_detail": {
+    "pk": 3,
+    "name": "NM-B Cable",
+    "pathstring": "Wire & Cable/NM-B Cable"
+   }
   },
   {
    "pk": 13,
@@ -2913,7 +2985,13 @@
    "units": "ft",
    "minimum_stock": 2000.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 4,
+   "category_detail": {
+    "pk": 4,
+    "name": "MC Cable",
+    "pathstring": "Wire & Cable/MC Cable"
+   }
   },
   {
    "pk": 14,
@@ -2923,7 +3001,13 @@
    "units": "ft",
    "minimum_stock": 500.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 4,
+   "category_detail": {
+    "pk": 4,
+    "name": "MC Cable",
+    "pathstring": "Wire & Cable/MC Cable"
+   }
   },
   {
    "pk": 15,
@@ -2933,7 +3017,13 @@
    "units": "ft",
    "minimum_stock": 100.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 5,
+   "category_detail": {
+    "pk": 5,
+    "name": "Service Entrance",
+    "pathstring": "Wire & Cable/Service Entrance"
+   }
   },
   {
    "pk": 16,
@@ -2943,7 +3033,13 @@
    "units": "ft",
    "minimum_stock": 1000.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 6,
+   "category_detail": {
+    "pk": 6,
+    "name": "Low Voltage",
+    "pathstring": "Wire & Cable/Low Voltage"
+   }
   },
   {
    "pk": 17,
@@ -2953,7 +3049,13 @@
    "units": "ft",
    "minimum_stock": 250.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 6,
+   "category_detail": {
+    "pk": 6,
+    "name": "Low Voltage",
+    "pathstring": "Wire & Cable/Low Voltage"
+   }
   },
   {
    "pk": 18,
@@ -2963,7 +3065,13 @@
    "units": "",
    "minimum_stock": 100.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 8,
+   "category_detail": {
+    "pk": 8,
+    "name": "EMT",
+    "pathstring": "Conduit & Raceway/EMT"
+   }
   },
   {
    "pk": 19,
@@ -2973,7 +3081,13 @@
    "units": "",
    "minimum_stock": 60.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 8,
+   "category_detail": {
+    "pk": 8,
+    "name": "EMT",
+    "pathstring": "Conduit & Raceway/EMT"
+   }
   },
   {
    "pk": 20,
@@ -2983,7 +3097,13 @@
    "units": "",
    "minimum_stock": 20.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 8,
+   "category_detail": {
+    "pk": 8,
+    "name": "EMT",
+    "pathstring": "Conduit & Raceway/EMT"
+   }
   },
   {
    "pk": 21,
@@ -2993,7 +3113,13 @@
    "units": "",
    "minimum_stock": 10.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 9,
+   "category_detail": {
+    "pk": 9,
+    "name": "PVC",
+    "pathstring": "Conduit & Raceway/PVC"
+   }
   },
   {
    "pk": 22,
@@ -3003,7 +3129,13 @@
    "units": "",
    "minimum_stock": 300.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 10,
+   "category_detail": {
+    "pk": 10,
+    "name": "Fittings",
+    "pathstring": "Conduit & Raceway/Fittings"
+   }
   },
   {
    "pk": 23,
@@ -3013,7 +3145,13 @@
    "units": "",
    "minimum_stock": 300.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 10,
+   "category_detail": {
+    "pk": 10,
+    "name": "Fittings",
+    "pathstring": "Conduit & Raceway/Fittings"
+   }
   },
   {
    "pk": 24,
@@ -3023,7 +3161,13 @@
    "units": "",
    "minimum_stock": 200.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 10,
+   "category_detail": {
+    "pk": 10,
+    "name": "Fittings",
+    "pathstring": "Conduit & Raceway/Fittings"
+   }
   },
   {
    "pk": 25,
@@ -3033,7 +3177,13 @@
    "units": "",
    "minimum_stock": 200.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 10,
+   "category_detail": {
+    "pk": 10,
+    "name": "Fittings",
+    "pathstring": "Conduit & Raceway/Fittings"
+   }
   },
   {
    "pk": 26,
@@ -3043,7 +3193,13 @@
    "units": "",
    "minimum_stock": 500.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 10,
+   "category_detail": {
+    "pk": 10,
+    "name": "Fittings",
+    "pathstring": "Conduit & Raceway/Fittings"
+   }
   },
   {
    "pk": 27,
@@ -3053,7 +3209,13 @@
    "units": "",
    "minimum_stock": 5.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 10,
+   "category_detail": {
+    "pk": 10,
+    "name": "Fittings",
+    "pathstring": "Conduit & Raceway/Fittings"
+   }
   },
   {
    "pk": 28,
@@ -3063,7 +3225,13 @@
    "units": "",
    "minimum_stock": 500.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 10,
+   "category_detail": {
+    "pk": 10,
+    "name": "Fittings",
+    "pathstring": "Conduit & Raceway/Fittings"
+   }
   },
   {
    "pk": 29,
@@ -3073,7 +3241,13 @@
    "units": "",
    "minimum_stock": 100.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 11,
+   "category_detail": {
+    "pk": 11,
+    "name": "Boxes & Enclosures",
+    "pathstring": "Boxes & Enclosures"
+   }
   },
   {
    "pk": 30,
@@ -3083,7 +3257,13 @@
    "units": "",
    "minimum_stock": 200.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 11,
+   "category_detail": {
+    "pk": 11,
+    "name": "Boxes & Enclosures",
+    "pathstring": "Boxes & Enclosures"
+   }
   },
   {
    "pk": 31,
@@ -3093,7 +3273,13 @@
    "units": "",
    "minimum_stock": 100.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 11,
+   "category_detail": {
+    "pk": 11,
+    "name": "Boxes & Enclosures",
+    "pathstring": "Boxes & Enclosures"
+   }
   },
   {
    "pk": 32,
@@ -3103,7 +3289,13 @@
    "units": "",
    "minimum_stock": 100.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 11,
+   "category_detail": {
+    "pk": 11,
+    "name": "Boxes & Enclosures",
+    "pathstring": "Boxes & Enclosures"
+   }
   },
   {
    "pk": 33,
@@ -3113,7 +3305,13 @@
    "units": "",
    "minimum_stock": 100.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 11,
+   "category_detail": {
+    "pk": 11,
+    "name": "Boxes & Enclosures",
+    "pathstring": "Boxes & Enclosures"
+   }
   },
   {
    "pk": 34,
@@ -3123,7 +3321,13 @@
    "units": "",
    "minimum_stock": 30.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 11,
+   "category_detail": {
+    "pk": 11,
+    "name": "Boxes & Enclosures",
+    "pathstring": "Boxes & Enclosures"
+   }
   },
   {
    "pk": 35,
@@ -3133,7 +3337,13 @@
    "units": "",
    "minimum_stock": 200.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 13,
+   "category_detail": {
+    "pk": 13,
+    "name": "Receptacles",
+    "pathstring": "Wiring Devices/Receptacles"
+   }
   },
   {
    "pk": 36,
@@ -3143,7 +3353,13 @@
    "units": "",
    "minimum_stock": 100.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 13,
+   "category_detail": {
+    "pk": 13,
+    "name": "Receptacles",
+    "pathstring": "Wiring Devices/Receptacles"
+   }
   },
   {
    "pk": 37,
@@ -3153,7 +3369,13 @@
    "units": "",
    "minimum_stock": 60.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 13,
+   "category_detail": {
+    "pk": 13,
+    "name": "Receptacles",
+    "pathstring": "Wiring Devices/Receptacles"
+   }
   },
   {
    "pk": 38,
@@ -3163,7 +3385,13 @@
    "units": "",
    "minimum_stock": 12.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 13,
+   "category_detail": {
+    "pk": 13,
+    "name": "Receptacles",
+    "pathstring": "Wiring Devices/Receptacles"
+   }
   },
   {
    "pk": 39,
@@ -3173,7 +3401,13 @@
    "units": "",
    "minimum_stock": 6.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 13,
+   "category_detail": {
+    "pk": 13,
+    "name": "Receptacles",
+    "pathstring": "Wiring Devices/Receptacles"
+   }
   },
   {
    "pk": 40,
@@ -3183,7 +3417,13 @@
    "units": "",
    "minimum_stock": 150.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 14,
+   "category_detail": {
+    "pk": 14,
+    "name": "Switches & Controls",
+    "pathstring": "Wiring Devices/Switches & Controls"
+   }
   },
   {
    "pk": 41,
@@ -3193,7 +3433,13 @@
    "units": "",
    "minimum_stock": 75.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 14,
+   "category_detail": {
+    "pk": 14,
+    "name": "Switches & Controls",
+    "pathstring": "Wiring Devices/Switches & Controls"
+   }
   },
   {
    "pk": 42,
@@ -3203,7 +3449,13 @@
    "units": "",
    "minimum_stock": 20.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 14,
+   "category_detail": {
+    "pk": 14,
+    "name": "Switches & Controls",
+    "pathstring": "Wiring Devices/Switches & Controls"
+   }
   },
   {
    "pk": 43,
@@ -3213,7 +3465,13 @@
    "units": "",
    "minimum_stock": 15.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 14,
+   "category_detail": {
+    "pk": 14,
+    "name": "Switches & Controls",
+    "pathstring": "Wiring Devices/Switches & Controls"
+   }
   },
   {
    "pk": 44,
@@ -3223,7 +3481,13 @@
    "units": "",
    "minimum_stock": 200.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 15,
+   "category_detail": {
+    "pk": 15,
+    "name": "Wall Plates",
+    "pathstring": "Wiring Devices/Wall Plates"
+   }
   },
   {
    "pk": 45,
@@ -3233,7 +3497,13 @@
    "units": "",
    "minimum_stock": 200.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 15,
+   "category_detail": {
+    "pk": 15,
+    "name": "Wall Plates",
+    "pathstring": "Wiring Devices/Wall Plates"
+   }
   },
   {
    "pk": 46,
@@ -3243,7 +3513,13 @@
    "units": "",
    "minimum_stock": 30.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 17,
+   "category_detail": {
+    "pk": 17,
+    "name": "Circuit Breakers",
+    "pathstring": "Circuit Protection/Circuit Breakers"
+   }
   },
   {
    "pk": 47,
@@ -3253,7 +3529,13 @@
    "units": "",
    "minimum_stock": 40.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 17,
+   "category_detail": {
+    "pk": 17,
+    "name": "Circuit Breakers",
+    "pathstring": "Circuit Protection/Circuit Breakers"
+   }
   },
   {
    "pk": 48,
@@ -3263,7 +3545,13 @@
    "units": "",
    "minimum_stock": 20.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 17,
+   "category_detail": {
+    "pk": 17,
+    "name": "Circuit Breakers",
+    "pathstring": "Circuit Protection/Circuit Breakers"
+   }
   },
   {
    "pk": 49,
@@ -3273,7 +3561,13 @@
    "units": "",
    "minimum_stock": 10.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 17,
+   "category_detail": {
+    "pk": 17,
+    "name": "Circuit Breakers",
+    "pathstring": "Circuit Protection/Circuit Breakers"
+   }
   },
   {
    "pk": 50,
@@ -3283,7 +3577,13 @@
    "units": "",
    "minimum_stock": 10.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 17,
+   "category_detail": {
+    "pk": 17,
+    "name": "Circuit Breakers",
+    "pathstring": "Circuit Protection/Circuit Breakers"
+   }
   },
   {
    "pk": 51,
@@ -3293,7 +3593,13 @@
    "units": "",
    "minimum_stock": 2.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 18,
+   "category_detail": {
+    "pk": 18,
+    "name": "Panels & Meter Sockets",
+    "pathstring": "Circuit Protection/Panels & Meter Sockets"
+   }
   },
   {
    "pk": 52,
@@ -3303,7 +3609,13 @@
    "units": "",
    "minimum_stock": 2.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 18,
+   "category_detail": {
+    "pk": 18,
+    "name": "Panels & Meter Sockets",
+    "pathstring": "Circuit Protection/Panels & Meter Sockets"
+   }
   },
   {
    "pk": 53,
@@ -3313,7 +3625,13 @@
    "units": "",
    "minimum_stock": 6.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 19,
+   "category_detail": {
+    "pk": 19,
+    "name": "Disconnects",
+    "pathstring": "Circuit Protection/Disconnects"
+   }
   },
   {
    "pk": 54,
@@ -3323,7 +3641,13 @@
    "units": "",
    "minimum_stock": 6.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 20,
+   "category_detail": {
+    "pk": 20,
+    "name": "Grounding & Bonding",
+    "pathstring": "Grounding & Bonding"
+   }
   },
   {
    "pk": 55,
@@ -3333,7 +3657,13 @@
    "units": "",
    "minimum_stock": 20.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 20,
+   "category_detail": {
+    "pk": 20,
+    "name": "Grounding & Bonding",
+    "pathstring": "Grounding & Bonding"
+   }
   },
   {
    "pk": 56,
@@ -3343,7 +3673,13 @@
    "units": "",
    "minimum_stock": 20.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 22,
+   "category_detail": {
+    "pk": 22,
+    "name": "LED Fixtures",
+    "pathstring": "Lighting/LED Fixtures"
+   }
   },
   {
    "pk": 57,
@@ -3353,7 +3689,13 @@
    "units": "",
    "minimum_stock": 24.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 22,
+   "category_detail": {
+    "pk": 22,
+    "name": "LED Fixtures",
+    "pathstring": "Lighting/LED Fixtures"
+   }
   },
   {
    "pk": 58,
@@ -3363,7 +3705,13 @@
    "units": "",
    "minimum_stock": 48.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 22,
+   "category_detail": {
+    "pk": 22,
+    "name": "LED Fixtures",
+    "pathstring": "Lighting/LED Fixtures"
+   }
   },
   {
    "pk": 59,
@@ -3373,7 +3721,13 @@
    "units": "",
    "minimum_stock": 8.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 23,
+   "category_detail": {
+    "pk": 23,
+    "name": "Emergency & Exit",
+    "pathstring": "Lighting/Emergency & Exit"
+   }
   },
   {
    "pk": 60,
@@ -3383,7 +3737,13 @@
    "units": "",
    "minimum_stock": 4.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 24,
+   "category_detail": {
+    "pk": 24,
+    "name": "EV Charging",
+    "pathstring": "EV Charging"
+   }
   },
   {
    "pk": 61,
@@ -3393,7 +3753,13 @@
    "units": "",
    "minimum_stock": 1000.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 25,
+   "category_detail": {
+    "pk": 25,
+    "name": "Connectors & Terminals",
+    "pathstring": "Connectors & Terminals"
+   }
   },
   {
    "pk": 62,
@@ -3403,7 +3769,13 @@
    "units": "",
    "minimum_stock": 1000.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 25,
+   "category_detail": {
+    "pk": 25,
+    "name": "Connectors & Terminals",
+    "pathstring": "Connectors & Terminals"
+   }
   },
   {
    "pk": 63,
@@ -3413,7 +3785,13 @@
    "units": "",
    "minimum_stock": 500.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 25,
+   "category_detail": {
+    "pk": 25,
+    "name": "Connectors & Terminals",
+    "pathstring": "Connectors & Terminals"
+   }
   },
   {
    "pk": 64,
@@ -3423,7 +3801,13 @@
    "units": "",
    "minimum_stock": 100.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 26,
+   "category_detail": {
+    "pk": 26,
+    "name": "Supports & Fasteners",
+    "pathstring": "Supports & Fasteners"
+   }
   },
   {
    "pk": 65,
@@ -3433,7 +3817,13 @@
    "units": "",
    "minimum_stock": 20.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 26,
+   "category_detail": {
+    "pk": 26,
+    "name": "Supports & Fasteners",
+    "pathstring": "Supports & Fasteners"
+   }
   },
   {
    "pk": 66,
@@ -3443,7 +3833,13 @@
    "units": "",
    "minimum_stock": 20.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 26,
+   "category_detail": {
+    "pk": 26,
+    "name": "Supports & Fasteners",
+    "pathstring": "Supports & Fasteners"
+   }
   },
   {
    "pk": 67,
@@ -3453,7 +3849,13 @@
    "units": "",
    "minimum_stock": 2000.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 26,
+   "category_detail": {
+    "pk": 26,
+    "name": "Supports & Fasteners",
+    "pathstring": "Supports & Fasteners"
+   }
   },
   {
    "pk": 68,
@@ -3463,7 +3865,13 @@
    "units": "",
    "minimum_stock": 500.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 26,
+   "category_detail": {
+    "pk": 26,
+    "name": "Supports & Fasteners",
+    "pathstring": "Supports & Fasteners"
+   }
   },
   {
    "pk": 69,
@@ -3473,7 +3881,13 @@
    "units": "",
    "minimum_stock": 50.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 27,
+   "category_detail": {
+    "pk": 27,
+    "name": "Consumables",
+    "pathstring": "Consumables"
+   }
   },
   {
    "pk": 70,
@@ -3483,7 +3897,13 @@
    "units": "",
    "minimum_stock": 6.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 27,
+   "category_detail": {
+    "pk": 27,
+    "name": "Consumables",
+    "pathstring": "Consumables"
+   }
   },
   {
    "pk": 71,
@@ -3493,7 +3913,13 @@
    "units": "",
    "minimum_stock": 0.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 28,
+   "category_detail": {
+    "pk": 28,
+    "name": "Tools & Equipment",
+    "pathstring": "Tools & Equipment"
+   }
   },
   {
    "pk": 72,
@@ -3503,7 +3929,13 @@
    "units": "",
    "minimum_stock": 0.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 28,
+   "category_detail": {
+    "pk": 28,
+    "name": "Tools & Equipment",
+    "pathstring": "Tools & Equipment"
+   }
   },
   {
    "pk": 73,
@@ -3513,7 +3945,13 @@
    "units": "",
    "minimum_stock": 0.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 28,
+   "category_detail": {
+    "pk": 28,
+    "name": "Tools & Equipment",
+    "pathstring": "Tools & Equipment"
+   }
   },
   {
    "pk": 74,
@@ -3523,7 +3961,13 @@
    "units": "",
    "minimum_stock": 0.0,
    "assembly": false,
-   "active": true
+   "active": true,
+   "category": 28,
+   "category_detail": {
+    "pk": 28,
+    "name": "Tools & Equipment",
+    "pathstring": "Tools & Equipment"
+   }
   },
   {
    "pk": 75,
@@ -3533,7 +3977,13 @@
    "units": "",
    "minimum_stock": 0.0,
    "assembly": true,
-   "active": true
+   "active": true,
+   "category": 29,
+   "category_detail": {
+    "pk": 29,
+    "name": "Install Kits",
+    "pathstring": "Install Kits"
+   }
   },
   {
    "pk": 76,
@@ -3543,7 +3993,13 @@
    "units": "",
    "minimum_stock": 0.0,
    "assembly": true,
-   "active": true
+   "active": true,
+   "category": 29,
+   "category_detail": {
+    "pk": 29,
+    "name": "Install Kits",
+    "pathstring": "Install Kits"
+   }
   },
   {
    "pk": 77,
@@ -3553,7 +4009,13 @@
    "units": "",
    "minimum_stock": 0.0,
    "assembly": true,
-   "active": true
+   "active": true,
+   "category": 29,
+   "category_detail": {
+    "pk": 29,
+    "name": "Install Kits",
+    "pathstring": "Install Kits"
+   }
   },
   {
    "pk": 78,
@@ -3563,7 +4025,13 @@
    "units": "",
    "minimum_stock": 0.0,
    "assembly": true,
-   "active": true
+   "active": true,
+   "category": 29,
+   "category_detail": {
+    "pk": 29,
+    "name": "Install Kits",
+    "pathstring": "Install Kits"
+   }
   },
   {
    "pk": 79,
@@ -3573,7 +4041,13 @@
    "units": "",
    "minimum_stock": 0.0,
    "assembly": true,
-   "active": true
+   "active": true,
+   "category": 29,
+   "category_detail": {
+    "pk": 29,
+    "name": "Install Kits",
+    "pathstring": "Install Kits"
+   }
   }
  ],
  "projectCodes": [
@@ -3679,6 +4153,7 @@
    "part": 56,
    "quantity": 40.0,
    "received": 0.0,
+   "purchase_price": 129.0,
    "project_code": 3,
    "project_code_label": "PRJ-103",
    "destination": null,
@@ -3702,7 +4177,11 @@
     "supplier": 3,
     "SKU": "BPL-10385",
     "pack_quantity": "1",
-    "pack_quantity_native": 1.0
+    "pack_quantity_native": 1.0,
+    "supplier_detail": {
+     "pk": 3,
+     "name": "BrightPath Lighting Distributors"
+    }
    }
   },
   {
@@ -3711,6 +4190,7 @@
    "part": 66,
    "quantity": 20.0,
    "received": 0.0,
+   "purchase_price": 6.8,
    "project_code": 3,
    "project_code_label": "PRJ-103",
    "destination": null,
@@ -3734,7 +4214,11 @@
     "supplier": 3,
     "SKU": "BPL-10455",
     "pack_quantity": "1",
-    "pack_quantity_native": 1.0
+    "pack_quantity_native": 1.0,
+    "supplier_detail": {
+     "pk": 3,
+     "name": "BrightPath Lighting Distributors"
+    }
    }
   },
   {
@@ -3743,6 +4227,7 @@
    "part": 13,
    "quantity": 2500.0,
    "received": 0.0,
+   "purchase_price": 0.85,
    "project_code": 3,
    "project_code_label": "PRJ-103",
    "destination": null,
@@ -3766,7 +4251,11 @@
     "supplier": 2,
     "SKU": "RWC-10084",
     "pack_quantity": "500",
-    "pack_quantity_native": 500.0
+    "pack_quantity_native": 500.0,
+    "supplier_detail": {
+     "pk": 2,
+     "name": "Ridgeline Wire & Cable"
+    }
    }
   },
   {
@@ -3775,6 +4264,7 @@
    "part": 60,
    "quantity": 8.0,
    "received": 0.0,
+   "purchase_price": 649.0,
    "project_code": 4,
    "project_code_label": "PRJ-104",
    "destination": null,
@@ -3798,7 +4288,11 @@
     "supplier": 1,
     "SKU": "NES-10413",
     "pack_quantity": "1",
-    "pack_quantity_native": 1.0
+    "pack_quantity_native": 1.0,
+    "supplier_detail": {
+     "pk": 1,
+     "name": "Northgate Electrical Supply"
+    }
    }
   },
   {
@@ -3807,6 +4301,7 @@
    "part": 50,
    "quantity": 8.0,
    "received": 0.0,
+   "purchase_price": 19.8,
    "project_code": 4,
    "project_code_label": "PRJ-104",
    "destination": null,
@@ -3830,7 +4325,11 @@
     "supplier": 1,
     "SKU": "NES-10343",
     "pack_quantity": "1",
-    "pack_quantity_native": 1.0
+    "pack_quantity_native": 1.0,
+    "supplier_detail": {
+     "pk": 1,
+     "name": "Northgate Electrical Supply"
+    }
    }
   },
   {
@@ -3839,6 +4338,7 @@
    "part": 53,
    "quantity": 4.0,
    "received": 0.0,
+   "purchase_price": 42.0,
    "project_code": 4,
    "project_code_label": "PRJ-104",
    "destination": null,
@@ -3862,7 +4362,11 @@
     "supplier": 1,
     "SKU": "NES-10364",
     "pack_quantity": "1",
-    "pack_quantity_native": 1.0
+    "pack_quantity_native": 1.0,
+    "supplier_detail": {
+     "pk": 1,
+     "name": "Northgate Electrical Supply"
+    }
    }
   },
   {
@@ -3871,6 +4375,7 @@
    "part": 37,
    "quantity": 60.0,
    "received": 0.0,
+   "purchase_price": 18.5,
    "project_code": null,
    "project_code_label": null,
    "destination": null,
@@ -3894,7 +4399,11 @@
     "supplier": 1,
     "SKU": "NES-10252",
     "pack_quantity": "1",
-    "pack_quantity_native": 1.0
+    "pack_quantity_native": 1.0,
+    "supplier_detail": {
+     "pk": 1,
+     "name": "Northgate Electrical Supply"
+    }
    }
   },
   {
@@ -3903,6 +4412,7 @@
    "part": 48,
    "quantity": 24.0,
    "received": 0.0,
+   "purchase_price": 48.0,
    "project_code": null,
    "project_code_label": null,
    "destination": null,
@@ -3926,7 +4436,2523 @@
     "supplier": 1,
     "SKU": "NES-10329",
     "pack_quantity": "1",
-    "pack_quantity_native": 1.0
+    "pack_quantity_native": 1.0,
+    "supplier_detail": {
+     "pk": 1,
+     "name": "Northgate Electrical Supply"
+    }
+   }
+  }
+ ],
+ "supplierParts": [
+  {
+   "pk": 1,
+   "part": 1,
+   "supplier": 2,
+   "SKU": "RWC-10000",
+   "pack_quantity": "500",
+   "pack_quantity_native": 500.0,
+   "supplier_detail": {
+    "pk": 2,
+    "name": "Ridgeline Wire & Cable"
+   }
+  },
+  {
+   "pk": 2,
+   "part": 2,
+   "supplier": 2,
+   "SKU": "RWC-10007",
+   "pack_quantity": "500",
+   "pack_quantity_native": 500.0,
+   "supplier_detail": {
+    "pk": 2,
+    "name": "Ridgeline Wire & Cable"
+   }
+  },
+  {
+   "pk": 3,
+   "part": 3,
+   "supplier": 2,
+   "SKU": "RWC-10014",
+   "pack_quantity": "500",
+   "pack_quantity_native": 500.0,
+   "supplier_detail": {
+    "pk": 2,
+    "name": "Ridgeline Wire & Cable"
+   }
+  },
+  {
+   "pk": 4,
+   "part": 4,
+   "supplier": 2,
+   "SKU": "RWC-10021",
+   "pack_quantity": "500",
+   "pack_quantity_native": 500.0,
+   "supplier_detail": {
+    "pk": 2,
+    "name": "Ridgeline Wire & Cable"
+   }
+  },
+  {
+   "pk": 5,
+   "part": 5,
+   "supplier": 2,
+   "SKU": "RWC-10028",
+   "pack_quantity": "500",
+   "pack_quantity_native": 500.0,
+   "supplier_detail": {
+    "pk": 2,
+    "name": "Ridgeline Wire & Cable"
+   }
+  },
+  {
+   "pk": 6,
+   "part": 6,
+   "supplier": 2,
+   "SKU": "RWC-10035",
+   "pack_quantity": "500",
+   "pack_quantity_native": 500.0,
+   "supplier_detail": {
+    "pk": 2,
+    "name": "Ridgeline Wire & Cable"
+   }
+  },
+  {
+   "pk": 7,
+   "part": 7,
+   "supplier": 2,
+   "SKU": "RWC-10042",
+   "pack_quantity": "500",
+   "pack_quantity_native": 500.0,
+   "supplier_detail": {
+    "pk": 2,
+    "name": "Ridgeline Wire & Cable"
+   }
+  },
+  {
+   "pk": 8,
+   "part": 8,
+   "supplier": 2,
+   "SKU": "RWC-10049",
+   "pack_quantity": "500",
+   "pack_quantity_native": 500.0,
+   "supplier_detail": {
+    "pk": 2,
+    "name": "Ridgeline Wire & Cable"
+   }
+  },
+  {
+   "pk": 9,
+   "part": 9,
+   "supplier": 2,
+   "SKU": "RWC-10056",
+   "pack_quantity": "500",
+   "pack_quantity_native": 500.0,
+   "supplier_detail": {
+    "pk": 2,
+    "name": "Ridgeline Wire & Cable"
+   }
+  },
+  {
+   "pk": 10,
+   "part": 10,
+   "supplier": 2,
+   "SKU": "RWC-10063",
+   "pack_quantity": "500",
+   "pack_quantity_native": 500.0,
+   "supplier_detail": {
+    "pk": 2,
+    "name": "Ridgeline Wire & Cable"
+   }
+  },
+  {
+   "pk": 11,
+   "part": 11,
+   "supplier": 2,
+   "SKU": "RWC-10070",
+   "pack_quantity": "500",
+   "pack_quantity_native": 500.0,
+   "supplier_detail": {
+    "pk": 2,
+    "name": "Ridgeline Wire & Cable"
+   }
+  },
+  {
+   "pk": 12,
+   "part": 12,
+   "supplier": 2,
+   "SKU": "RWC-10077",
+   "pack_quantity": "500",
+   "pack_quantity_native": 500.0,
+   "supplier_detail": {
+    "pk": 2,
+    "name": "Ridgeline Wire & Cable"
+   }
+  },
+  {
+   "pk": 13,
+   "part": 13,
+   "supplier": 2,
+   "SKU": "RWC-10084",
+   "pack_quantity": "500",
+   "pack_quantity_native": 500.0,
+   "supplier_detail": {
+    "pk": 2,
+    "name": "Ridgeline Wire & Cable"
+   }
+  },
+  {
+   "pk": 14,
+   "part": 14,
+   "supplier": 2,
+   "SKU": "RWC-10091",
+   "pack_quantity": "500",
+   "pack_quantity_native": 500.0,
+   "supplier_detail": {
+    "pk": 2,
+    "name": "Ridgeline Wire & Cable"
+   }
+  },
+  {
+   "pk": 15,
+   "part": 15,
+   "supplier": 2,
+   "SKU": "RWC-10098",
+   "pack_quantity": "500",
+   "pack_quantity_native": 500.0,
+   "supplier_detail": {
+    "pk": 2,
+    "name": "Ridgeline Wire & Cable"
+   }
+  },
+  {
+   "pk": 16,
+   "part": 16,
+   "supplier": 2,
+   "SKU": "RWC-10105",
+   "pack_quantity": "500",
+   "pack_quantity_native": 500.0,
+   "supplier_detail": {
+    "pk": 2,
+    "name": "Ridgeline Wire & Cable"
+   }
+  },
+  {
+   "pk": 17,
+   "part": 17,
+   "supplier": 2,
+   "SKU": "RWC-10112",
+   "pack_quantity": "500",
+   "pack_quantity_native": 500.0,
+   "supplier_detail": {
+    "pk": 2,
+    "name": "Ridgeline Wire & Cable"
+   }
+  },
+  {
+   "pk": 18,
+   "part": 18,
+   "supplier": 1,
+   "SKU": "NES-10119",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 19,
+   "part": 19,
+   "supplier": 1,
+   "SKU": "NES-10126",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 20,
+   "part": 20,
+   "supplier": 1,
+   "SKU": "NES-10133",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 21,
+   "part": 21,
+   "supplier": 1,
+   "SKU": "NES-10140",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 22,
+   "part": 22,
+   "supplier": 1,
+   "SKU": "NES-10147",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 23,
+   "part": 23,
+   "supplier": 1,
+   "SKU": "NES-10154",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 24,
+   "part": 24,
+   "supplier": 1,
+   "SKU": "NES-10161",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 25,
+   "part": 25,
+   "supplier": 1,
+   "SKU": "NES-10168",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 26,
+   "part": 26,
+   "supplier": 1,
+   "SKU": "NES-10175",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 27,
+   "part": 27,
+   "supplier": 1,
+   "SKU": "NES-10182",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 28,
+   "part": 28,
+   "supplier": 1,
+   "SKU": "NES-10189",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 29,
+   "part": 29,
+   "supplier": 1,
+   "SKU": "NES-10196",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 30,
+   "part": 30,
+   "supplier": 1,
+   "SKU": "NES-10203",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 31,
+   "part": 31,
+   "supplier": 1,
+   "SKU": "NES-10210",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 32,
+   "part": 32,
+   "supplier": 1,
+   "SKU": "NES-10217",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 33,
+   "part": 33,
+   "supplier": 1,
+   "SKU": "NES-10224",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 34,
+   "part": 34,
+   "supplier": 1,
+   "SKU": "NES-10231",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 35,
+   "part": 35,
+   "supplier": 1,
+   "SKU": "NES-10238",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 36,
+   "part": 36,
+   "supplier": 1,
+   "SKU": "NES-10245",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 37,
+   "part": 37,
+   "supplier": 1,
+   "SKU": "NES-10252",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 38,
+   "part": 38,
+   "supplier": 1,
+   "SKU": "NES-10259",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 39,
+   "part": 39,
+   "supplier": 1,
+   "SKU": "NES-10266",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 40,
+   "part": 40,
+   "supplier": 1,
+   "SKU": "NES-10273",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 41,
+   "part": 41,
+   "supplier": 1,
+   "SKU": "NES-10280",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 42,
+   "part": 42,
+   "supplier": 1,
+   "SKU": "NES-10287",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 43,
+   "part": 43,
+   "supplier": 3,
+   "SKU": "BPL-10294",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 3,
+    "name": "BrightPath Lighting Distributors"
+   }
+  },
+  {
+   "pk": 44,
+   "part": 44,
+   "supplier": 1,
+   "SKU": "NES-10301",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 45,
+   "part": 45,
+   "supplier": 1,
+   "SKU": "NES-10308",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 46,
+   "part": 46,
+   "supplier": 1,
+   "SKU": "NES-10315",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 47,
+   "part": 47,
+   "supplier": 1,
+   "SKU": "NES-10322",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 48,
+   "part": 48,
+   "supplier": 1,
+   "SKU": "NES-10329",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 49,
+   "part": 49,
+   "supplier": 1,
+   "SKU": "NES-10336",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 50,
+   "part": 50,
+   "supplier": 1,
+   "SKU": "NES-10343",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 51,
+   "part": 51,
+   "supplier": 1,
+   "SKU": "NES-10350",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 52,
+   "part": 52,
+   "supplier": 1,
+   "SKU": "NES-10357",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 53,
+   "part": 53,
+   "supplier": 1,
+   "SKU": "NES-10364",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 54,
+   "part": 54,
+   "supplier": 1,
+   "SKU": "NES-10371",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 55,
+   "part": 55,
+   "supplier": 1,
+   "SKU": "NES-10378",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 56,
+   "part": 56,
+   "supplier": 3,
+   "SKU": "BPL-10385",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 3,
+    "name": "BrightPath Lighting Distributors"
+   }
+  },
+  {
+   "pk": 57,
+   "part": 57,
+   "supplier": 3,
+   "SKU": "BPL-10392",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 3,
+    "name": "BrightPath Lighting Distributors"
+   }
+  },
+  {
+   "pk": 58,
+   "part": 58,
+   "supplier": 3,
+   "SKU": "BPL-10399",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 3,
+    "name": "BrightPath Lighting Distributors"
+   }
+  },
+  {
+   "pk": 59,
+   "part": 59,
+   "supplier": 3,
+   "SKU": "BPL-10406",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 3,
+    "name": "BrightPath Lighting Distributors"
+   }
+  },
+  {
+   "pk": 60,
+   "part": 60,
+   "supplier": 1,
+   "SKU": "NES-10413",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 61,
+   "part": 61,
+   "supplier": 1,
+   "SKU": "NES-10420",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 62,
+   "part": 62,
+   "supplier": 1,
+   "SKU": "NES-10427",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 63,
+   "part": 63,
+   "supplier": 1,
+   "SKU": "NES-10434",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 64,
+   "part": 64,
+   "supplier": 1,
+   "SKU": "NES-10441",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 65,
+   "part": 65,
+   "supplier": 1,
+   "SKU": "NES-10448",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 66,
+   "part": 66,
+   "supplier": 3,
+   "SKU": "BPL-10455",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 3,
+    "name": "BrightPath Lighting Distributors"
+   }
+  },
+  {
+   "pk": 67,
+   "part": 67,
+   "supplier": 1,
+   "SKU": "NES-10462",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 68,
+   "part": 68,
+   "supplier": 1,
+   "SKU": "NES-10469",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 69,
+   "part": 69,
+   "supplier": 1,
+   "SKU": "NES-10476",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 70,
+   "part": 70,
+   "supplier": 1,
+   "SKU": "NES-10483",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 71,
+   "part": 71,
+   "supplier": 1,
+   "SKU": "NES-10490",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 72,
+   "part": 72,
+   "supplier": 1,
+   "SKU": "NES-10497",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 73,
+   "part": 73,
+   "supplier": 1,
+   "SKU": "NES-10504",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  },
+  {
+   "pk": 74,
+   "part": 74,
+   "supplier": 1,
+   "SKU": "NES-10511",
+   "pack_quantity": "1",
+   "pack_quantity_native": 1.0,
+   "supplier_detail": {
+    "pk": 1,
+    "name": "Northgate Electrical Supply"
+   }
+  }
+ ],
+ "parameters": [
+  {
+   "pk": 1,
+   "template": 1,
+   "model_type": "part.part",
+   "model_id": 1,
+   "data": "12 AWG",
+   "template_detail": {
+    "pk": 1,
+    "name": "Gauge",
+    "units": ""
+   }
+  },
+  {
+   "pk": 2,
+   "template": 2,
+   "model_type": "part.part",
+   "model_id": 1,
+   "data": "Copper",
+   "template_detail": {
+    "pk": 2,
+    "name": "Conductor",
+    "units": ""
+   }
+  },
+  {
+   "pk": 3,
+   "template": 3,
+   "model_type": "part.part",
+   "model_id": 1,
+   "data": "Black",
+   "template_detail": {
+    "pk": 3,
+    "name": "Color",
+    "units": ""
+   }
+  },
+  {
+   "pk": 4,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 1,
+   "data": "600",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 5,
+   "template": 1,
+   "model_type": "part.part",
+   "model_id": 2,
+   "data": "12 AWG",
+   "template_detail": {
+    "pk": 1,
+    "name": "Gauge",
+    "units": ""
+   }
+  },
+  {
+   "pk": 6,
+   "template": 2,
+   "model_type": "part.part",
+   "model_id": 2,
+   "data": "Copper",
+   "template_detail": {
+    "pk": 2,
+    "name": "Conductor",
+    "units": ""
+   }
+  },
+  {
+   "pk": 7,
+   "template": 3,
+   "model_type": "part.part",
+   "model_id": 2,
+   "data": "White",
+   "template_detail": {
+    "pk": 3,
+    "name": "Color",
+    "units": ""
+   }
+  },
+  {
+   "pk": 8,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 2,
+   "data": "600",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 9,
+   "template": 1,
+   "model_type": "part.part",
+   "model_id": 3,
+   "data": "12 AWG",
+   "template_detail": {
+    "pk": 1,
+    "name": "Gauge",
+    "units": ""
+   }
+  },
+  {
+   "pk": 10,
+   "template": 2,
+   "model_type": "part.part",
+   "model_id": 3,
+   "data": "Copper",
+   "template_detail": {
+    "pk": 2,
+    "name": "Conductor",
+    "units": ""
+   }
+  },
+  {
+   "pk": 11,
+   "template": 3,
+   "model_type": "part.part",
+   "model_id": 3,
+   "data": "Green",
+   "template_detail": {
+    "pk": 3,
+    "name": "Color",
+    "units": ""
+   }
+  },
+  {
+   "pk": 12,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 3,
+   "data": "600",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 13,
+   "template": 1,
+   "model_type": "part.part",
+   "model_id": 4,
+   "data": "10 AWG",
+   "template_detail": {
+    "pk": 1,
+    "name": "Gauge",
+    "units": ""
+   }
+  },
+  {
+   "pk": 14,
+   "template": 2,
+   "model_type": "part.part",
+   "model_id": 4,
+   "data": "Copper",
+   "template_detail": {
+    "pk": 2,
+    "name": "Conductor",
+    "units": ""
+   }
+  },
+  {
+   "pk": 15,
+   "template": 3,
+   "model_type": "part.part",
+   "model_id": 4,
+   "data": "Black",
+   "template_detail": {
+    "pk": 3,
+    "name": "Color",
+    "units": ""
+   }
+  },
+  {
+   "pk": 16,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 4,
+   "data": "600",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 17,
+   "template": 1,
+   "model_type": "part.part",
+   "model_id": 5,
+   "data": "6 AWG",
+   "template_detail": {
+    "pk": 1,
+    "name": "Gauge",
+    "units": ""
+   }
+  },
+  {
+   "pk": 18,
+   "template": 2,
+   "model_type": "part.part",
+   "model_id": 5,
+   "data": "Copper",
+   "template_detail": {
+    "pk": 2,
+    "name": "Conductor",
+    "units": ""
+   }
+  },
+  {
+   "pk": 19,
+   "template": 3,
+   "model_type": "part.part",
+   "model_id": 5,
+   "data": "Black",
+   "template_detail": {
+    "pk": 3,
+    "name": "Color",
+    "units": ""
+   }
+  },
+  {
+   "pk": 20,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 5,
+   "data": "600",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 21,
+   "template": 1,
+   "model_type": "part.part",
+   "model_id": 6,
+   "data": "6 AWG",
+   "template_detail": {
+    "pk": 1,
+    "name": "Gauge",
+    "units": ""
+   }
+  },
+  {
+   "pk": 22,
+   "template": 2,
+   "model_type": "part.part",
+   "model_id": 6,
+   "data": "Copper",
+   "template_detail": {
+    "pk": 2,
+    "name": "Conductor",
+    "units": ""
+   }
+  },
+  {
+   "pk": 23,
+   "template": 3,
+   "model_type": "part.part",
+   "model_id": 6,
+   "data": "Red",
+   "template_detail": {
+    "pk": 3,
+    "name": "Color",
+    "units": ""
+   }
+  },
+  {
+   "pk": 24,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 6,
+   "data": "600",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 25,
+   "template": 1,
+   "model_type": "part.part",
+   "model_id": 7,
+   "data": "8 AWG",
+   "template_detail": {
+    "pk": 1,
+    "name": "Gauge",
+    "units": ""
+   }
+  },
+  {
+   "pk": 26,
+   "template": 2,
+   "model_type": "part.part",
+   "model_id": 7,
+   "data": "Copper",
+   "template_detail": {
+    "pk": 2,
+    "name": "Conductor",
+    "units": ""
+   }
+  },
+  {
+   "pk": 27,
+   "template": 3,
+   "model_type": "part.part",
+   "model_id": 7,
+   "data": "Green",
+   "template_detail": {
+    "pk": 3,
+    "name": "Color",
+    "units": ""
+   }
+  },
+  {
+   "pk": 28,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 7,
+   "data": "600",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 29,
+   "template": 1,
+   "model_type": "part.part",
+   "model_id": 8,
+   "data": "4 AWG",
+   "template_detail": {
+    "pk": 1,
+    "name": "Gauge",
+    "units": ""
+   }
+  },
+  {
+   "pk": 30,
+   "template": 2,
+   "model_type": "part.part",
+   "model_id": 8,
+   "data": "Copper",
+   "template_detail": {
+    "pk": 2,
+    "name": "Conductor",
+    "units": ""
+   }
+  },
+  {
+   "pk": 31,
+   "template": 1,
+   "model_type": "part.part",
+   "model_id": 9,
+   "data": "14 AWG",
+   "template_detail": {
+    "pk": 1,
+    "name": "Gauge",
+    "units": ""
+   }
+  },
+  {
+   "pk": 32,
+   "template": 2,
+   "model_type": "part.part",
+   "model_id": 9,
+   "data": "Copper",
+   "template_detail": {
+    "pk": 2,
+    "name": "Conductor",
+    "units": ""
+   }
+  },
+  {
+   "pk": 33,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 9,
+   "data": "600",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 34,
+   "template": 1,
+   "model_type": "part.part",
+   "model_id": 10,
+   "data": "12 AWG",
+   "template_detail": {
+    "pk": 1,
+    "name": "Gauge",
+    "units": ""
+   }
+  },
+  {
+   "pk": 35,
+   "template": 2,
+   "model_type": "part.part",
+   "model_id": 10,
+   "data": "Copper",
+   "template_detail": {
+    "pk": 2,
+    "name": "Conductor",
+    "units": ""
+   }
+  },
+  {
+   "pk": 36,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 10,
+   "data": "600",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 37,
+   "template": 1,
+   "model_type": "part.part",
+   "model_id": 11,
+   "data": "12 AWG",
+   "template_detail": {
+    "pk": 1,
+    "name": "Gauge",
+    "units": ""
+   }
+  },
+  {
+   "pk": 38,
+   "template": 2,
+   "model_type": "part.part",
+   "model_id": 11,
+   "data": "Copper",
+   "template_detail": {
+    "pk": 2,
+    "name": "Conductor",
+    "units": ""
+   }
+  },
+  {
+   "pk": 39,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 11,
+   "data": "600",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 40,
+   "template": 1,
+   "model_type": "part.part",
+   "model_id": 12,
+   "data": "6 AWG",
+   "template_detail": {
+    "pk": 1,
+    "name": "Gauge",
+    "units": ""
+   }
+  },
+  {
+   "pk": 41,
+   "template": 2,
+   "model_type": "part.part",
+   "model_id": 12,
+   "data": "Copper",
+   "template_detail": {
+    "pk": 2,
+    "name": "Conductor",
+    "units": ""
+   }
+  },
+  {
+   "pk": 42,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 12,
+   "data": "600",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 43,
+   "template": 1,
+   "model_type": "part.part",
+   "model_id": 13,
+   "data": "12 AWG",
+   "template_detail": {
+    "pk": 1,
+    "name": "Gauge",
+    "units": ""
+   }
+  },
+  {
+   "pk": 44,
+   "template": 2,
+   "model_type": "part.part",
+   "model_id": 13,
+   "data": "Copper",
+   "template_detail": {
+    "pk": 2,
+    "name": "Conductor",
+    "units": ""
+   }
+  },
+  {
+   "pk": 45,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 13,
+   "data": "600",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 46,
+   "template": 1,
+   "model_type": "part.part",
+   "model_id": 14,
+   "data": "12 AWG",
+   "template_detail": {
+    "pk": 1,
+    "name": "Gauge",
+    "units": ""
+   }
+  },
+  {
+   "pk": 47,
+   "template": 2,
+   "model_type": "part.part",
+   "model_id": 14,
+   "data": "Copper",
+   "template_detail": {
+    "pk": 2,
+    "name": "Conductor",
+    "units": ""
+   }
+  },
+  {
+   "pk": 48,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 14,
+   "data": "600",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 49,
+   "template": 1,
+   "model_type": "part.part",
+   "model_id": 15,
+   "data": "4/0 AWG",
+   "template_detail": {
+    "pk": 1,
+    "name": "Gauge",
+    "units": ""
+   }
+  },
+  {
+   "pk": 50,
+   "template": 2,
+   "model_type": "part.part",
+   "model_id": 15,
+   "data": "Aluminum",
+   "template_detail": {
+    "pk": 2,
+    "name": "Conductor",
+    "units": ""
+   }
+  },
+  {
+   "pk": 51,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 15,
+   "data": "600",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 52,
+   "template": 1,
+   "model_type": "part.part",
+   "model_id": 16,
+   "data": "23 AWG",
+   "template_detail": {
+    "pk": 1,
+    "name": "Gauge",
+    "units": ""
+   }
+  },
+  {
+   "pk": 53,
+   "template": 2,
+   "model_type": "part.part",
+   "model_id": 16,
+   "data": "Copper",
+   "template_detail": {
+    "pk": 2,
+    "name": "Conductor",
+    "units": ""
+   }
+  },
+  {
+   "pk": 54,
+   "template": 3,
+   "model_type": "part.part",
+   "model_id": 16,
+   "data": "Blue",
+   "template_detail": {
+    "pk": 3,
+    "name": "Color",
+    "units": ""
+   }
+  },
+  {
+   "pk": 55,
+   "template": 1,
+   "model_type": "part.part",
+   "model_id": 17,
+   "data": "18 AWG",
+   "template_detail": {
+    "pk": 1,
+    "name": "Gauge",
+    "units": ""
+   }
+  },
+  {
+   "pk": 56,
+   "template": 2,
+   "model_type": "part.part",
+   "model_id": 17,
+   "data": "Copper",
+   "template_detail": {
+    "pk": 2,
+    "name": "Conductor",
+    "units": ""
+   }
+  },
+  {
+   "pk": 57,
+   "template": 7,
+   "model_type": "part.part",
+   "model_id": 18,
+   "data": "1/2 in",
+   "template_detail": {
+    "pk": 7,
+    "name": "Trade Size",
+    "units": ""
+   }
+  },
+  {
+   "pk": 58,
+   "template": 7,
+   "model_type": "part.part",
+   "model_id": 19,
+   "data": "3/4 in",
+   "template_detail": {
+    "pk": 7,
+    "name": "Trade Size",
+    "units": ""
+   }
+  },
+  {
+   "pk": 59,
+   "template": 7,
+   "model_type": "part.part",
+   "model_id": 20,
+   "data": "1 in",
+   "template_detail": {
+    "pk": 7,
+    "name": "Trade Size",
+    "units": ""
+   }
+  },
+  {
+   "pk": 60,
+   "template": 7,
+   "model_type": "part.part",
+   "model_id": 21,
+   "data": "2 in",
+   "template_detail": {
+    "pk": 7,
+    "name": "Trade Size",
+    "units": ""
+   }
+  },
+  {
+   "pk": 61,
+   "template": 7,
+   "model_type": "part.part",
+   "model_id": 22,
+   "data": "1/2 in",
+   "template_detail": {
+    "pk": 7,
+    "name": "Trade Size",
+    "units": ""
+   }
+  },
+  {
+   "pk": 62,
+   "template": 7,
+   "model_type": "part.part",
+   "model_id": 23,
+   "data": "1/2 in",
+   "template_detail": {
+    "pk": 7,
+    "name": "Trade Size",
+    "units": ""
+   }
+  },
+  {
+   "pk": 63,
+   "template": 7,
+   "model_type": "part.part",
+   "model_id": 24,
+   "data": "3/4 in",
+   "template_detail": {
+    "pk": 7,
+    "name": "Trade Size",
+    "units": ""
+   }
+  },
+  {
+   "pk": 64,
+   "template": 7,
+   "model_type": "part.part",
+   "model_id": 25,
+   "data": "3/4 in",
+   "template_detail": {
+    "pk": 7,
+    "name": "Trade Size",
+    "units": ""
+   }
+  },
+  {
+   "pk": 65,
+   "template": 7,
+   "model_type": "part.part",
+   "model_id": 26,
+   "data": "3/8 in",
+   "template_detail": {
+    "pk": 7,
+    "name": "Trade Size",
+    "units": ""
+   }
+  },
+  {
+   "pk": 66,
+   "template": 7,
+   "model_type": "part.part",
+   "model_id": 27,
+   "data": "2 in",
+   "template_detail": {
+    "pk": 7,
+    "name": "Trade Size",
+    "units": ""
+   }
+  },
+  {
+   "pk": 67,
+   "template": 7,
+   "model_type": "part.part",
+   "model_id": 28,
+   "data": "1/2 in",
+   "template_detail": {
+    "pk": 7,
+    "name": "Trade Size",
+    "units": ""
+   }
+  },
+  {
+   "pk": 68,
+   "template": 5,
+   "model_type": "part.part",
+   "model_id": 35,
+   "data": "15",
+   "template_detail": {
+    "pk": 5,
+    "name": "Current Rating",
+    "units": "A"
+   }
+  },
+  {
+   "pk": 69,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 35,
+   "data": "125",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 70,
+   "template": 3,
+   "model_type": "part.part",
+   "model_id": 35,
+   "data": "White",
+   "template_detail": {
+    "pk": 3,
+    "name": "Color",
+    "units": ""
+   }
+  },
+  {
+   "pk": 71,
+   "template": 5,
+   "model_type": "part.part",
+   "model_id": 36,
+   "data": "20",
+   "template_detail": {
+    "pk": 5,
+    "name": "Current Rating",
+    "units": "A"
+   }
+  },
+  {
+   "pk": 72,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 36,
+   "data": "125",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 73,
+   "template": 3,
+   "model_type": "part.part",
+   "model_id": 36,
+   "data": "White",
+   "template_detail": {
+    "pk": 3,
+    "name": "Color",
+    "units": ""
+   }
+  },
+  {
+   "pk": 74,
+   "template": 5,
+   "model_type": "part.part",
+   "model_id": 37,
+   "data": "20",
+   "template_detail": {
+    "pk": 5,
+    "name": "Current Rating",
+    "units": "A"
+   }
+  },
+  {
+   "pk": 75,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 37,
+   "data": "125",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 76,
+   "template": 3,
+   "model_type": "part.part",
+   "model_id": 37,
+   "data": "White",
+   "template_detail": {
+    "pk": 3,
+    "name": "Color",
+    "units": ""
+   }
+  },
+  {
+   "pk": 77,
+   "template": 5,
+   "model_type": "part.part",
+   "model_id": 38,
+   "data": "15",
+   "template_detail": {
+    "pk": 5,
+    "name": "Current Rating",
+    "units": "A"
+   }
+  },
+  {
+   "pk": 78,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 38,
+   "data": "125",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 79,
+   "template": 3,
+   "model_type": "part.part",
+   "model_id": 38,
+   "data": "White",
+   "template_detail": {
+    "pk": 3,
+    "name": "Color",
+    "units": ""
+   }
+  },
+  {
+   "pk": 80,
+   "template": 5,
+   "model_type": "part.part",
+   "model_id": 39,
+   "data": "50",
+   "template_detail": {
+    "pk": 5,
+    "name": "Current Rating",
+    "units": "A"
+   }
+  },
+  {
+   "pk": 81,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 39,
+   "data": "250",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 82,
+   "template": 5,
+   "model_type": "part.part",
+   "model_id": 40,
+   "data": "15",
+   "template_detail": {
+    "pk": 5,
+    "name": "Current Rating",
+    "units": "A"
+   }
+  },
+  {
+   "pk": 83,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 40,
+   "data": "277",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 84,
+   "template": 6,
+   "model_type": "part.part",
+   "model_id": 40,
+   "data": "1",
+   "template_detail": {
+    "pk": 6,
+    "name": "Poles",
+    "units": ""
+   }
+  },
+  {
+   "pk": 85,
+   "template": 3,
+   "model_type": "part.part",
+   "model_id": 40,
+   "data": "White",
+   "template_detail": {
+    "pk": 3,
+    "name": "Color",
+    "units": ""
+   }
+  },
+  {
+   "pk": 86,
+   "template": 5,
+   "model_type": "part.part",
+   "model_id": 41,
+   "data": "15",
+   "template_detail": {
+    "pk": 5,
+    "name": "Current Rating",
+    "units": "A"
+   }
+  },
+  {
+   "pk": 87,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 41,
+   "data": "277",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 88,
+   "template": 3,
+   "model_type": "part.part",
+   "model_id": 41,
+   "data": "White",
+   "template_detail": {
+    "pk": 3,
+    "name": "Color",
+    "units": ""
+   }
+  },
+  {
+   "pk": 89,
+   "template": 8,
+   "model_type": "part.part",
+   "model_id": 42,
+   "data": "150",
+   "template_detail": {
+    "pk": 8,
+    "name": "Power",
+    "units": "W"
+   }
+  },
+  {
+   "pk": 90,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 42,
+   "data": "120",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 91,
+   "template": 3,
+   "model_type": "part.part",
+   "model_id": 42,
+   "data": "White",
+   "template_detail": {
+    "pk": 3,
+    "name": "Color",
+    "units": ""
+   }
+  },
+  {
+   "pk": 92,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 43,
+   "data": "277",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 93,
+   "template": 3,
+   "model_type": "part.part",
+   "model_id": 43,
+   "data": "White",
+   "template_detail": {
+    "pk": 3,
+    "name": "Color",
+    "units": ""
+   }
+  },
+  {
+   "pk": 94,
+   "template": 3,
+   "model_type": "part.part",
+   "model_id": 44,
+   "data": "White",
+   "template_detail": {
+    "pk": 3,
+    "name": "Color",
+    "units": ""
+   }
+  },
+  {
+   "pk": 95,
+   "template": 3,
+   "model_type": "part.part",
+   "model_id": 45,
+   "data": "White",
+   "template_detail": {
+    "pk": 3,
+    "name": "Color",
+    "units": ""
+   }
+  },
+  {
+   "pk": 96,
+   "template": 5,
+   "model_type": "part.part",
+   "model_id": 46,
+   "data": "15",
+   "template_detail": {
+    "pk": 5,
+    "name": "Current Rating",
+    "units": "A"
+   }
+  },
+  {
+   "pk": 97,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 46,
+   "data": "120",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 98,
+   "template": 6,
+   "model_type": "part.part",
+   "model_id": 46,
+   "data": "1",
+   "template_detail": {
+    "pk": 6,
+    "name": "Poles",
+    "units": ""
+   }
+  },
+  {
+   "pk": 99,
+   "template": 5,
+   "model_type": "part.part",
+   "model_id": 47,
+   "data": "20",
+   "template_detail": {
+    "pk": 5,
+    "name": "Current Rating",
+    "units": "A"
+   }
+  },
+  {
+   "pk": 100,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 47,
+   "data": "120",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 101,
+   "template": 6,
+   "model_type": "part.part",
+   "model_id": 47,
+   "data": "1",
+   "template_detail": {
+    "pk": 6,
+    "name": "Poles",
+    "units": ""
+   }
+  },
+  {
+   "pk": 102,
+   "template": 5,
+   "model_type": "part.part",
+   "model_id": 48,
+   "data": "20",
+   "template_detail": {
+    "pk": 5,
+    "name": "Current Rating",
+    "units": "A"
+   }
+  },
+  {
+   "pk": 103,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 48,
+   "data": "120",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 104,
+   "template": 6,
+   "model_type": "part.part",
+   "model_id": 48,
+   "data": "1",
+   "template_detail": {
+    "pk": 6,
+    "name": "Poles",
+    "units": ""
+   }
+  },
+  {
+   "pk": 105,
+   "template": 5,
+   "model_type": "part.part",
+   "model_id": 49,
+   "data": "30",
+   "template_detail": {
+    "pk": 5,
+    "name": "Current Rating",
+    "units": "A"
+   }
+  },
+  {
+   "pk": 106,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 49,
+   "data": "240",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 107,
+   "template": 6,
+   "model_type": "part.part",
+   "model_id": 49,
+   "data": "2",
+   "template_detail": {
+    "pk": 6,
+    "name": "Poles",
+    "units": ""
+   }
+  },
+  {
+   "pk": 108,
+   "template": 5,
+   "model_type": "part.part",
+   "model_id": 50,
+   "data": "60",
+   "template_detail": {
+    "pk": 5,
+    "name": "Current Rating",
+    "units": "A"
+   }
+  },
+  {
+   "pk": 109,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 50,
+   "data": "240",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 110,
+   "template": 6,
+   "model_type": "part.part",
+   "model_id": 50,
+   "data": "2",
+   "template_detail": {
+    "pk": 6,
+    "name": "Poles",
+    "units": ""
+   }
+  },
+  {
+   "pk": 111,
+   "template": 5,
+   "model_type": "part.part",
+   "model_id": 51,
+   "data": "200",
+   "template_detail": {
+    "pk": 5,
+    "name": "Current Rating",
+    "units": "A"
+   }
+  },
+  {
+   "pk": 112,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 51,
+   "data": "240",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 113,
+   "template": 5,
+   "model_type": "part.part",
+   "model_id": 52,
+   "data": "200",
+   "template_detail": {
+    "pk": 5,
+    "name": "Current Rating",
+    "units": "A"
+   }
+  },
+  {
+   "pk": 114,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 52,
+   "data": "240",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 115,
+   "template": 5,
+   "model_type": "part.part",
+   "model_id": 53,
+   "data": "60",
+   "template_detail": {
+    "pk": 5,
+    "name": "Current Rating",
+    "units": "A"
+   }
+  },
+  {
+   "pk": 116,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 53,
+   "data": "240",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 117,
+   "template": 6,
+   "model_type": "part.part",
+   "model_id": 53,
+   "data": "2",
+   "template_detail": {
+    "pk": 6,
+    "name": "Poles",
+    "units": ""
+   }
+  },
+  {
+   "pk": 118,
+   "template": 8,
+   "model_type": "part.part",
+   "model_id": 56,
+   "data": "150",
+   "template_detail": {
+    "pk": 8,
+    "name": "Power",
+    "units": "W"
+   }
+  },
+  {
+   "pk": 119,
+   "template": 9,
+   "model_type": "part.part",
+   "model_id": 56,
+   "data": "21000",
+   "template_detail": {
+    "pk": 9,
+    "name": "Light Output",
+    "units": "lm"
+   }
+  },
+  {
+   "pk": 120,
+   "template": 10,
+   "model_type": "part.part",
+   "model_id": 56,
+   "data": "5000",
+   "template_detail": {
+    "pk": 10,
+    "name": "Color Temperature",
+    "units": "K"
+   }
+  },
+  {
+   "pk": 121,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 56,
+   "data": "277",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 122,
+   "template": 8,
+   "model_type": "part.part",
+   "model_id": 57,
+   "data": "40",
+   "template_detail": {
+    "pk": 8,
+    "name": "Power",
+    "units": "W"
+   }
+  },
+  {
+   "pk": 123,
+   "template": 9,
+   "model_type": "part.part",
+   "model_id": 57,
+   "data": "5200",
+   "template_detail": {
+    "pk": 9,
+    "name": "Light Output",
+    "units": "lm"
+   }
+  },
+  {
+   "pk": 124,
+   "template": 10,
+   "model_type": "part.part",
+   "model_id": 57,
+   "data": "4000",
+   "template_detail": {
+    "pk": 10,
+    "name": "Color Temperature",
+    "units": "K"
+   }
+  },
+  {
+   "pk": 125,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 57,
+   "data": "277",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 126,
+   "template": 8,
+   "model_type": "part.part",
+   "model_id": 58,
+   "data": "12",
+   "template_detail": {
+    "pk": 8,
+    "name": "Power",
+    "units": "W"
+   }
+  },
+  {
+   "pk": 127,
+   "template": 9,
+   "model_type": "part.part",
+   "model_id": 58,
+   "data": "1000",
+   "template_detail": {
+    "pk": 9,
+    "name": "Light Output",
+    "units": "lm"
+   }
+  },
+  {
+   "pk": 128,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 58,
+   "data": "120",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 129,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 59,
+   "data": "277",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 130,
+   "template": 5,
+   "model_type": "part.part",
+   "model_id": 60,
+   "data": "48",
+   "template_detail": {
+    "pk": 5,
+    "name": "Current Rating",
+    "units": "A"
+   }
+  },
+  {
+   "pk": 131,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 60,
+   "data": "240",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 132,
+   "template": 8,
+   "model_type": "part.part",
+   "model_id": 60,
+   "data": "11500",
+   "template_detail": {
+    "pk": 8,
+    "name": "Power",
+    "units": "W"
+   }
+  },
+  {
+   "pk": 133,
+   "template": 3,
+   "model_type": "part.part",
+   "model_id": 69,
+   "data": "Black",
+   "template_detail": {
+    "pk": 3,
+    "name": "Color",
+    "units": ""
+   }
+  },
+  {
+   "pk": 134,
+   "template": 4,
+   "model_type": "part.part",
+   "model_id": 71,
+   "data": "1000",
+   "template_detail": {
+    "pk": 4,
+    "name": "Voltage Rating",
+    "units": "V"
+   }
+  },
+  {
+   "pk": 135,
+   "template": 5,
+   "model_type": "part.part",
+   "model_id": 72,
+   "data": "600",
+   "template_detail": {
+    "pk": 5,
+    "name": "Current Rating",
+    "units": "A"
    }
   }
  ]

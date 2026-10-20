@@ -63,8 +63,14 @@ def rows(t):
     loc_pk = {key: by_path[path]['pk'] for key, (path, _, _) in t['LOCATIONS'].items()}
 
     cat_loc = {path: loc_pk[loc] for path, _desc, loc in t['CATEGORIES']}
-    stock, part_details, supplier_parts = [], {}, {}
-    for n, (ipn, cat, name, desc, units, cost, minimum, sup, _mfr, stock_spec, _params) in enumerate(t['PARTS']):
+    # Parents come before children in CATEGORIES, so pks follow its order.
+    categories = {path: {'pk': n + 1, 'name': path.split('/')[-1], 'pathstring': path}
+                  for n, (path, _desc, _loc) in enumerate(t['CATEGORIES'])}
+    templates = {name: {'pk': n + 1, 'name': name, 'units': units}
+                 for n, (name, (units, _desc, _choices)) in enumerate(t['TEMPLATES'].items())}
+    stock, part_details, supplier_parts, parameters, costs = [], {}, {}, [], {}
+    for n, (ipn, cat, name, desc, units, cost, minimum, sup, _mfr, stock_spec, params) in enumerate(t['PARTS']):
+        costs[ipn] = cost
         # The seed copies the category's default location onto the part.
         part_detail = {'pk': n + 1, 'IPN': ipn, 'name': name, 'description': desc,
                        'units': units, 'minimum_stock': f'{minimum:.6f}',
@@ -76,7 +82,14 @@ def rows(t):
         supplier_parts[ipn] = {'pk': n + 1, 'part': n + 1, 'supplier': list(t['SUPPLIERS']).index(sup) + 1,
                                'SKU': f"{t['SUPPLIERS'][sup][2]}-{10000 + n * 7}",
                                'pack_quantity': '500' if reel else '1',
-                               'pack_quantity_native': 500.0 if reel else 1.0}
+                               'pack_quantity_native': 500.0 if reel else 1.0,
+                               'supplier_detail': {'pk': list(t['SUPPLIERS']).index(sup) + 1,
+                                                   'name': t['SUPPLIERS'][sup][0]}}
+        for pair in params.split(';') if params else []:
+            key, value = pair.split('=', 1)
+            parameters.append({'pk': len(parameters) + 1, 'template': templates[key]['pk'],
+                               'model_type': 'part.part', 'model_id': n + 1, 'data': value,
+                               'template_detail': templates[key]})
         for entry in stock_spec.split():
             loc, qty = entry.split(':')
             count, each = (int(qty), 1) if ipn in t['TRACKABLE'] else (1, float(qty))
@@ -103,7 +116,7 @@ def rows(t):
         for ipn, qty in lines:
             spart = supplier_parts[ipn]
             po_lines.append({'pk': len(po_lines) + 1, 'order': po['pk'], 'part': spart['pk'],
-                             'quantity': float(qty), 'received': 0.0,
+                             'quantity': float(qty), 'received': 0.0, 'purchase_price': costs[ipn],
                              'project_code': po['project_code'], 'project_code_label': prj,
                              'destination': None, 'sku': spart['SKU'], 'ipn': ipn,
                              'internal_part': spart['part'], 'internal_part_name': part_details[ipn]['name'],
@@ -111,15 +124,18 @@ def rows(t):
 
     # Parts in creation order: the stocked parts, then the install kits (assemblies, no stock, min 0).
     parts = [{'pk': d['pk'], 'IPN': d['IPN'], 'name': d['name'], 'description': d['description'],
-              'units': d['units'], 'minimum_stock': float(d['minimum_stock']), 'assembly': False, 'active': True}
-             for d in part_details.values()]
+              'units': d['units'], 'minimum_stock': float(d['minimum_stock']), 'assembly': False, 'active': True,
+              'category': categories[cat]['pk'], 'category_detail': categories[cat]}
+             for d, cat in zip(part_details.values(), (row[1] for row in t['PARTS']))]
     parts += [{'pk': len(parts) + n + 1, 'IPN': ipn, 'name': name, 'description': desc, 'units': '',
-               'minimum_stock': 0.0, 'assembly': True, 'active': True}
+               'minimum_stock': 0.0, 'assembly': True, 'active': True,
+              'category': categories['Install Kits']['pk'], 'category_detail': categories['Install Kits']}
               for n, (ipn, name, desc, _bom) in enumerate(t['KITS'])]
     project_codes = [{'pk': n + 1, 'code': code, 'description': desc, 'active': True}
                      for n, (code, desc) in enumerate(t['PROJECTS'])]
     return {'locations': locations, 'stock': stock, 'parts': parts, 'projectCodes': project_codes,
-            'purchaseOrders': purchase_orders, 'poLines': po_lines}
+            'purchaseOrders': purchase_orders, 'poLines': po_lines,
+            'supplierParts': list(supplier_parts.values()), 'parameters': parameters}
 
 
 if __name__ == '__main__':
